@@ -1,0 +1,4 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+Starting Sim
+$finish called at time : 545 ns : File "C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sim_1/new/ADC_tb.sv" Line 86
