@@ -60,8 +60,8 @@ module ADC_Interface(
    
     always_ff @(posedge clk_100mhz) begin
         if (rst) begin
-            prev_data <= 12'b0;
-            sync_data <= 12'b0;
+            prev_data <= 13'b0;
+            sync_data <= 13'b0;
         end else begin
             //sync all 12 input pins with 2 registers
             for (int i=0; i<=12; i=i+1) begin
