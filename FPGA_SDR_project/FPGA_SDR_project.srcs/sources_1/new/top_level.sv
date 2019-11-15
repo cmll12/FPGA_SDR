@@ -45,7 +45,7 @@ module top_level(
     logic [12:0] ADC_data; //raw data from ADC for ila, OTR, MSB..LSB
     assign ADC_data = {OTR, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12}; 
     
-    adc_ila ila1 (.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample_offset));
+    adc_ila ila1 (.clk(clk_100mhz),.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample_offset));
                     
     //interface with AD9220
     ADC_Interface AD9220 (.clk_100mhz(clk_100mhz),.rst(rst),.sample_offset(sample_offset),
