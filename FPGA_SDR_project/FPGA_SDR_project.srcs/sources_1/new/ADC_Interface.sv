@@ -19,7 +19,7 @@ module ADC_Interface(
            
    //format ADC values in array, including out of range bit
     logic [12:0] raw_values;
-    assign raw_values[12:0] = {out_of_range, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11};
+    assign raw_values[12:0] = {out_of_range, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12};
     
     //10 mhz clk (100 ns) with 50% duty cycle with rising edge synced with 100mHz clk
     //rising edge. ADC sample rate = 10 MSPS 
