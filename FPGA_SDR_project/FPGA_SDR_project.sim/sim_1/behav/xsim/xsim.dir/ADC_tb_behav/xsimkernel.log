@@ -1,7 +1,7 @@
-Running: xsim.dir/ADC_tb_behav/xsimk.exe -simmode gui -wdb ADC_tb_behav.wdb -simrunnum 0 -socket 54698
+Running: xsim.dir/ADC_tb_behav/xsimk.exe -simmode gui -wdb ADC_tb_behav.wdb -simrunnum 0 -socket 49406
 Design successfully loaded
-Design Loading Memory Usage: 5000 KB (Peak: 5000 KB)
-Design Loading CPU Usage: 62 ms
+Design Loading Memory Usage: 4972 KB (Peak: 4972 KB)
+Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 5684 KB (Peak: 5684 KB)
-Simulation CPU Usage: 93 ms
+Simulation Memory Usage: 5664 KB (Peak: 5664 KB)
+Simulation CPU Usage: 31 ms

@@ -39,8 +39,17 @@ module ADC_tb;
         clk = !clk;
      end
         
+     logic [2:0] a = 3'b001;
+     
+     logic [2:0] b = 3'd111;
+     logic signed [5:0] d;
+     
+     
     initial begin
         $display("Starting Sim"); 
+        
+        d = b*a;   
+             
         clk = 0; 
         
         B1 = 0;

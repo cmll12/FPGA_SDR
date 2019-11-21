@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Fri Nov 15 14:35:13 2019
-| Host         : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Nov 21 17:13:01 2019
+| Host         : CharlesPC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
 | Design       : top_level
 | Device       : 7a100tcsg324-1
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   15 |     0 |     63400 |  0.02 |
-|   LUT as Logic          |   15 |     0 |     63400 |  0.02 |
+| Slice LUTs*             |   84 |     0 |     63400 |  0.13 |
+|   LUT as Logic          |   84 |     0 |     63400 |  0.13 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |   48 |     0 |    126800 |  0.04 |
-|   Register as Flip Flop |   48 |     0 |    126800 |  0.04 |
+| Slice Registers         |   80 |     0 |    126800 |  0.06 |
+|   Register as Flip Flop |   80 |     0 |    126800 |  0.06 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 3     |          Yes |         Set |            - |
-| 45    |          Yes |       Reset |            - |
+| 77    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -77,11 +77,12 @@ Table of Contents
 3. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |       240 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |    2 |     0 |       240 |  0.83 |
+|   DSP48E1 only |    2 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -146,16 +147,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   45 |        Flop & Latch |
+| FDRE     |   77 |        Flop & Latch |
+| LUT1     |   42 |                 LUT |
+| LUT2     |   40 |                 LUT |
 | IBUF     |   15 |                  IO |
-| LUT2     |   12 |                 LUT |
+| CARRY4   |   13 |          CarryLogic |
 | LUT4     |    4 |                 LUT |
 | LUT6     |    3 |                 LUT |
 | LUT5     |    3 |                 LUT |
 | FDSE     |    3 |        Flop & Latch |
 | LUT3     |    2 |                 LUT |
+| DSP48E1  |    2 |    Block Arithmetic |
 | OBUF     |    1 |                  IO |
-| LUT1     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -163,11 +166,12 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
-| adc_ila  |    1 |
-+----------+------+
++-----------+------+
+|  Ref Name | Used |
++-----------+------+
+| sine_wave |    1 |
+| ila_2     |    1 |
++-----------+------+
 
 
 9. Instantiated Netlists

@@ -1,4 +1,5 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
-Starting Sim
-$finish called at time : 545 ns : File "C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sim_1/new/ADC_tb.sv" Line 86
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module lo_tb.uut.LO_sine_wave.inst.native_mem_module.blk_mem_gen_v8_4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
