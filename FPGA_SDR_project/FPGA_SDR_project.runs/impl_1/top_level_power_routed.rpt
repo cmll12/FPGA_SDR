@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date             : Thu Nov 21 19:42:53 2019
+| Date             : Fri Nov 22 12:33:59 2019
 | Host             : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
 | Command          : report_power -file top_level_power_routed.rpt -pb top_level_power_summary_routed.pb -rpx top_level_power_routed.rpx
 | Design           : top_level
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.124        |
+| Total On-Chip Power (W)  | 0.123        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.026        |
-| Device Static (W)        | 0.098        |
+| Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.4         |
 | Junction Temperature (C) | 25.6         |
@@ -52,21 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.011 |        4 |       --- |             --- |
-| Slice Logic              |     0.001 |     4285 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1181 |     63400 |            1.86 |
-|   LUT as Shift Register  |    <0.001 |      143 |     19000 |            0.75 |
-|   Register               |    <0.001 |     2310 |    126800 |            1.82 |
-|   CARRY4                 |    <0.001 |       55 |     15850 |            0.35 |
-|   LUT as Distributed RAM |    <0.001 |       24 |     19000 |            0.13 |
-|   F7/F8 Muxes            |    <0.001 |        3 |     63400 |           <0.01 |
-|   Others                 |     0.000 |      287 |       --- |             --- |
-| Signals                  |     0.003 |     3274 |       --- |             --- |
-| Block RAM                |     0.008 |      9.5 |       135 |            7.04 |
-| DSPs                     |    <0.001 |        2 |       240 |            0.83 |
+| Clocks                   |     0.017 |        4 |       --- |             --- |
+| Slice Logic              |     0.002 |     8071 |       --- |             --- |
+|   LUT as Logic           |     0.001 |     2447 |     63400 |            3.86 |
+|   Register               |    <0.001 |     3998 |    126800 |            3.15 |
+|   LUT as Distributed RAM |    <0.001 |      152 |     19000 |            0.80 |
+|   CARRY4                 |    <0.001 |      120 |     15850 |            0.76 |
+|   LUT as Shift Register  |    <0.001 |      257 |     19000 |            1.35 |
+|   F7/F8 Muxes            |    <0.001 |       89 |     63400 |            0.14 |
+|   Others                 |     0.000 |      520 |       --- |             --- |
+| Signals                  |     0.002 |     5668 |       --- |             --- |
+| Block RAM                |     0.002 |      3.5 |       135 |            2.59 |
 | I/O                      |     0.002 |       16 |       210 |            7.62 |
-| Static Power             |     0.098 |          |           |                 |
-| Total                    |     0.124 |          |           |                 |
+| Static Power             |     0.097 |          |           |                 |
+| Total                    |     0.123 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -85,7 +84,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.001 |      0.000 |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -147,16 +146,12 @@ Table of Contents
 | Name                     | Power (W) |
 +--------------------------+-----------+
 | top_level                |     0.026 |
-|   LO                     |     0.003 |
-|     LO_sine_wave         |     0.002 |
-|       U0                 |     0.002 |
 |   dbg_hub                |     0.003 |
 |     inst                 |     0.003 |
 |       BSCANID.u_xsdbm_id |     0.003 |
-|   mixer_ila              |     0.016 |
-|     inst                 |     0.016 |
-|       ila_core_inst      |     0.016 |
-|   sample_LO_mixer        |     0.001 |
+|   ila1                   |     0.020 |
+|     inst                 |     0.020 |
+|       ila_core_inst      |     0.020 |
 +--------------------------+-----------+
 
 

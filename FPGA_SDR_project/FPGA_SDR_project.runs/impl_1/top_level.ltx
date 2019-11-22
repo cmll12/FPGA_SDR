@@ -15,7 +15,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "mixer_ila",
+                        "name": "ila1",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,7 +23,7 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "DA5155FE43DC5B02A72D3D18219AF98C",
+                        "uuid": "E471556499EE5A9FA8061F800DC52A73",
                         "pins": [
                             {
                                 "name": "probe0",
@@ -32,8 +32,97 @@
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 11,
+                                "rightIndex": 12,
                                 "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "ADC_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ADC_data[12]"
+                                            },
+                                            {
+                                                "name": "ADC_data[11]"
+                                            },
+                                            {
+                                                "name": "ADC_data[10]"
+                                            },
+                                            {
+                                                "name": "ADC_data[9]"
+                                            },
+                                            {
+                                                "name": "ADC_data[8]"
+                                            },
+                                            {
+                                                "name": "ADC_data[7]"
+                                            },
+                                            {
+                                                "name": "ADC_data[6]"
+                                            },
+                                            {
+                                                "name": "ADC_data[5]"
+                                            },
+                                            {
+                                                "name": "ADC_data[4]"
+                                            },
+                                            {
+                                                "name": "ADC_data[3]"
+                                            },
+                                            {
+                                                "name": "ADC_data[2]"
+                                            },
+                                            {
+                                                "name": "ADC_data[1]"
+                                            },
+                                            {
+                                                "name": "ADC_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "ADC_clk_gen",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "ADC_data_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 11,
+                                "portIndex": 3,
                                 "nets": [
                                     {
                                         "name": "sample",
@@ -74,264 +163,6 @@
                                             },
                                             {
                                                 "name": "sample[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 1,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "center_freq",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "center_freq[31]"
-                                            },
-                                            {
-                                                "name": "center_freq[30]"
-                                            },
-                                            {
-                                                "name": "center_freq[29]"
-                                            },
-                                            {
-                                                "name": "center_freq[28]"
-                                            },
-                                            {
-                                                "name": "center_freq[27]"
-                                            },
-                                            {
-                                                "name": "center_freq[26]"
-                                            },
-                                            {
-                                                "name": "center_freq[25]"
-                                            },
-                                            {
-                                                "name": "center_freq[24]"
-                                            },
-                                            {
-                                                "name": "center_freq[23]"
-                                            },
-                                            {
-                                                "name": "center_freq[22]"
-                                            },
-                                            {
-                                                "name": "center_freq[21]"
-                                            },
-                                            {
-                                                "name": "center_freq[20]"
-                                            },
-                                            {
-                                                "name": "center_freq[19]"
-                                            },
-                                            {
-                                                "name": "center_freq[18]"
-                                            },
-                                            {
-                                                "name": "center_freq[17]"
-                                            },
-                                            {
-                                                "name": "center_freq[16]"
-                                            },
-                                            {
-                                                "name": "center_freq[15]"
-                                            },
-                                            {
-                                                "name": "center_freq[14]"
-                                            },
-                                            {
-                                                "name": "center_freq[13]"
-                                            },
-                                            {
-                                                "name": "center_freq[12]"
-                                            },
-                                            {
-                                                "name": "center_freq[11]"
-                                            },
-                                            {
-                                                "name": "center_freq[10]"
-                                            },
-                                            {
-                                                "name": "center_freq[9]"
-                                            },
-                                            {
-                                                "name": "center_freq[8]"
-                                            },
-                                            {
-                                                "name": "center_freq[7]"
-                                            },
-                                            {
-                                                "name": "center_freq[6]"
-                                            },
-                                            {
-                                                "name": "center_freq[5]"
-                                            },
-                                            {
-                                                "name": "center_freq[4]"
-                                            },
-                                            {
-                                                "name": "center_freq[3]"
-                                            },
-                                            {
-                                                "name": "center_freq[2]"
-                                            },
-                                            {
-                                                "name": "center_freq[1]"
-                                            },
-                                            {
-                                                "name": "center_freq[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 11,
-                                "portIndex": 2,
-                                "nets": [
-                                    {
-                                        "name": "LO_out",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "LO_out[11]"
-                                            },
-                                            {
-                                                "name": "LO_out[10]"
-                                            },
-                                            {
-                                                "name": "LO_out[9]"
-                                            },
-                                            {
-                                                "name": "LO_out[8]"
-                                            },
-                                            {
-                                                "name": "LO_out[7]"
-                                            },
-                                            {
-                                                "name": "LO_out[6]"
-                                            },
-                                            {
-                                                "name": "LO_out[5]"
-                                            },
-                                            {
-                                                "name": "LO_out[4]"
-                                            },
-                                            {
-                                                "name": "LO_out[3]"
-                                            },
-                                            {
-                                                "name": "LO_out[2]"
-                                            },
-                                            {
-                                                "name": "LO_out[1]"
-                                            },
-                                            {
-                                                "name": "LO_out[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe3",
-                                "id": 3,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 23,
-                                "portIndex": 3,
-                                "nets": [
-                                    {
-                                        "name": "IF_out",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "IF_out[23]"
-                                            },
-                                            {
-                                                "name": "IF_out[22]"
-                                            },
-                                            {
-                                                "name": "IF_out[21]"
-                                            },
-                                            {
-                                                "name": "IF_out[20]"
-                                            },
-                                            {
-                                                "name": "IF_out[19]"
-                                            },
-                                            {
-                                                "name": "IF_out[18]"
-                                            },
-                                            {
-                                                "name": "IF_out[17]"
-                                            },
-                                            {
-                                                "name": "IF_out[16]"
-                                            },
-                                            {
-                                                "name": "IF_out[15]"
-                                            },
-                                            {
-                                                "name": "IF_out[14]"
-                                            },
-                                            {
-                                                "name": "IF_out[13]"
-                                            },
-                                            {
-                                                "name": "IF_out[12]"
-                                            },
-                                            {
-                                                "name": "IF_out[11]"
-                                            },
-                                            {
-                                                "name": "IF_out[10]"
-                                            },
-                                            {
-                                                "name": "IF_out[9]"
-                                            },
-                                            {
-                                                "name": "IF_out[8]"
-                                            },
-                                            {
-                                                "name": "IF_out[7]"
-                                            },
-                                            {
-                                                "name": "IF_out[6]"
-                                            },
-                                            {
-                                                "name": "IF_out[5]"
-                                            },
-                                            {
-                                                "name": "IF_out[4]"
-                                            },
-                                            {
-                                                "name": "IF_out[3]"
-                                            },
-                                            {
-                                                "name": "IF_out[2]"
-                                            },
-                                            {
-                                                "name": "IF_out[1]"
-                                            },
-                                            {
-                                                "name": "IF_out[0]"
                                             }
                                         ]
                                     }

@@ -62,14 +62,14 @@ module top_level(
                             
     //for debug ----------
     
-    //logic [12:0] ADC_data; //raw data from ADC for ila, OTR, MSB..LSB
-    //assign ADC_data = {OTR, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12}; 
+    logic [12:0] ADC_data; //raw data from ADC for ila, OTR, MSB..LSB
+    assign ADC_data = {OTR, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12}; 
     
-    //adc_ila ila1 (.clk(clk_100mhz),.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample));
+    adc_ila ila1 (.clk(clk_100mhz),.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample));
     
-    logic [31:0] center_freq;
-    assign center_freq = center_freq_div_20 * 20;
-    ila_2 mixer_ila (.clk(clk_100mhz),.probe0(sample),.probe1(center_freq),.probe2(LO_out),.probe3(IF_out));
+    //logic [31:0] center_freq;
+    //assign center_freq = center_freq_div_20 * 20;
+    //ila_2 mixer_ila (.clk(clk_100mhz),.probe0(sample),.probe1(center_freq),.probe2(LO_out),.probe3(IF_out));
     
     ///-------------------
    

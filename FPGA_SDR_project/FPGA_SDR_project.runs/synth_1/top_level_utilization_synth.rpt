@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Thu Nov 21 19:41:34 2019
+| Date         : Fri Nov 22 12:32:32 2019
 | Host         : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
 | Design       : top_level
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   84 |     0 |     63400 |  0.13 |
-|   LUT as Logic          |   84 |     0 |     63400 |  0.13 |
+| Slice LUTs*             |   43 |     0 |     63400 |  0.07 |
+|   LUT as Logic          |   43 |     0 |     63400 |  0.07 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |   80 |     0 |    126800 |  0.06 |
 |   Register as Flip Flop |   80 |     0 |    126800 |  0.06 |
@@ -148,17 +148,17 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |   77 |        Flop & Latch |
-| LUT1     |   42 |                 LUT |
 | LUT2     |   40 |                 LUT |
 | IBUF     |   15 |                  IO |
-| CARRY4   |   13 |          CarryLogic |
-| LUT4     |    4 |                 LUT |
+| CARRY4   |    8 |          CarryLogic |
+| LUT5     |    4 |                 LUT |
 | LUT6     |    3 |                 LUT |
-| LUT5     |    3 |                 LUT |
+| LUT3     |    3 |                 LUT |
 | FDSE     |    3 |        Flop & Latch |
-| LUT3     |    2 |                 LUT |
+| LUT4     |    2 |                 LUT |
 | DSP48E1  |    2 |    Block Arithmetic |
 | OBUF     |    1 |                  IO |
+| LUT1     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -170,7 +170,7 @@ Table of Contents
 |  Ref Name | Used |
 +-----------+------+
 | sine_wave |    1 |
-| ila_2     |    1 |
+| adc_ila   |    1 |
 +-----------+------+
 
 

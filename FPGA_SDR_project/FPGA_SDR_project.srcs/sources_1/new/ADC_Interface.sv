@@ -72,21 +72,23 @@ module ADC_Interface(
     end //always_ff
     
     //updates ouput value once ADC data has become valid
-    //AND passes through 2 registers (2 clk periods for 
-    //data valid, + 2 clk periods for sync registers.
+    //AND passes through 2 registers (waits 10 clk periods for 
+    //data valid, + 2 clk periods for sync registers. So delay_period = 2,
+    //which grabs value at 10 ns after last ADC clk high
     //Asserts ADC_data_valid once new data is valid
+    parameter delay_period = 'd2;
     logic [3:0] count;
     always_ff @(posedge clk_100mhz) begin
         if (rst) begin
-            count <= 5;
+            count <= delay_period + 1; //ensures data won't become valid until after first trigger
             sample_offset[11:0] <= 12'h000;
             ADC_data_valid <= 0;
         end else begin
             if (trigger) begin
                 count <= 1;     
             end else begin
-                //once waited for 4 clk periods...
-                if (count == 4) begin
+                //once waited for 2 clk periods...
+                if (count == delay_period) begin
                     //assert data valid
                     ADC_data_valid <= 1;
                     //ouput ADC synced data if not out of range, otherwise output max value
