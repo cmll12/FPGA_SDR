@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Nov 21 14:51:42 2019
-# Process ID: 20504
-# Current directory: C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/sine_wave_synth_1
-# Command line: vivado.exe -log sine_wave.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sine_wave.tcl
-# Log file: C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/sine_wave_synth_1/sine_wave.vds
-# Journal file: C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/sine_wave_synth_1\vivado.jou
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Thu Nov 21 18:13:05 2019
+# Process ID: 17901
+# Current directory: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/sine_wave_synth_1
+# Command line: vivado -log sine_wave.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sine_wave.tcl
+# Log file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/sine_wave_synth_1/sine_wave.vds
+# Journal file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/sine_wave_synth_1/vivado.jou
 #-----------------------------------------------------------
 source sine_wave.tcl -notrace

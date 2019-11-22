@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Thu Nov 21 14:53:48 2019
--- Host        : CharlesPC running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final
---               Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave_sim_netlist.vhdl}
+-- Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
+-- Date        : Thu Nov 21 18:14:30 2019
+-- Host        : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
+-- Command     : write_vhdl -force -mode funcsim
+--               /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave_sim_netlist.vhdl
 -- Design      : sine_wave
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -620,7 +620,7 @@ entity sine_wave is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of sine_wave : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of sine_wave : entity is "blk_mem_gen_v8_4_3,Vivado 2019.1";
+  attribute x_core_info of sine_wave : entity is "blk_mem_gen_v8_4_3,Vivado 2019.1.2";
 end sine_wave;
 
 architecture STRUCTURE of sine_wave is

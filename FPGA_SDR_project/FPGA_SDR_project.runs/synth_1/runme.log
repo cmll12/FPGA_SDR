@@ -3,9 +3,9 @@
     with args -log top_level.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
 
 
-****** Vivado v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+****** Vivado v2019.1.2 (64-bit)
+  **** SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+  **** IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source top_level.tcl -notrace
@@ -15,32 +15,32 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 19856 
+INFO: Helper process launched with PID 2243 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 773.262 ; gain = 177.980
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1823.055 ; gain = 154.527 ; free physical = 672 ; free virtual = 11515
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_level' [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
-INFO: [Synth 8-6157] synthesizing module 'ADC_Interface' [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
-INFO: [Synth 8-6155] done synthesizing module 'ADC_Interface' (1#1) [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
-INFO: [Synth 8-6157] synthesizing module 'Local_Oscillator' [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'top_level' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'ADC_Interface' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ADC_Interface' (1#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'Local_Oscillator' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
 	Parameter IF_FREQ_div_20 bound to: 18'b000101100011011110 
 	Parameter A bound to: 13744 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'sine_wave' [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-20428-CharlesPC/realtime/sine_wave_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'sine_wave' (2#1) [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-20428-CharlesPC/realtime/sine_wave_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Local_Oscillator' (3#1) [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
-INFO: [Synth 8-6157] synthesizing module 'Mixer' [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
-INFO: [Synth 8-6155] done synthesizing module 'Mixer' (4#1) [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:71]
-INFO: [Synth 8-6157] synthesizing module 'ila_2' [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-20428-CharlesPC/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_2' (5#1) [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-20428-CharlesPC/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'AD9220'. This will prevent further optimization [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:46]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mixer_ila'. This will prevent further optimization [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:71]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'sample_LO_mixer'. This will prevent further optimization [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:61]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'LO'. This will prevent further optimization [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:57]
-INFO: [Synth 8-6155] done synthesizing module 'top_level' (6#1) [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'sine_wave' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-2222-eecs-digital-49/realtime/sine_wave_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'sine_wave' (2#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-2222-eecs-digital-49/realtime/sine_wave_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Local_Oscillator' (3#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'Mixer' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'Mixer' (4#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:72]
+INFO: [Synth 8-6157] synthesizing module 'ila_2' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-2222-eecs-digital-49/realtime/ila_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_2' (5#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-2222-eecs-digital-49/realtime/ila_2_stub.v:6]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'AD9220'. This will prevent further optimization [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:46]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mixer_ila'. This will prevent further optimization [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:72]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'sample_LO_mixer'. This will prevent further optimization [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:61]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'LO'. This will prevent further optimization [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'top_level' (6#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[14]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 840.074 ; gain = 244.793
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1879.777 ; gain = 211.250 ; free physical = 695 ; free virtual = 11539
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -53,43 +53,43 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 840.074 ; gain = 244.793
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1887.711 ; gain = 219.184 ; free physical = 693 ; free virtual = 11536
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 840.074 ; gain = 244.793
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1887.711 ; gain = 219.184 ; free physical = 693 ; free virtual = 11536
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
-Finished Parsing XDC File [c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
-Parsing XDC File [c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'mixer_ila'
-Finished Parsing XDC File [c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'mixer_ila'
-Parsing XDC File [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
-WARNING: [Vivado 12-584] No ports matched 'jb[6]'. [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:120]
-WARNING: [Vivado 12-584] No ports matched 'jb[7]'. [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:121]
-Finished Parsing XDC File [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_level_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
+Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
+Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'mixer_ila'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'mixer_ila'
+Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
+WARNING: [Vivado 12-584] No ports matched 'jb[6]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:120]
+WARNING: [Vivado 12-584] No ports matched 'jb[7]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:121]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_level_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 947.840 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2021.320 ; gain = 0.000 ; free physical = 537 ; free virtual = 11380
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 947.840 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2021.320 ; gain = 0.000 ; free physical = 537 ; free virtual = 11380
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'LO/LO_sine_wave' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 956.895 ; gain = 361.613
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2021.320 ; gain = 352.793 ; free physical = 658 ; free virtual = 11501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 956.895 ; gain = 361.613
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2021.320 ; gain = 352.793 ; free physical = 658 ; free virtual = 11501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -97,10 +97,10 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for LO/LO_sine_wave. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mixer_ila. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 956.895 ; gain = 361.613
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2021.320 ; gain = 352.793 ; free physical = 660 ; free virtual = 11504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 956.895 ; gain = 361.613
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2021.324 ; gain = 352.797 ; free physical = 651 ; free virtual = 11496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -172,7 +172,7 @@ DSP Report: Generating DSP p_out0, operation Mode is: A*B.
 DSP Report: operator p_out0 is absorbed into DSP p_out0.
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[14]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 956.895 ; gain = 361.613
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2021.324 ; gain = 352.797 ; free physical = 636 ; free virtual = 11485
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -200,13 +200,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 978.020 ; gain = 382.738
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2021.324 ; gain = 352.797 ; free physical = 476 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 978.809 ; gain = 383.527
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2021.324 ; gain = 352.797 ; free physical = 477 ; free virtual = 11325
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -218,7 +218,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 988.340 ; gain = 393.059
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2021.324 ; gain = 352.797 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -242,7 +242,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.227 ; gain = 362.699 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -255,7 +255,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.227 ; gain = 362.699 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -267,25 +267,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.227 ; gain = 362.699 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.227 ; gain = 362.699 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.227 ; gain = 362.699 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.227 ; gain = 362.699 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -330,27 +330,29 @@ Report Instance Areas:
 |4     |  sample_LO_mixer |Mixer            |     1|
 +------+------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.227 ; gain = 362.699 ; free physical = 475 ; free virtual = 11324
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:30 . Memory (MB): peak = 1004.145 ; gain = 292.043
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1004.145 ; gain = 408.863
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2031.227 ; gain = 229.090 ; free physical = 539 ; free virtual = 11388
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2031.230 ; gain = 362.699 ; free physical = 554 ; free virtual = 11402
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1022.199 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2037.164 ; gain = 0.000 ; free physical = 486 ; free virtual = 11334
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 28 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1022.199 ; gain = 688.965
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1022.199 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 2037.164 ; gain = 579.902 ; free physical = 587 ; free virtual = 11435
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2037.164 ; gain = 0.000 ; free physical = 587 ; free virtual = 11435
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 17:13:01 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 19:41:34 2019...
