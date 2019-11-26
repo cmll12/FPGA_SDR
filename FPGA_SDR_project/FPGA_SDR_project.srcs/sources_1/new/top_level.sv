@@ -42,7 +42,7 @@ module top_level(
    
     assign ja_0 = ADC_clk_gen; //10MHz clock output from ADC interface
     
-    //interface with AD9220
+    //Interface with AD9220
     ADC_Interface AD9220 (.clk_100mhz(clk_100mhz),.rst(rst),.sample_offset(sample),
                          .ADC_data_valid(ADC_data_valid),.ADC_clk(ADC_clk_gen),.B1(B1),.B2(B2),
                          .B3(B3),.B4(B4),.B5(B5),.B6(B6),.B7(B7),.B8(B8),.B9(B9),.B10(B10),
@@ -57,20 +57,86 @@ module top_level(
     Local_Oscillator LO (.rst(rst), .clk_in(clk_100mhz),.center_freq_div_20(center_freq_div_20),
                             .LO_out(LO_out));
     
+    //Mixer
     logic [23:0] IF_out;
     Mixer sample_LO_mixer (.in_a(sample),.in_b(LO_out),.p_out(IF_out));
-                            
+    
+    //convert mixer IF out to signed integer
+    logic signed [23:0] IF_signed;
+    assign IF_signed = {~IF_out[23],IF_out[22:0]};
+                 
+    //AM Bandpass Filter
+    
+     //section 1 ------------------------------------------
+     //initialize coeffs
+     parameter N = 3;
+     logic signed [17:0] b1 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
+     logic signed [17:0] a1 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+     
+     assign b1 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
+     assign a1 [(N-2):0] = '{18'sd65380,-18'sd125527}; //a coeff MATLAB: 
+     
+     logic signed [33:0] filt_sec_1_out;
+     logic sec_1_ready;
+     
+     //triggers on ADC_sample_valid
+     AM_BP_Filter #(.N(N)) AM_BP_sec_1 (.clk_in(clk_100mhz),.rst(rst),.b(b1),.a(a1),
+                    .sample_ready(ADC_data_valid),.sample(IF_signed),.filt_out(filt_sec_1_out),.filt_valid(sec_1_ready));
+
+     //section 2 ------------------------------------------
+     //same N as section 1
+     
+     logic signed [23:0] filt_sec_2_in;
+     //divide output from filter section 1 by 2^11 to fit 24 bit input parameter
+     assign filt_sec_2_in = (filt_sec_1_out>>>11);
+     
+     //initialize coeffs
+     logic signed [17:0] b2 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
+     logic signed [17:0] a2 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+     
+     assign b2 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
+     assign a2 [(N-2):0] = '{18'sd65383,-18'sd125680}; //a coeff MATLAB: 
+     
+     logic signed [33:0] filt_sec_2_out;
+     logic sec_2_ready;
+     
+     AM_BP_Filter #(.N(N)) AM_BP_sec_2 (.clk_in(clk_100mhz),.rst(rst),.b(b2),.a(a2),
+                    .sample_ready(sec_1_ready),.sample(filt_sec_2_in),.filt_out(filt_sec_2_out),.filt_valid(sec_2_ready));
+     
+     //section 3 ------------------------------------------
+     //same N as section 1
+     
+     logic signed [23:0] filt_sec_3_in;
+     //divide output from filter section 1 by 2^11 to fit 24 bit input parameter
+     assign filt_sec_3_in = (filt_sec_2_out>>>11);
+     
+     //initialize coeffs
+     logic signed [17:0] b3 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
+     logic signed [17:0] a3 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+     
+     assign b3 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
+     assign a3 [(N-2):0] = '{18'sd65227,-18'sd125456}; //a coeff MATLAB: 
+     
+     logic signed [33:0] filt_sec_3_out;
+     logic sec_3_ready;
+     
+     AM_BP_Filter #(.N(N)) AM_BP_sec_3 (.clk_in(clk_100mhz),.rst(rst),.b(b3),.a(a3),
+                    .sample_ready(sec_2_ready),.sample(filt_sec_3_in),.filt_out(filt_sec_3_out),.filt_valid(sec_3_ready));
+               
     //for debug ----------
+     
+    //logic [12:0] ADC_data; //raw data from ADC for ila, OTR, MSB..LSB
+    //assign ADC_data = {OTR, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12}; 
     
-    logic [12:0] ADC_data; //raw data from ADC for ila, OTR, MSB..LSB
-    assign ADC_data = {OTR, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12}; 
-    
-    adc_ila ila1 (.clk(clk_100mhz),.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample));
+    //adc_ila ila1 (.clk(clk_100mhz),.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample));
     
     //logic [31:0] center_freq;
     //assign center_freq = center_freq_div_20 * 20;
     //ila_2 mixer_ila (.clk(clk_100mhz),.probe0(sample),.probe1(center_freq),.probe2(LO_out),.probe3(IF_out));
     
+    //Band Pass ila
+     am_bp_ila am_bp_debug (.clk(clk_100mhz),.probe0(ADC_data_valid),.probe1(IF_out),
+                                .probe2(filt_sec_1_out),.probe3(filt_sec_2_out),.probe4(filt_sec_3_out));
     ///-------------------
    
     
