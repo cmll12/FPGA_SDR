@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="am_bp_ila_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1574808124">
-  <File Type="PA-TCL" Name="am_bp_ila.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="am_bp_ila_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="am_bp_ila_reports.tcl"/>
-  <File Type="RDS-RDS" Name="am_bp_ila.vds"/>
-  <File Type="RDS-UTIL" Name="am_bp_ila_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="am_bp_ila_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="am_bp_ila.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="am_bp_ila_timing_summary_synth.rpt"/>
+<GenRun Id="am_bp_ila_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1574809250">
   <File Type="VDS-TIMING-PB" Name="am_bp_ila_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="am_bp_ila_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="am_bp_ila.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="am_bp_ila_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="am_bp_ila_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="am_bp_ila_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="am_bp_ila.vds"/>
+  <File Type="REPORTS-TCL" Name="am_bp_ila_reports.tcl"/>
+  <File Type="PA-TCL" Name="am_bp_ila.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/am_bp_ila">
     <File Path="$PSRCDIR/sources_1/ip/am_bp_ila/am_bp_ila.xci">
       <FileInfo>
@@ -42,9 +42,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

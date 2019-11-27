@@ -1,0 +1,16 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(+0xb6aadb) [0x7f1603735adb]
+/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(JVM_handle_linux_signal+0xbb) [0x7f160373ae1b]
+/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(+0xb647b8) [0x7f160372f7b8]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36cb0) [0x7f164b4eecb0]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_filemgmt.so(+0x314014) [0x7f1620f8f014]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_filemgmt.so(+0x271e50) [0x7f1620eece50]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_filemgmt.so(HDDAFilteredSrcIter::getNext_()+0x44d) [0x7f1620f1fafd]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_filemgmt.so(HDDAFilteredSrcIter::next()+0x11) [0x7f1620f1fe01]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_filemgmt.so(HADLSrcScanFileSet::addFilesFrom(HADAFileSet const&)+0x302) [0x7f1621163dc2]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_filemgmt.so(HADLEditorAssist::refresh()+0x389) [0x7f1621158c29]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_filemgmt.so(Java_ui_data_srcscan_srcscani_EditorAssist_1refresh+0x17) [0x7f1621175187]
+[0x7f15f4643e11]

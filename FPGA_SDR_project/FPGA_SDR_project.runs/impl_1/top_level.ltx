@@ -15,7 +15,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "ila1",
+                        "name": "am_bp_debug",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,90 +23,17 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "E471556499EE5A9FA8061F800DC52A73",
+                        "uuid": "E56D47B9D534590ABF2CAD81BE19CD99",
                         "pins": [
                             {
                                 "name": "probe0",
                                 "id": 0,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": true,
+                                "isVector": false,
                                 "leftIndex": 0,
-                                "rightIndex": 12,
+                                "rightIndex": 0,
                                 "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "ADC_data",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "ADC_data[12]"
-                                            },
-                                            {
-                                                "name": "ADC_data[11]"
-                                            },
-                                            {
-                                                "name": "ADC_data[10]"
-                                            },
-                                            {
-                                                "name": "ADC_data[9]"
-                                            },
-                                            {
-                                                "name": "ADC_data[8]"
-                                            },
-                                            {
-                                                "name": "ADC_data[7]"
-                                            },
-                                            {
-                                                "name": "ADC_data[6]"
-                                            },
-                                            {
-                                                "name": "ADC_data[5]"
-                                            },
-                                            {
-                                                "name": "ADC_data[4]"
-                                            },
-                                            {
-                                                "name": "ADC_data[3]"
-                                            },
-                                            {
-                                                "name": "ADC_data[2]"
-                                            },
-                                            {
-                                                "name": "ADC_data[1]"
-                                            },
-                                            {
-                                                "name": "ADC_data[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 1,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "ADC_clk_gen",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 2,
                                 "nets": [
                                     {
                                         "name": "ADC_data_valid",
@@ -115,54 +42,210 @@
                                 ]
                             },
                             {
-                                "name": "probe3",
-                                "id": 3,
+                                "name": "probe1",
+                                "id": 1,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 11,
-                                "portIndex": 3,
+                                "rightIndex": 23,
+                                "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "sample",
+                                        "name": "IF_out",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "sample[11]"
+                                                "name": "IF_out[23]"
                                             },
                                             {
-                                                "name": "sample[10]"
+                                                "name": "IF_out[22]"
                                             },
                                             {
-                                                "name": "sample[9]"
+                                                "name": "IF_out[21]"
                                             },
                                             {
-                                                "name": "sample[8]"
+                                                "name": "IF_out[20]"
                                             },
                                             {
-                                                "name": "sample[7]"
+                                                "name": "IF_out[19]"
                                             },
                                             {
-                                                "name": "sample[6]"
+                                                "name": "IF_out[18]"
                                             },
                                             {
-                                                "name": "sample[5]"
+                                                "name": "IF_out[17]"
                                             },
                                             {
-                                                "name": "sample[4]"
+                                                "name": "IF_out[16]"
                                             },
                                             {
-                                                "name": "sample[3]"
+                                                "name": "IF_out[15]"
                                             },
                                             {
-                                                "name": "sample[2]"
+                                                "name": "IF_out[14]"
                                             },
                                             {
-                                                "name": "sample[1]"
+                                                "name": "IF_out[13]"
                                             },
                                             {
-                                                "name": "sample[0]"
+                                                "name": "IF_out[12]"
+                                            },
+                                            {
+                                                "name": "IF_out[11]"
+                                            },
+                                            {
+                                                "name": "IF_out[10]"
+                                            },
+                                            {
+                                                "name": "IF_out[9]"
+                                            },
+                                            {
+                                                "name": "IF_out[8]"
+                                            },
+                                            {
+                                                "name": "IF_out[7]"
+                                            },
+                                            {
+                                                "name": "IF_out[6]"
+                                            },
+                                            {
+                                                "name": "IF_out[5]"
+                                            },
+                                            {
+                                                "name": "IF_out[4]"
+                                            },
+                                            {
+                                                "name": "IF_out[3]"
+                                            },
+                                            {
+                                                "name": "IF_out[2]"
+                                            },
+                                            {
+                                                "name": "IF_out[1]"
+                                            },
+                                            {
+                                                "name": "IF_out[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 33,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "filt_sec_3_out",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "filt_sec_3_out[33]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[32]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[31]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[30]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[29]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[28]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[27]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[26]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[25]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[24]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[23]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[22]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[21]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[20]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[19]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[18]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[17]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[16]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[15]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[14]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[13]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[12]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[11]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[10]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[9]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[8]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[7]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[6]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[5]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[4]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[3]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[2]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[1]"
+                                            },
+                                            {
+                                                "name": "filt_sec_3_out[0]"
                                             }
                                         ]
                                     }

@@ -35,12 +35,19 @@ module AM_BP_Filter #(parameter N = 8) //N = number of feedforward coeff, max 8
     logic signed [100:0] y_sum;
     logic [3:0] ii;
     
+    //ensures index overflow does not result in calling x or y at a negative val
+    logic [2:0] val_index;
+    assign val_index = index - ii;
+    
     always_ff @(posedge clk_in) begin
         if (rst) begin
             //intialize x & y values to all 0
             for (int i=0; i<8; i=i+1) begin
                 x[i] <= 0;
                 y[i] <= 0; 
+                //reset x and y sums
+                x_sum <= 0;
+                y_sum <= 0;
             end
             //reset current value pointer
             index <= 0;
@@ -58,37 +65,28 @@ module AM_BP_Filter #(parameter N = 8) //N = number of feedforward coeff, max 8
                 //start ii at 1, since incrementing index 
                 //therefore x[n] is at [index-1]
                 ii <= 1;    
-            end //sample ready
+            end else begin //sample ready
+            //calculate x and y sums for past N values
+                if (sum_values && (ii <= N)) begin
+                    x_sum <= x_sum + ( (x[val_index]*b[ii-1])>>>16 );
+                    //only summing N-2 y terms
+                    y_sum <= (ii <= (N-1)) ? ( y_sum + ( (y[val_index]*a[ii-1])>>>16 ) ) : y_sum; 
+                    ii <= ii + 1;
+                end else if (sum_values) begin
+                    //stop summation
+                    sum_values <= 0;
+                    //compute filt_out
+                    filt_out <= x_sum - y_sum;
+                    filt_valid <= 1;
+                    //store this to be used as previous value of y
+                    y[index] <= x_sum - y_sum;
+                end else begin
+                    filt_valid <= 0;
+                end //sum values     
+            end //else sample ready
+            
         end //rst else
     end //end always_ff
 
-    //ensures index overflow does not result in calling x or y at a negative val
-    logic [2:0] val_index;
-    assign val_index = index - ii;
-    
-    always_ff @(posedge clk_in) begin
-        if (rst) begin
-            //reset x and y sums
-            x_sum <= 0;
-            y_sum <= 0;
-        end else begin
-            //calculate x and y sums for past N values
-            if (sum_values && (ii <= N)) begin
-                x_sum <= x_sum + ( (x[val_index]*b[ii-1])>>>16 );
-                //only summing N-2 y terms
-                y_sum <= (ii <= (N-1)) ? ( y_sum + ( (y[val_index]*a[ii-1])>>>16 ) ) : y_sum; 
-                ii <= ii + 1;
-            end else if (sum_values) begin
-                //stop summation
-                sum_values <= 0;
-                //compute filt_out
-                filt_out <= x_sum - y_sum;
-                filt_valid <= 1;
-                //store this to be used as previous value of y
-                y[index] <= x_sum - y_sum;
-            end else begin
-                filt_valid <= 0;
-            end      
-        end //rst
-    end //always_ff
+
 endmodule

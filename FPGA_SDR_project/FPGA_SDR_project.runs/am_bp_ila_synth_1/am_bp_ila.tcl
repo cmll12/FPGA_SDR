@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param chipscope.maxJobs 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7a100tcsg324-1
@@ -26,18 +26,18 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr} [current_project]
+set_property webtalk.parent_dir /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.cache/wt [current_project]
+set_property parent.project_path /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.cache/ip} [current_project]
+set_property ip_output_repo /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet {{c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila.xci}}
-set_property used_in_synthesis false [get_files -all {{c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/ila_v6_2/constraints/ila_impl.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/ila_v6_2/constraints/ila_impl.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/ila_v6_2/constraints/ila.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_ooc.xdc}}]
+read_ip -quiet /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila.xci
+set_property used_in_synthesis false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -51,7 +51,7 @@ read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-set cached_ip [config_ip_cache -export -no_bom  -dir {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1} -new_name am_bp_ila -ip [get_ips am_bp_ila]]
+set cached_ip [config_ip_cache -export -no_bom  -dir /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1 -new_name am_bp_ila -ip [get_ips am_bp_ila]]
 
 if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
@@ -92,32 +92,32 @@ write_checkpoint -force -noxdef am_bp_ila.dcp
 create_report "am_bp_ila_synth_1_synth_report_utilization_0" "report_utilization -file am_bp_ila_utilization_synth.rpt -pb am_bp_ila_utilization_synth.pb"
 
 if { [catch {
-  file copy -force {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila.dcp} {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila.dcp}
+  file copy -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila.dcp /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.v}
+  write_verilog -force -mode synth_stub /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.vhdl}
+  write_vhdl -force -mode synth_stub /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.v}
+  write_verilog -force -mode funcsim /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.vhdl}
+  write_vhdl -force -mode funcsim /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -127,47 +127,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila.dcp} {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila.dcp}
+  file copy -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila.dcp /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_stub.v} {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.v}
+  file rename -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_stub.v /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_stub.vhdl} {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.vhdl}
+  file rename -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_stub.vhdl /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_sim_netlist.v} {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.v}
+  file rename -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_sim_netlist.v /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_sim_netlist.vhdl} {c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.vhdl}
+  file rename -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/am_bp_ila_synth_1/am_bp_ila_sim_netlist.vhdl /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila}]} {
+if {[file isdir /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila]} {
   catch { 
-    file copy -force {{c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.v}} {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila}
+    file copy -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.v /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila
   }
 }
 
-if {[file isdir {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila}]} {
+if {[file isdir /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila]} {
   catch { 
-    file copy -force {{c:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.vhdl}} {C:/Users/Charles/Desktop/MIT/Fall 2019/6_111/FPGA SDR Final Project/FPGA_SDR/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila}
+    file copy -force /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/am_bp_ila_stub.vhdl /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.ip_user_files/ip/am_bp_ila
   }
 }
 file delete __synthesis_is_running__

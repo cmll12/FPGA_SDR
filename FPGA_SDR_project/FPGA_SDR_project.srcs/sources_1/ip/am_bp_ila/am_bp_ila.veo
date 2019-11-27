@@ -59,9 +59,7 @@ am_bp_ila your_instance_name (
 
 	.probe0(probe0), // input wire [0:0]  probe0  
 	.probe1(probe1), // input wire [23:0]  probe1 
-	.probe2(probe2), // input wire [33:0]  probe2 
-	.probe3(probe3), // input wire [33:0]  probe3 
-	.probe4(probe4) // input wire [33:0]  probe4
+	.probe2(probe2) // input wire [33:0]  probe2
 );
 
 // INST_TAG_END ------ End INSTANTIATION Template ---------

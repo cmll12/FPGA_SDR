@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Tue Nov 26 20:19:36 2019
+# Process ID: 23263
+# Current directory: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR
+# Command line: vivado
+# Log file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/vivado.log
+# Journal file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /afs/athena.mit.edu/user/c/m/cmll/six_111/lab_5a/lab_5a.xpr
+open_project /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr
+update_compile_order -fileset sources_1

@@ -18,6 +18,10 @@
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
+    <Object name="am_bp_debug" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
     <Object name="ila1" gui_info="">
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
@@ -29,6 +33,7 @@
   </ObjectList>
   <ObjectList object_type="hw_probe" gui_info="">
     <Object name="ADC_clk_gen" gui_info="Trigger Setup=0"/>
+    <Object name="ADC_data_valid" gui_info="Trigger Setup=0"/>
     <Object name="LO_out[11:0]" gui_info="Trigger Setup=0"/>
     <Object name="sample[11:0]" gui_info=""/>
   </ObjectList>
@@ -54,7 +59,7 @@
         <net name="ADC_clk_gen"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq13&apos;hXXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq13&apos;hXXXX"/>
@@ -90,18 +95,18 @@
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="MAP" value="probe0[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -510,6 +515,60 @@
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq34&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq34&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="SIGNED"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[33:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq34&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Analog"/>
+      </probeOptions>
+      <nets>
+        <net name="filt_sec_3_out[33]"/>
+        <net name="filt_sec_3_out[32]"/>
+        <net name="filt_sec_3_out[31]"/>
+        <net name="filt_sec_3_out[30]"/>
+        <net name="filt_sec_3_out[29]"/>
+        <net name="filt_sec_3_out[28]"/>
+        <net name="filt_sec_3_out[27]"/>
+        <net name="filt_sec_3_out[26]"/>
+        <net name="filt_sec_3_out[25]"/>
+        <net name="filt_sec_3_out[24]"/>
+        <net name="filt_sec_3_out[23]"/>
+        <net name="filt_sec_3_out[22]"/>
+        <net name="filt_sec_3_out[21]"/>
+        <net name="filt_sec_3_out[20]"/>
+        <net name="filt_sec_3_out[19]"/>
+        <net name="filt_sec_3_out[18]"/>
+        <net name="filt_sec_3_out[17]"/>
+        <net name="filt_sec_3_out[16]"/>
+        <net name="filt_sec_3_out[15]"/>
+        <net name="filt_sec_3_out[14]"/>
+        <net name="filt_sec_3_out[13]"/>
+        <net name="filt_sec_3_out[12]"/>
+        <net name="filt_sec_3_out[11]"/>
+        <net name="filt_sec_3_out[10]"/>
+        <net name="filt_sec_3_out[9]"/>
+        <net name="filt_sec_3_out[8]"/>
+        <net name="filt_sec_3_out[7]"/>
+        <net name="filt_sec_3_out[6]"/>
+        <net name="filt_sec_3_out[5]"/>
+        <net name="filt_sec_3_out[4]"/>
+        <net name="filt_sec_3_out[3]"/>
+        <net name="filt_sec_3_out[2]"/>
+        <net name="filt_sec_3_out[1]"/>
+        <net name="filt_sec_3_out[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq12&apos;hXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq12&apos;hXXX"/>
