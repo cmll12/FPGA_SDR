@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Tue Nov 26 18:17:47 2019
+| Date         : Wed Nov 27 11:39:45 2019
 | Host         : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
 | Design       : top_level
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 2185 |     0 |     63400 |  3.45 |
-|   LUT as Logic          | 2185 |     0 |     63400 |  3.45 |
+| Slice LUTs*             | 2750 |     0 |     63400 |  4.34 |
+|   LUT as Logic          | 2750 |     0 |     63400 |  4.34 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         | 3801 |     0 |    126800 |  3.00 |
-|   Register as Flip Flop | 3801 |     0 |    126800 |  3.00 |
+| Slice Registers         | 4156 |     0 |    126800 |  3.28 |
+|   Register as Flip Flop | 4156 |     0 |    126800 |  3.28 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |  375 |     0 |     31700 |  1.18 |
+| F7 Muxes                |  409 |     0 |     31700 |  1.29 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 7     |          Yes |         Set |            - |
-| 3794  |          Yes |       Reset |            - |
+| 4149  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,17 +147,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 3794 |        Flop & Latch |
-| LUT2     | 1280 |                 LUT |
-| LUT6     |  780 |                 LUT |
-| MUXF7    |  375 |               MuxFx |
-| CARRY4   |  320 |          CarryLogic |
-| LUT4     |  137 |                 LUT |
-| LUT3     |   50 |                 LUT |
-| LUT5     |   43 |                 LUT |
+| FDRE     | 4149 |        Flop & Latch |
+| LUT2     | 1464 |                 LUT |
+| LUT6     |  953 |                 LUT |
+| MUXF7    |  409 |               MuxFx |
+| CARRY4   |  407 |          CarryLogic |
+| LUT4     |  320 |                 LUT |
+| LUT3     |  196 |                 LUT |
+| LUT5     |   80 |                 LUT |
+| LUT1     |   44 |                 LUT |
 | DSP48E1  |   23 |    Block Arithmetic |
 | IBUF     |   15 |                  IO |
-| LUT1     |    9 |                 LUT |
 | FDSE     |    7 |        Flop & Latch |
 | OBUF     |    1 |                  IO |
 | BUFG     |    1 |               Clock |
@@ -167,12 +167,12 @@ Table of Contents
 8. Black Boxes
 --------------
 
-+-----------+------+
-|  Ref Name | Used |
-+-----------+------+
-| sine_wave |    1 |
-| am_bp_ila |    1 |
-+-----------+------+
++---------------+------+
+|    Ref Name   | Used |
++---------------+------+
+| sine_wave     |    1 |
+| am_detect_ila |    1 |
++---------------+------+
 
 
 9. Instantiated Netlists

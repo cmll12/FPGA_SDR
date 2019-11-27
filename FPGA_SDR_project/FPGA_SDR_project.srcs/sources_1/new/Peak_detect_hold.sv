@@ -35,27 +35,32 @@ module Peak_detect_hold(
     
     always_ff @(posedge clk) begin
         if (rst) begin
-            deriv <= '{default:0};
-            past_val <= '{default:0};
+            deriv <= '{0,0,0,0,0,0,0,0};
+            past_val <= '{0,0,0,0,0,0,0,0};
             index <= 0;
         end else begin
             if (sample_ready) begin
                 //store current sample at index in array
                 past_val[index] <= sample_in;
                 //deriv = 1 if positive, 0 if negative
-                deriv[index] <= ( (sample_in - past_val[index-1]) >= 0 );
+                if (index >= 1) begin
+                    deriv[index] <= ( (sample_in - past_val[index-1]) >= 0 );
+                end else begin
+                    deriv[index] <= ( (sample_in - past_val[7]) >= 0 );
+                end
                 //increment index. Will overflow once reaches 7
                 index <= index + 1;
             end //sample_ready
         end //rst
     end //always_ff
     
-    logic [2:0] s_index;
+    logic [3:0] s_index;
     
     always_ff @(posedge clk) begin
         if (rst) begin
             s_index <= 0;
             extrema <= 0;
+            peak_value <= 0;
         end else begin
            //peak detected if 5 positives & 5 negative derivatives
             //find and output max or min value, stop if searched all index
@@ -64,24 +69,25 @@ module Peak_detect_hold(
                 if (val_sum >= 0) begin
                     //if value at index is greater than previous, set extrema to that. otherwise set
                     //equal to current extrema value
-                    extrema <= ( past_val[s_index] > past_val[s_index - 1] ) ? past_val[s_index] : extrema;
+                    extrema <= ( past_val[s_index] > extrema ) ? past_val[s_index] : extrema;
                 end else begin  //if < 0, look for trough (min). Also multiply value by -1
-                    extrema <= ( past_val[s_index] < past_val[s_index - 1] ) ? (-'sd1)*past_val[s_index] : extrema;
+                    extrema <= ( past_val[s_index] < extrema ) ? past_val[s_index] : extrema;
                 end 
                 //increment search index
                 s_index <= s_index + 1;
             end else begin 
                 //reset search index
-                s_index <= 1;
+                s_index <= 0;
+                //reset extrema to 0
+                extrema <= 0;
                 //reset extrema to past_vals[0] if in positive region, otherwise -past_vals[0]
-                if (val_sum >= 0) extrema <= past_val[s_index - 1];
-                else extrema <= (-'sd1)*past_val[s_index - 1];             
+//                if (val_sum >= 0) extrema <= past_val[s_index - 1];
+//                else extrema <= (-'sd1)*past_val[s_index - 1];             
             end
             
-            //should always be >=0, taken care of in following always_ff block
             //peak_Value only re-assigned once finishing searching all values, then holds
-            //until after next search
-            peak_value <= (s_index == 0) ? extrema : peak_value;
+            //until after next search. Also converts from signed to unsigned variable
+            if (s_index == 8) peak_value <= (extrema >= 0) ? extrema : -'sd1*extrema;
     
         end //!rst
         

@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../FPGA_SDR_project.srcs/sources_1/ip/am_bp_ila/sim/am_bp_ila.v" \
+"../../../../FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sim/sine_wave.v" \
+
+sv xil_defaultlib  \
+"../../../../FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv" \
+"../../../../FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv" \
+"../../../../FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv" \
+"../../../../FPGA_SDR_project.srcs/sources_1/new/Mixer.sv" \
+"../../../../FPGA_SDR_project.srcs/sources_1/new/top_level.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

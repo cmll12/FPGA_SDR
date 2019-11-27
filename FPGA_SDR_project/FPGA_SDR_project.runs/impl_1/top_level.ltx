@@ -15,7 +15,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "am_bp_debug",
+                        "name": "detector",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,7 +23,7 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "E56D47B9D534590ABF2CAD81BE19CD99",
+                        "uuid": "453AB4D9DA3A5813B413FF9A2E43ED33",
                         "pins": [
                             {
                                 "name": "probe0",
@@ -48,98 +48,8 @@
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 23,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "IF_out",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "IF_out[23]"
-                                            },
-                                            {
-                                                "name": "IF_out[22]"
-                                            },
-                                            {
-                                                "name": "IF_out[21]"
-                                            },
-                                            {
-                                                "name": "IF_out[20]"
-                                            },
-                                            {
-                                                "name": "IF_out[19]"
-                                            },
-                                            {
-                                                "name": "IF_out[18]"
-                                            },
-                                            {
-                                                "name": "IF_out[17]"
-                                            },
-                                            {
-                                                "name": "IF_out[16]"
-                                            },
-                                            {
-                                                "name": "IF_out[15]"
-                                            },
-                                            {
-                                                "name": "IF_out[14]"
-                                            },
-                                            {
-                                                "name": "IF_out[13]"
-                                            },
-                                            {
-                                                "name": "IF_out[12]"
-                                            },
-                                            {
-                                                "name": "IF_out[11]"
-                                            },
-                                            {
-                                                "name": "IF_out[10]"
-                                            },
-                                            {
-                                                "name": "IF_out[9]"
-                                            },
-                                            {
-                                                "name": "IF_out[8]"
-                                            },
-                                            {
-                                                "name": "IF_out[7]"
-                                            },
-                                            {
-                                                "name": "IF_out[6]"
-                                            },
-                                            {
-                                                "name": "IF_out[5]"
-                                            },
-                                            {
-                                                "name": "IF_out[4]"
-                                            },
-                                            {
-                                                "name": "IF_out[3]"
-                                            },
-                                            {
-                                                "name": "IF_out[2]"
-                                            },
-                                            {
-                                                "name": "IF_out[1]"
-                                            },
-                                            {
-                                                "name": "IF_out[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
                                 "rightIndex": 33,
-                                "portIndex": 2,
+                                "portIndex": 1,
                                 "nets": [
                                     {
                                         "name": "filt_sec_3_out",
@@ -246,6 +156,126 @@
                                             },
                                             {
                                                 "name": "filt_sec_3_out[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 33,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "peak_values",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "peak_values[33]"
+                                            },
+                                            {
+                                                "name": "peak_values[32]"
+                                            },
+                                            {
+                                                "name": "peak_values[31]"
+                                            },
+                                            {
+                                                "name": "peak_values[30]"
+                                            },
+                                            {
+                                                "name": "peak_values[29]"
+                                            },
+                                            {
+                                                "name": "peak_values[28]"
+                                            },
+                                            {
+                                                "name": "peak_values[27]"
+                                            },
+                                            {
+                                                "name": "peak_values[26]"
+                                            },
+                                            {
+                                                "name": "peak_values[25]"
+                                            },
+                                            {
+                                                "name": "peak_values[24]"
+                                            },
+                                            {
+                                                "name": "peak_values[23]"
+                                            },
+                                            {
+                                                "name": "peak_values[22]"
+                                            },
+                                            {
+                                                "name": "peak_values[21]"
+                                            },
+                                            {
+                                                "name": "peak_values[20]"
+                                            },
+                                            {
+                                                "name": "peak_values[19]"
+                                            },
+                                            {
+                                                "name": "peak_values[18]"
+                                            },
+                                            {
+                                                "name": "peak_values[17]"
+                                            },
+                                            {
+                                                "name": "peak_values[16]"
+                                            },
+                                            {
+                                                "name": "peak_values[15]"
+                                            },
+                                            {
+                                                "name": "peak_values[14]"
+                                            },
+                                            {
+                                                "name": "peak_values[13]"
+                                            },
+                                            {
+                                                "name": "peak_values[12]"
+                                            },
+                                            {
+                                                "name": "peak_values[11]"
+                                            },
+                                            {
+                                                "name": "peak_values[10]"
+                                            },
+                                            {
+                                                "name": "peak_values[9]"
+                                            },
+                                            {
+                                                "name": "peak_values[8]"
+                                            },
+                                            {
+                                                "name": "peak_values[7]"
+                                            },
+                                            {
+                                                "name": "peak_values[6]"
+                                            },
+                                            {
+                                                "name": "peak_values[5]"
+                                            },
+                                            {
+                                                "name": "peak_values[4]"
+                                            },
+                                            {
+                                                "name": "peak_values[3]"
+                                            },
+                                            {
+                                                "name": "peak_values[2]"
+                                            },
+                                            {
+                                                "name": "peak_values[1]"
+                                            },
+                                            {
+                                                "name": "peak_values[0]"
                                             }
                                         ]
                                     }
