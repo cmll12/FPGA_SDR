@@ -15,7 +15,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "detector",
+                        "name": "ila",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,259 +23,45 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "453AB4D9DA3A5813B413FF9A2E43ED33",
+                        "uuid": "901A5F558B2950A88131F43987F6BE78",
                         "pins": [
                             {
                                 "name": "probe0",
                                 "id": 0,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 7,
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "ADC_data_valid",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 1,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 33,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "filt_sec_3_out",
+                                        "name": "DAC_audio_in",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "filt_sec_3_out[33]"
+                                                "name": "DAC_audio_in[7]"
                                             },
                                             {
-                                                "name": "filt_sec_3_out[32]"
+                                                "name": "DAC_audio_in[6]"
                                             },
                                             {
-                                                "name": "filt_sec_3_out[31]"
+                                                "name": "DAC_audio_in[5]"
                                             },
                                             {
-                                                "name": "filt_sec_3_out[30]"
+                                                "name": "DAC_audio_in[4]"
                                             },
                                             {
-                                                "name": "filt_sec_3_out[29]"
+                                                "name": "DAC_audio_in[3]"
                                             },
                                             {
-                                                "name": "filt_sec_3_out[28]"
+                                                "name": "DAC_audio_in[2]"
                                             },
                                             {
-                                                "name": "filt_sec_3_out[27]"
+                                                "name": "DAC_audio_in[1]"
                                             },
                                             {
-                                                "name": "filt_sec_3_out[26]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[25]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[24]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[23]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[22]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[21]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[20]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[19]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[18]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[17]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[16]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[15]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[14]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[13]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[12]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[11]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[10]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[9]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[8]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[7]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[6]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[5]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[4]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[3]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[2]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[1]"
-                                            },
-                                            {
-                                                "name": "filt_sec_3_out[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 33,
-                                "portIndex": 2,
-                                "nets": [
-                                    {
-                                        "name": "peak_values",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "peak_values[33]"
-                                            },
-                                            {
-                                                "name": "peak_values[32]"
-                                            },
-                                            {
-                                                "name": "peak_values[31]"
-                                            },
-                                            {
-                                                "name": "peak_values[30]"
-                                            },
-                                            {
-                                                "name": "peak_values[29]"
-                                            },
-                                            {
-                                                "name": "peak_values[28]"
-                                            },
-                                            {
-                                                "name": "peak_values[27]"
-                                            },
-                                            {
-                                                "name": "peak_values[26]"
-                                            },
-                                            {
-                                                "name": "peak_values[25]"
-                                            },
-                                            {
-                                                "name": "peak_values[24]"
-                                            },
-                                            {
-                                                "name": "peak_values[23]"
-                                            },
-                                            {
-                                                "name": "peak_values[22]"
-                                            },
-                                            {
-                                                "name": "peak_values[21]"
-                                            },
-                                            {
-                                                "name": "peak_values[20]"
-                                            },
-                                            {
-                                                "name": "peak_values[19]"
-                                            },
-                                            {
-                                                "name": "peak_values[18]"
-                                            },
-                                            {
-                                                "name": "peak_values[17]"
-                                            },
-                                            {
-                                                "name": "peak_values[16]"
-                                            },
-                                            {
-                                                "name": "peak_values[15]"
-                                            },
-                                            {
-                                                "name": "peak_values[14]"
-                                            },
-                                            {
-                                                "name": "peak_values[13]"
-                                            },
-                                            {
-                                                "name": "peak_values[12]"
-                                            },
-                                            {
-                                                "name": "peak_values[11]"
-                                            },
-                                            {
-                                                "name": "peak_values[10]"
-                                            },
-                                            {
-                                                "name": "peak_values[9]"
-                                            },
-                                            {
-                                                "name": "peak_values[8]"
-                                            },
-                                            {
-                                                "name": "peak_values[7]"
-                                            },
-                                            {
-                                                "name": "peak_values[6]"
-                                            },
-                                            {
-                                                "name": "peak_values[5]"
-                                            },
-                                            {
-                                                "name": "peak_values[4]"
-                                            },
-                                            {
-                                                "name": "peak_values[3]"
-                                            },
-                                            {
-                                                "name": "peak_values[2]"
-                                            },
-                                            {
-                                                "name": "peak_values[1]"
-                                            },
-                                            {
-                                                "name": "peak_values[0]"
+                                                "name": "DAC_audio_in[0]"
                                             }
                                         ]
                                     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="ila_2_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1574374107">
-  <File Type="PA-TCL" Name="ila_2.tcl"/>
   <File Type="RDS-DCP" Name="ila_2.dcp"/>
+  <File Type="PA-TCL" Name="ila_2.tcl"/>
   <File Type="REPORTS-TCL" Name="ila_2_reports.tcl"/>
   <File Type="RDS-RDS" Name="ila_2.vds"/>
   <File Type="RDS-UTIL" Name="ila_2_utilization_synth.rpt"/>

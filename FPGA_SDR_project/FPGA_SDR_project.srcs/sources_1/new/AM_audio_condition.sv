@@ -74,7 +74,7 @@ module AM_audio_condition(
     logic signed [33:0] HP_shifted;
     //shifts between 26 and 12 bits (since max audio level = 7)
     //therefore min HP_shifted must be 20 bits to hear max volume on output
-    assign HP_shifted = HP_out >>> ('d26 - 2*audio_level);
+    assign HP_shifted = HP_out >>> ('d20 - 2*audio_level);
     assign audio_out = HP_shifted;
     
 endmodule

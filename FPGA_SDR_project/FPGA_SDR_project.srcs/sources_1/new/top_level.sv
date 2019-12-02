@@ -8,15 +8,21 @@
 
 module top_level(
         input clk_100mhz, //10 ns period
-        input [15:14] sw, //reset switch
+        input [15:10] sw, //reset switch
         input [5:0] jb, //ADC data in
         input [7:1] ja, //ADC data in
-        output logic ja_0 //ADC clk pin
+        output logic ja_0, //ADC clk pin
+        //speaker output
+        output logic aud_pwm,
+        output logic aud_sd
     );
   
     //system reset as sw[15]  
     logic rst; 
     assign rst = sw[15];
+    
+    //setup speaker output
+    assign aud_sd = 1;
     
     //ADC variables
     logic [11:0] sample;
@@ -49,7 +55,7 @@ module top_level(
     
     //for AM condition
     //3 switches determine audio level
-    logic [2:0] sw_audio = 8'd0;
+    logic [2:0] sw_audio = {sw[12],sw[11],sw[10]};
     //------------------------------------------------------------------
     
     //Interface with AD9220
@@ -142,6 +148,11 @@ module top_level(
     logic audio_ready;
     AM_audio_condition uut (.clk(clk_100mhz),.rst(rst),.audio_offset(peak_values),.audio_level(sw_audio),
                             .audio_out(DAC_audio_in),.audio_ready(audio_ready));
+                            
+    logic pwm_val;               
+    DAC_stuff (.clk_in(clk_100mhz), .rst_in(rst), .level_in({~DAC_audio_in[7],DAC_audio_in[6:0]}), .pwm_out(pwm_val));                      
+    assign aud_pwm = pwm_val?1'bZ:1'b0; 
+     
     //for debug ----------
      
     //logic [12:0] ADC_data; //raw data from ADC for ila, OTR, MSB..LSB
@@ -157,7 +168,8 @@ module top_level(
     // am_bp_ila am_bp_debug (.clk(clk_100mhz),.probe0(ADC_data_valid),.probe1(IF_out),.probe2(peak_values));
     
     //AM peak detect ila
-    am_detect_ila detector (.clk(clk_100mhz),.probe0(ADC_data_valid),.probe1(filt_sec_3_out),.probe2(peak_values));
+    //am_detect_ila detector (.clk(clk_100mhz),.probe0(ADC_data_valid),.probe1(filt_sec_3_out),.probe2(peak_values));
+      ila_0 ila (.clk(clk_100mhz),.probe0(DAC_audio_in));
     ///-------------------
    
     
