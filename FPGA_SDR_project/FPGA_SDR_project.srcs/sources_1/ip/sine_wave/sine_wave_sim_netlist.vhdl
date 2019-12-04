@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
--- Date        : Thu Nov 21 18:14:30 2019
+-- Date        : Thu Nov 21 18:14:29 2019
 -- Host        : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top sine_wave -prefix
+--               sine_wave_ sine_wave_sim_netlist.vhdl
 -- Design      : sine_wave
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity sine_wave_blk_mem_gen_prim_wrapper_init is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sine_wave_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end sine_wave_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of sine_wave_blk_mem_gen_prim_wrapper_init is
@@ -217,8 +215,6 @@ entity sine_wave_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sine_wave_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end sine_wave_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of sine_wave_blk_mem_gen_prim_width is
@@ -240,8 +236,6 @@ entity sine_wave_blk_mem_gen_generic_cstr is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sine_wave_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end sine_wave_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of sine_wave_blk_mem_gen_generic_cstr is
@@ -263,8 +257,6 @@ entity sine_wave_blk_mem_gen_top is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sine_wave_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end sine_wave_blk_mem_gen_top;
 
 architecture STRUCTURE of sine_wave_blk_mem_gen_top is
@@ -286,8 +278,6 @@ entity sine_wave_blk_mem_gen_v8_4_3_synth is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sine_wave_blk_mem_gen_v8_4_3_synth : entity is "blk_mem_gen_v8_4_3_synth";
 end sine_wave_blk_mem_gen_v8_4_3_synth;
 
 architecture STRUCTURE of sine_wave_blk_mem_gen_v8_4_3_synth is
@@ -519,8 +509,6 @@ entity sine_wave_blk_mem_gen_v8_4_3 is
   attribute C_WRITE_WIDTH_B of sine_wave_blk_mem_gen_v8_4_3 : entity is 12;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of sine_wave_blk_mem_gen_v8_4_3 : entity is "artix7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of sine_wave_blk_mem_gen_v8_4_3 : entity is "blk_mem_gen_v8_4_3";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of sine_wave_blk_mem_gen_v8_4_3 : entity is "yes";
 end sine_wave_blk_mem_gen_v8_4_3;

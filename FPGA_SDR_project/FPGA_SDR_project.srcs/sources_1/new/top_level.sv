@@ -8,18 +8,35 @@
 
 module top_level(
         input clk_100mhz, //10 ns period
-        input [15:10] sw, //reset switch
+        input [15:0] sw, //reset switch
+        input btnc, btnu, btnl, btnr, btnd,
         input [5:0] jb, //ADC data in
         input [7:1] ja, //ADC data in
         output logic ja_0, //ADC clk pin
         //speaker output
         output logic aud_pwm,
-        output logic aud_sd
+        output logic aud_sd,
+        output[3:0] vga_r,
+        output[3:0] vga_b,
+        output[3:0] vga_g,
+        output vga_hs,
+        output vga_vs
     );
   
     //system reset as sw[15]  
     logic rst; 
     assign rst = sw[15];
+    
+    // create 65mhz system clock, happens to match 1024 x 768 XVGA timing
+    clk_wiz_0 clkdivider(.clk_in1(clk_100mhz), .clk_out1(clk100mhz), .clk_out2(clk_65mhz));
+
+    wire [10:0] hcount;    // pixel on current line
+    wire [9:0] vcount;     // line number
+    wire hsync, vsync, blank;
+    wire [11:0] pixel;
+    reg [11:0] rgb;    
+    xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount),.vcount_out(vcount),
+          .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
     
     //setup speaker output
     assign aud_sd = 1;
@@ -67,7 +84,7 @@ module top_level(
     //Local Oscillator
   
     logic [11:0] LO_out;
-    Local_Oscillator LO (.rst(rst), .clk_in(clk_100mhz),.center_freq_div_20(center_freq_div_20),
+    Local_Oscillator LO (.rst(rst), .clk_in(clk100mhz),.center_freq_div_20(center_freq_div_20),
                             .LO_out(LO_out));
     
     //Mixer
@@ -93,7 +110,7 @@ module top_level(
     logic sec_1_ready;
     
     //triggers on ADC_sample_valid
-    AM_BP_Filter #(.N(N)) AM_BP_sec_1 (.clk_in(clk_100mhz),.rst(rst),.b(b1),.a(a1),
+    AM_BP_Filter #(.N(N)) AM_BP_sec_1 (.clk_in(clk100mhz),.rst(rst),.b(b1),.a(a1),
                 .sample_ready(ADC_data_valid),.sample(IF_signed),.filt_out(filt_sec_1_out),.filt_valid(sec_1_ready));
     
     //section 2 ------------------------------------------
@@ -113,7 +130,7 @@ module top_level(
     logic signed [33:0] filt_sec_2_out;
     logic sec_2_ready;
     
-    AM_BP_Filter #(.N(N)) AM_BP_sec_2 (.clk_in(clk_100mhz),.rst(rst),.b(b2),.a(a2),
+    AM_BP_Filter #(.N(N)) AM_BP_sec_2 (.clk_in(clk100mhz),.rst(rst),.b(b2),.a(a2),
                 .sample_ready(sec_1_ready),.sample(filt_sec_2_in),.filt_out(filt_sec_2_out),.filt_valid(sec_2_ready));
     
     //section 3 ------------------------------------------
@@ -133,24 +150,24 @@ module top_level(
     logic signed [33:0] filt_sec_3_out;
     logic sec_3_ready;
     
-    AM_BP_Filter #(.N(N)) AM_BP_sec_3 (.clk_in(clk_100mhz),.rst(rst),.b(b3),.a(a3),
+    AM_BP_Filter #(.N(N)) AM_BP_sec_3 (.clk_in(clk100mhz),.rst(rst),.b(b3),.a(a3),
                 .sample_ready(sec_2_ready),.sample(filt_sec_3_in),.filt_out(filt_sec_3_out),.filt_valid(sec_3_ready));
            
     //AM Peak Detect and Hold
     //magnitude of peak values of signal
     logic [33:0] peak_values;
-    Peak_detect_hold AM_peak_detect (.clk(clk_100mhz),.rst(rst),.sample_ready(sec_3_ready),.sample_in(filt_sec_3_out),.peak_value(peak_values));
+    Peak_detect_hold AM_peak_detect (.clk(clk100mhz),.rst(rst),.sample_ready(sec_3_ready),.sample_in(filt_sec_3_out),.peak_value(peak_values));
        
     //AM Audio Condition
     //output to DAC module
     logic signed [7:0] DAC_audio_in;
     //triggers for 1x 100MHz clock cycle when new audio sample ready
     logic audio_ready;
-    AM_audio_condition uut (.clk(clk_100mhz),.rst(rst),.audio_offset(peak_values),.audio_level(sw_audio),
+    AM_audio_condition uut (.clk(clk100mhz),.rst(rst),.audio_offset(peak_values),.audio_level(sw_audio),
                             .audio_out(DAC_audio_in),.audio_ready(audio_ready));
                             
     logic pwm_val;               
-    DAC_stuff (.clk_in(clk_100mhz), .rst_in(rst), .level_in({~DAC_audio_in[7],DAC_audio_in[6:0]}), .pwm_out(pwm_val));                      
+    DAC_stuff (.clk_in(clk100mhz), .rst_in(rst), .level_in({~DAC_audio_in[7],DAC_audio_in[6:0]}), .pwm_out(pwm_val));                      
     assign aud_pwm = pwm_val?1'bZ:1'b0; 
      
     //for debug ----------
@@ -158,19 +175,83 @@ module top_level(
     //logic [12:0] ADC_data; //raw data from ADC for ila, OTR, MSB..LSB
     //assign ADC_data = {OTR, B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12}; 
     
-    //adc_ila ila1 (.clk(clk_100mhz),.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample));
+    //adc_ila ila1 (.clk(clk100mhz),.probe0(ADC_data),.probe1(ADC_clk_gen),.probe2(ADC_data_valid),.probe3(sample));
     
     //logic [31:0] center_freq;
     //assign center_freq = center_freq_div_20 * 20;
-    //ila_2 mixer_ila (.clk(clk_100mhz),.probe0(sample),.probe1(center_freq),.probe2(LO_out),.probe3(IF_out));
+    //ila_2 mixer_ila (.clk(clk100mhz),.probe0(sample),.probe1(center_freq),.probe2(LO_out),.probe3(IF_out));
     
     //Band Pass ila
-    // am_bp_ila am_bp_debug (.clk(clk_100mhz),.probe0(ADC_data_valid),.probe1(IF_out),.probe2(peak_values));
+    // am_bp_ila am_bp_debug (.clk(clk100mhz),.probe0(ADC_data_valid),.probe1(IF_out),.probe2(peak_values));
     
     //AM peak detect ila
-    //am_detect_ila detector (.clk(clk_100mhz),.probe0(ADC_data_valid),.probe1(filt_sec_3_out),.probe2(peak_values));
-      ila_0 ila (.clk(clk_100mhz),.probe0(DAC_audio_in));
+    //am_detect_ila detector (.clk(clk100mhz),.probe0(ADC_data_valid),.probe1(filt_sec_3_out),.probe2(peak_values));
+    //ila_0 ila (.clk(clk100mhz),.probe0(DAC_audio_in));
     ///-------------------
    
+    //VGA Stuff
+    wire up,down;
+    debounce db2(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(btnu),.clean_out(up));
+    debounce db3(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(btnd),.clean_out(down));
     
+    wire right,left;
+    debounce db4(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(btnr),.clean_out(right));
+    debounce db5(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(btnl),.clean_out(left));
+    
+    logic [11:0] height_adjust;
+    control_height my_height(.clk(clk_65mhz), .up(up), .down(down), .reset(rst), .sw(sw[14]), .height_out(height_adjust));
+    
+    logic [11:0] trigger_adjust;
+    control_trigger_height my_trigger(.clk(clk_65mhz), .up(up), .down(down), .reset(rst), .sw(sw[14]), .height_out(trigger_adjust));
+     
+    logic [11:0] period;
+    control_period my_period(.clk(clk_65mhz), .right(right), .left(left), .reset(rst), .period_out(period));
+    
+    
+    logic [11:0] signal_to_display;
+    always_comb begin
+       if(sw[1]) begin
+          signal_to_display = {DAC_audio_in, 3'b0};
+       end else begin
+          signal_to_display = sample;
+       end
+    end
+    
+    logic [11:0] display_signal;
+    trigger_buffer my_buffer(.clock_in(clk_65mhz),.reset_in(rst),
+                             .signal_in(signal_to_display),
+                             .trigger_height(trigger_adjust),
+                             .hcount_in(hcount),.vcount_in(vcount),
+                             .period(period),
+                             .signal_out(display_signal));
+                             
+    function_pixel_logic plot(.vclock_in(clk_65mhz),.reset_in(rst),
+                .height_adjust(height_adjust),
+                .signal_in(display_signal),
+                .trigger_height(trigger_adjust),
+                .hcount_in(hcount),.vcount_in(vcount),
+                .is_audio(sw[1]),
+                .pixel_out(pixel));
+
+    wire border = (hcount==0 | hcount==1023 | vcount==0 | vcount==767 |
+                   hcount == 512 | vcount == 384);
+
+    reg b,hs,vs;
+    always_ff @(posedge clk_65mhz) begin
+      hs <= hsync;
+      vs <= vsync;
+      b <= blank;
+      if (sw[0]) begin
+         rgb <= {12{border}};
+      end else begin
+         rgb <= pixel;
+      end
+    end
+    
+    assign vga_r = ~b ? rgb[11:8]: 0;
+    assign vga_g = ~b ? rgb[7:4] : 0;
+    assign vga_b = ~b ? rgb[3:0] : 0;
+
+    assign vga_hs = ~hs;
+    assign vga_vs = ~vs;
 endmodule

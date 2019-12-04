@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-// Date        : Thu Nov 21 18:14:30 2019
+// Date        : Thu Nov 21 18:14:29 2019
 // Host        : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top sine_wave -prefix
+//               sine_wave_ sine_wave_stub.v
 // Design      : sine_wave
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1

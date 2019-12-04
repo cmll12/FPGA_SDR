@@ -2,12 +2,12 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Sun Dec  1 19:39:30 2019
-# Process ID: 25761
-# Current directory: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1
+# Start of session at: Wed Dec  4 12:47:42 2019
+# Process ID: 28170
+# Current directory: /afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1
 # Command line: vivado -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
-# Log file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.vds
-# Journal file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/vivado.jou
+# Log file: /afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.vds
+# Journal file: /afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source top_level.tcl -notrace
 Command: synth_design -top top_level -part xc7a100tcsg324-1
@@ -16,42 +16,98 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 25807 
+INFO: Helper process launched with PID 28201 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1839.215 ; gain = 154.527 ; free physical = 1038 ; free virtual = 6666
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1808.051 ; gain = 154.496 ; free physical = 130 ; free virtual = 10532
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_level' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'top_level' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
 	Parameter N bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ADC_Interface' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-28170-eecs-digital-49/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-28170-eecs-digital-49/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-7023] instance 'clkdivider' of module 'clk_wiz_0' has 5 connections declared, but only 3 given [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:31]
+INFO: [Synth 8-6157] synthesizing module 'xvga' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/xvga.sv:22]
+	Parameter DISPLAY_WIDTH bound to: 1024 - type: integer 
+	Parameter DISPLAY_HEIGHT bound to: 768 - type: integer 
+	Parameter H_FP bound to: 24 - type: integer 
+	Parameter H_SYNC_PULSE bound to: 136 - type: integer 
+	Parameter H_BP bound to: 160 - type: integer 
+	Parameter V_FP bound to: 3 - type: integer 
+	Parameter V_SYNC_PULSE bound to: 6 - type: integer 
+	Parameter V_BP bound to: 29 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xvga' (2#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/xvga.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'ADC_Interface' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
 	Parameter delay_period bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ADC_Interface' (1#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
-INFO: [Synth 8-6157] synthesizing module 'Local_Oscillator' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'ADC_Interface' (3#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/ADC_Interface.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'Local_Oscillator' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
 	Parameter IF_FREQ_div_20 bound to: 18'b000101100011011110 
 	Parameter A bound to: 13744 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'sine_wave' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-25761-eecs-digital-49/realtime/sine_wave_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'sine_wave' (2#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-25761-eecs-digital-49/realtime/sine_wave_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Local_Oscillator' (3#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
-INFO: [Synth 8-6157] synthesizing module 'Mixer' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
-INFO: [Synth 8-6155] done synthesizing module 'Mixer' (4#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
-INFO: [Synth 8-6157] synthesizing module 'AM_BP_Filter' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:10]
+INFO: [Synth 8-6157] synthesizing module 'sine_wave' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-28170-eecs-digital-49/realtime/sine_wave_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'sine_wave' (4#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-28170-eecs-digital-49/realtime/sine_wave_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Local_Oscillator' (5#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'Mixer' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'Mixer' (6#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
+INFO: [Synth 8-6157] synthesizing module 'AM_BP_Filter' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:10]
 	Parameter N bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'AM_BP_Filter' (5#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:10]
-INFO: [Synth 8-6157] synthesizing module 'Peak_detect_hold' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Peak_detect_hold.sv:11]
-INFO: [Synth 8-6155] done synthesizing module 'Peak_detect_hold' (6#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Peak_detect_hold.sv:11]
-INFO: [Synth 8-6157] synthesizing module 'AM_audio_condition' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_audio_condition.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'AM_BP_Filter' (7#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:10]
+INFO: [Synth 8-6157] synthesizing module 'Peak_detect_hold' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Peak_detect_hold.sv:11]
+INFO: [Synth 8-6155] done synthesizing module 'Peak_detect_hold' (8#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Peak_detect_hold.sv:11]
+INFO: [Synth 8-6157] synthesizing module 'AM_audio_condition' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_audio_condition.sv:10]
 	Parameter COUNT_48k bound to: 2082 - type: integer 
 	Parameter N bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'AM_audio_condition' (7#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_audio_condition.sv:10]
-INFO: [Synth 8-6157] synthesizing module 'DAC_stuff' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/DAC_stuff.sv:12]
-INFO: [Synth 8-6155] done synthesizing module 'DAC_stuff' (8#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/DAC_stuff.sv:12]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:172]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-25761-eecs-digital-49/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (9#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-25761-eecs-digital-49/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'uut'. This will prevent further optimization [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:149]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila'. This will prevent further optimization [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:172]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'nolabel_line153'. This will prevent further optimization [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:153]
-INFO: [Synth 8-6155] done synthesizing module 'top_level' (10#1) [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'AM_audio_condition' (9#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_audio_condition.sv:10]
+INFO: [Synth 8-6157] synthesizing module 'DAC_stuff' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/DAC_stuff.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'DAC_stuff' (10#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/DAC_stuff.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/debounce.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (11#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/debounce.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'control_height' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/control_height.sv:1]
+	Parameter RESET bound to: 3'b000 
+	Parameter IDLE bound to: 3'b001 
+	Parameter UP_INCREMENT bound to: 3'b100 
+	Parameter UP_WAIT bound to: 3'b101 
+	Parameter DOWN_INCREMENT bound to: 3'b111 
+	Parameter DOWN_WAIT bound to: 3'b011 
+INFO: [Synth 8-6155] done synthesizing module 'control_height' (12#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/control_height.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'control_trigger_height' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/control_trigger_height.sv:1]
+	Parameter RESET bound to: 3'b000 
+	Parameter IDLE bound to: 3'b001 
+	Parameter UP_INCREMENT bound to: 3'b100 
+	Parameter UP_WAIT bound to: 3'b101 
+	Parameter DOWN_INCREMENT bound to: 3'b111 
+	Parameter DOWN_WAIT bound to: 3'b011 
+INFO: [Synth 8-6155] done synthesizing module 'control_trigger_height' (13#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/control_trigger_height.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'control_period' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/control_period.sv:1]
+	Parameter RESET bound to: 3'b000 
+	Parameter IDLE bound to: 3'b001 
+	Parameter RIGHT_INCREMENT bound to: 3'b100 
+	Parameter RIGHT_WAIT bound to: 3'b101 
+	Parameter LEFT_INCREMENT bound to: 3'b111 
+	Parameter LEFT_WAIT bound to: 3'b011 
+INFO: [Synth 8-6155] done synthesizing module 'control_period' (14#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/control_period.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'trigger_buffer' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/trigger_buffer.sv:1]
+	Parameter RESET bound to: 5'b00000 
+	Parameter BRAM1_WAIT_FOR_TRIGGER bound to: 5'b00001 
+	Parameter BRAM1_VERIFY_TRIGGER bound to: 5'b00011 
+	Parameter BRAM1_WAIT_FOR_FILL bound to: 5'b00111 
+	Parameter BRAM1_WAIT_FOR_FRAME bound to: 5'b01111 
+	Parameter BRAM2_WAIT_FOR_TRIGGER bound to: 5'b11111 
+	Parameter BRAM2_VERIFY_TRIGGER bound to: 5'b11101 
+	Parameter BRAM2_WAIT_FOR_FILL bound to: 5'b11001 
+	Parameter BRAM2_WAIT_FOR_FRAME bound to: 5'b10001 
+	Parameter NEEDED_HIGH bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'frame_bram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-28170-eecs-digital-49/realtime/frame_bram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'frame_bram' (15#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-28170-eecs-digital-49/realtime/frame_bram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'trigger_buffer' (16#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/trigger_buffer.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'function_pixel_logic' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/function_pixel_logic.sv:1]
+	Parameter OFFSET_25 bound to: 2048 - type: integer 
+	Parameter OFFSET_20 bound to: 1638 - type: integer 
+	Parameter OFFSET_15 bound to: 1228 - type: integer 
+	Parameter OFFSET_AUDIO bound to: 128 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'function_pixel_logic' (17#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/function_pixel_logic.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'top_level' (18#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
 WARNING: [Synth 8-3917] design top_level has port aud_sd driven by constant 1
+WARNING: [Synth 8-3331] design function_pixel_logic has unconnected port reset_in
+WARNING: [Synth 8-3331] design function_pixel_logic has unconnected port is_audio
+WARNING: [Synth 8-3331] design trigger_buffer has unconnected port hcount_in[10]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[9]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[8]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[7]
@@ -62,10 +118,18 @@ WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_off
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[2]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[1]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[0]
-WARNING: [Synth 8-3331] design top_level has unconnected port sw[14]
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[13]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[9]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[8]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[7]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[6]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[5]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[4]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top_level has unconnected port btnc
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1895.938 ; gain = 211.250 ; free physical = 1055 ; free virtual = 6686
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1865.773 ; gain = 212.219 ; free physical = 218 ; free virtual = 10544
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -78,64 +142,116 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1907.809 ; gain = 223.121 ; free physical = 1053 ; free virtual = 6684
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1871.707 ; gain = 218.152 ; free physical = 218 ; free virtual = 10543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1907.809 ; gain = 223.121 ; free physical = 1053 ; free virtual = 6684
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1871.707 ; gain = 218.152 ; free physical = 218 ; free virtual = 10543
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
-Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila'
-Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:19]
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:20]
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:21]
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:22]
-WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:23]
-WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:24]
-WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:25]
-WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:26]
-WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:27]
-WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:28]
-WARNING: [Vivado 12-584] No ports matched 'jb[6]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:120]
-WARNING: [Vivado 12-584] No ports matched 'jb[7]'. [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:121]
-Finished Parsing XDC File [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_level_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
+Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave/sine_wave_in_context.xdc] for cell 'LO/LO_sine_wave'
+Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clkdivider'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clkdivider'
+Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/frame_bram/frame_bram/frame_bram_in_context.xdc] for cell 'my_buffer/frame1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/frame_bram/frame_bram/frame_bram_in_context.xdc] for cell 'my_buffer/frame1'
+Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/frame_bram/frame_bram/frame_bram_in_context.xdc] for cell 'my_buffer/frame2'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/frame_bram/frame_bram/frame_bram_in_context.xdc] for cell 'my_buffer/frame2'
+Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
+WARNING: [Vivado 12-584] No ports matched 'jb[6]'. [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:120]
+WARNING: [Vivado 12-584] No ports matched 'jb[7]'. [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc:121]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_level_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/constrs_1/imports/6_111/nexys4_ddr_default.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_level_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2057.418 ; gain = 0.000 ; free physical = 929 ; free virtual = 6572
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2035.223 ; gain = 0.000 ; free physical = 143 ; free virtual = 10416
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2057.418 ; gain = 0.000 ; free physical = 929 ; free virtual = 6572
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2035.223 ; gain = 0.000 ; free physical = 143 ; free virtual = 10416
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'LO/LO_sine_wave' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_buffer/frame1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_buffer/frame2' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2063.355 ; gain = 378.668 ; free physical = 1015 ; free virtual = 6658
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2038.191 ; gain = 384.637 ; free physical = 239 ; free virtual = 10512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2063.355 ; gain = 378.668 ; free physical = 1015 ; free virtual = 6658
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2038.191 ; gain = 384.637 ; free physical = 239 ; free virtual = 10512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc}, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc}, line 5).
 Applied set_property DONT_TOUCH = true for LO/LO_sine_wave. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for ila. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for clkdivider. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_buffer/frame1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_buffer/frame2. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2063.355 ; gain = 378.668 ; free physical = 1014 ; free virtual = 6657
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2038.191 ; gain = 384.637 ; free physical = 239 ; free virtual = 10512
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_height'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_trigger_height'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/control_period.sv:19]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_period'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'trigger_buffer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   RESET |                           000001 |                              000
+                    IDLE |                           000010 |                              001
+            UP_INCREMENT |                           000100 |                              100
+                 UP_WAIT |                           001000 |                              101
+          DOWN_INCREMENT |                           010000 |                              111
+               DOWN_WAIT |                           100000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'control_height'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   RESET |                           000001 |                              000
+                    IDLE |                           000010 |                              001
+            UP_INCREMENT |                           000100 |                              100
+                 UP_WAIT |                           001000 |                              101
+          DOWN_INCREMENT |                           010000 |                              111
+               DOWN_WAIT |                           100000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'control_trigger_height'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   RESET |                           000001 |                              000
+                    IDLE |                           000010 |                              001
+         RIGHT_INCREMENT |                           000100 |                              100
+              RIGHT_WAIT |                           001000 |                              101
+          LEFT_INCREMENT |                           010000 |                              111
+               LEFT_WAIT |                           100000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'control_period'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   RESET |                             0000 |                            00000
+  BRAM1_WAIT_FOR_TRIGGER |                             0001 |                            00001
+    BRAM1_VERIFY_TRIGGER |                             0010 |                            00011
+     BRAM1_WAIT_FOR_FILL |                             0011 |                            00111
+    BRAM1_WAIT_FOR_FRAME |                             0100 |                            01111
+  BRAM2_WAIT_FOR_TRIGGER |                             0101 |                            11111
+    BRAM2_VERIFY_TRIGGER |                             0110 |                            11101
+     BRAM2_WAIT_FOR_FILL |                             0111 |                            11001
+    BRAM2_WAIT_FOR_FRAME |                             1000 |                            10001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'trigger_buffer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 2063.359 ; gain = 378.672 ; free physical = 1006 ; free virtual = 6650
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2038.195 ; gain = 384.641 ; free physical = 227 ; free virtual = 10502
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -151,7 +267,14 @@ Detailed RTL Component Info :
 	   3 Input    101 Bit       Adders := 4     
 	   8 Input     41 Bit       Adders := 1     
 	   3 Input     34 Bit       Adders := 6     
+	   2 Input     24 Bit       Adders := 2     
 	   2 Input     18 Bit       Adders := 1     
+	   3 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 9     
+	   3 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 5     
+	   2 Input      9 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 7     
 	   8 Input      4 Bit       Adders := 1     
@@ -162,11 +285,13 @@ Detailed RTL Component Info :
 	               34 Bit    Registers := 14    
 	               24 Bit    Registers := 33    
 	               13 Bit    Registers := 2     
-	               12 Bit    Registers := 1     
+	               12 Bit    Registers := 28    
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 7     
 	                3 Bit    Registers := 5     
-	                1 Bit    Registers := 19    
+	                1 Bit    Registers := 38    
 +---Multipliers : 
 	               18x101  Multipliers := 4     
 	                 1x34  Multipliers := 1     
@@ -174,10 +299,19 @@ Detailed RTL Component Info :
 	   2 Input     34 Bit        Muxes := 1     
 	   2 Input     18 Bit        Muxes := 4     
 	   3 Input     18 Bit        Muxes := 4     
-	   2 Input     12 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 8     
+	   6 Input     12 Bit        Muxes := 2     
+	   9 Input     12 Bit        Muxes := 23    
+	   2 Input     10 Bit        Muxes := 2     
+	   9 Input     10 Bit        Muxes := 2     
+	   6 Input      6 Bit        Muxes := 3     
+	   2 Input      6 Bit        Muxes := 27    
+	   2 Input      4 Bit        Muxes := 6     
 	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 61    
+	   9 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 98    
+	   6 Input      1 Bit        Muxes := 6     
+	   9 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -185,6 +319,25 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module top_level 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 3     
+Module xvga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
 Module ADC_Interface 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -255,6 +408,71 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
 	                8 Bit    Registers := 1     
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module control_height 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 1     
++---Muxes : 
+	   6 Input     12 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 2     
+Module control_trigger_height 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 2     
++---Registers : 
+	               12 Bit    Registers := 1     
++---Muxes : 
+	   6 Input     12 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 2     
+Module control_period 
+Detailed RTL Component Info : 
++---Muxes : 
+	   6 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 2     
+Module trigger_buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 4     
++---Registers : 
+	               12 Bit    Registers := 24    
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 4     
+	   9 Input     12 Bit        Muxes := 23    
+	   2 Input     10 Bit        Muxes := 2     
+	   9 Input     10 Bit        Muxes := 2     
+	   9 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+	   9 Input      1 Bit        Muxes := 13    
+Module function_pixel_logic 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 4     
+	   3 Input     12 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -273,7 +491,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 DSP Report: Generating DSP phase_inc0, operation Mode is: A*(B:0x35b0).
 DSP Report: operator phase_inc0 is absorbed into DSP phase_inc0.
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 6 [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:73]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 6 [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:73]
 DSP Report: Generating DSP x_sum2, operation Mode is: A*B.
 DSP Report: operator x_sum2 is absorbed into DSP x_sum2.
 DSP Report: Generating DSP y_sum2, operation Mode is: A*B.
@@ -334,7 +552,7 @@ DSP Report: operator y_sum2 is absorbed into DSP y_sum2.
 DSP Report: Generating DSP y_sum2, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator y_sum2 is absorbed into DSP y_sum2.
 DSP Report: operator y_sum2 is absorbed into DSP y_sum2.
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 6 [/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:73]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 6 [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_BP_Filter.sv:73]
 DSP Report: Generating DSP audio_HP_sec_1/x_sum2, operation Mode is: A*B.
 DSP Report: operator audio_HP_sec_1/x_sum2 is absorbed into DSP audio_HP_sec_1/x_sum2.
 DSP Report: Generating DSP audio_HP_sec_1/y_sum2, operation Mode is: A*B.
@@ -355,9 +573,16 @@ DSP Report: operator audio_HP_sec_1/y_sum2 is absorbed into DSP audio_HP_sec_1/y
 DSP Report: Generating DSP audio_HP_sec_1/y_sum2, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator audio_HP_sec_1/y_sum2 is absorbed into DSP audio_HP_sec_1/y_sum2.
 DSP Report: operator audio_HP_sec_1/y_sum2 is absorbed into DSP audio_HP_sec_1/y_sum2.
+DSP Report: Generating DSP pixel_out_function5, operation Mode is: A*B.
+DSP Report: operator pixel_out_function5 is absorbed into DSP pixel_out_function5.
+DSP Report: Generating DSP pixel_out_triggerline5, operation Mode is: A*B.
+DSP Report: operator pixel_out_triggerline5 is absorbed into DSP pixel_out_triggerline5.
 DSP Report: Generating DSP sample_LO_mixer/p_out0, operation Mode is: A*B.
 DSP Report: operator sample_LO_mixer/p_out0 is absorbed into DSP sample_LO_mixer/p_out0.
 WARNING: [Synth 8-3917] design top_level has port aud_sd driven by constant 1
+WARNING: [Synth 8-3331] design function_pixel_logic has unconnected port reset_in
+WARNING: [Synth 8-3331] design function_pixel_logic has unconnected port is_audio
+WARNING: [Synth 8-3331] design trigger_buffer has unconnected port hcount_in[10]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[9]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[8]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[7]
@@ -368,8 +593,23 @@ WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_off
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[2]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[1]
 WARNING: [Synth 8-3331] design AM_audio_condition has unconnected port audio_offset[0]
-WARNING: [Synth 8-3331] design top_level has unconnected port sw[14]
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[13]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[9]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[8]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[7]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[6]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[5]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[4]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top_level has unconnected port btnc
+INFO: [Synth 8-3886] merging instance 'rgb_reg[5]' (FD) to 'rgb_reg[6]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[6]' (FD) to 'rgb_reg[7]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[7]' (FD) to 'rgb_reg[8]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[2]' (FD) to 'rgb_reg[3]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[8]' (FD) to 'rgb_reg[9]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[9]' (FD) to 'rgb_reg[10]'
+INFO: [Synth 8-3886] merging instance 'rgb_reg[10]' (FD) to 'rgb_reg[11]'
 INFO: [Synth 8-3886] merging instance 'AM_BP_sec_2/x_reg[7][22]' (FDRE) to 'AM_BP_sec_2/x_reg[7][23]'
 INFO: [Synth 8-3886] merging instance 'AM_BP_sec_2/x_reg[6][22]' (FDRE) to 'AM_BP_sec_2/x_reg[6][23]'
 INFO: [Synth 8-3886] merging instance 'AM_BP_sec_2/x_reg[5][22]' (FDRE) to 'AM_BP_sec_2/x_reg[5][23]'
@@ -387,47 +627,49 @@ INFO: [Synth 8-3886] merging instance 'AM_BP_sec_3/x_reg[2][22]' (FDRE) to 'AM_B
 INFO: [Synth 8-3886] merging instance 'AM_BP_sec_3/x_reg[1][22]' (FDRE) to 'AM_BP_sec_3/x_reg[1][23]'
 INFO: [Synth 8-3886] merging instance 'AM_BP_sec_3/x_reg[0][22]' (FDRE) to 'AM_BP_sec_3/x_reg[0][23]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2063.359 ; gain = 378.672 ; free physical = 959 ; free virtual = 6614
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 2038.195 ; gain = 384.641 ; free physical = 191 ; free virtual = 10453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 DSP: Preliminary Mapping  Report (see note below)
-+-------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name        | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Local_Oscillator   | A*(B:0x35b0)   | 18     | 14     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_BP_Filter       | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_audio_condition | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_audio_condition | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_audio_condition | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_audio_condition | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_audio_condition | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|AM_audio_condition | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|Mixer              | A*B            | 12     | 12     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+-------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++---------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Local_Oscillator     | A*(B:0x35b0)   | 18     | 14     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_BP_Filter         | A*B            | 24     | 18     | -      | -      | 42     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_audio_condition   | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_audio_condition   | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_audio_condition   | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_audio_condition   | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_audio_condition   | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|AM_audio_condition   | (PCIN>>17)+A*B | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|function_pixel_logic | A*B            | 23     | 12     | -      | -      | 35     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|function_pixel_logic | A*B            | 24     | 12     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|Mixer                | A*B            | 12     | 12     | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++---------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -442,14 +684,17 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clkdivider/clk_out1' to pin 'clkdivider/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clkdivider/clk_out2' to pin 'clkdivider/bbstub_clk_out2/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2063.359 ; gain = 378.672 ; free physical = 808 ; free virtual = 6470
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 2038.195 ; gain = 384.641 ; free physical = 130 ; free virtual = 10314
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 2137.672 ; gain = 452.984 ; free physical = 766 ; free virtual = 6429
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 2091.227 ; gain = 437.672 ; free physical = 182 ; free virtual = 10282
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -461,7 +706,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:46 . Memory (MB): peak = 2137.672 ; gain = 452.984 ; free physical = 758 ; free virtual = 6420
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 2107.242 ; gain = 453.688 ; free physical = 198 ; free virtual = 10274
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -484,8 +729,9 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module clkdivider has unconnected pin reset
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 2137.676 ; gain = 452.988 ; free physical = 755 ; free virtual = 6418
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 2110.215 ; gain = 456.660 ; free physical = 201 ; free virtual = 10271
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -498,7 +744,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 2137.676 ; gain = 452.988 ; free physical = 755 ; free virtual = 6418
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 2110.215 ; gain = 456.660 ; free physical = 201 ; free virtual = 10270
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -510,25 +756,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 2137.676 ; gain = 452.988 ; free physical = 756 ; free virtual = 6418
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 2110.215 ; gain = 456.660 ; free physical = 200 ; free virtual = 10270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 2137.676 ; gain = 452.988 ; free physical = 756 ; free virtual = 6418
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 2110.215 ; gain = 456.660 ; free physical = 200 ; free virtual = 10270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 2137.676 ; gain = 452.988 ; free physical = 756 ; free virtual = 6418
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 2110.215 ; gain = 456.660 ; free physical = 200 ; free virtual = 10270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 2137.676 ; gain = 452.988 ; free physical = 756 ; free virtual = 6418
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 2110.215 ; gain = 456.660 ; free physical = 200 ; free virtual = 10270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -538,74 +784,85 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |ila_0         |         1|
+|1     |clk_wiz_0     |         1|
 |2     |sine_wave     |         1|
+|3     |frame_bram    |         2|
 +------+--------------+----------+
 
 Report Cell Usage: 
-+------+----------+------+
-|      |Cell      |Count |
-+------+----------+------+
-|1     |ila_0     |     1|
-|2     |sine_wave |     1|
-|3     |BUFG      |     1|
-|4     |CARRY4    |   513|
-|5     |DSP48E1   |    29|
-|6     |DSP48E1_1 |     1|
-|7     |LUT1      |    50|
-|8     |LUT2      |  1874|
-|9     |LUT3      |   176|
-|10    |LUT4      |   375|
-|11    |LUT5      |    46|
-|12    |LUT6      |  1222|
-|13    |MUXF7     |   532|
-|14    |FDRE      |  5386|
-|15    |FDSE      |     8|
-|16    |IBUF      |    18|
-|17    |OBUF      |     2|
-|18    |OBUFT     |     1|
-+------+----------+------+
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |clk_wiz_0     |     1|
+|2     |frame_bram    |     1|
+|3     |frame_bram__2 |     1|
+|4     |sine_wave     |     1|
+|5     |CARRY4        |   622|
+|6     |DSP48E1       |    31|
+|7     |DSP48E1_1     |     1|
+|8     |LUT1          |   138|
+|9     |LUT2          |  1928|
+|10    |LUT3          |   419|
+|11    |LUT4          |   677|
+|12    |LUT5          |   150|
+|13    |LUT6          |  1409|
+|14    |MUXF7         |   532|
+|15    |FDRE          |  5870|
+|16    |FDSE          |    18|
+|17    |IBUF          |    24|
+|18    |OBUF          |    16|
+|19    |OBUFT         |     1|
++------+--------------+------+
 
 Report Instance Areas: 
-+------+-------------------+-------------------+------+
-|      |Instance           |Module             |Cells |
-+------+-------------------+-------------------+------+
-|1     |top                |                   | 10246|
-|2     |  uut              |AM_audio_condition |  2249|
-|3     |    audio_HP_sec_1 |AM_BP_Filter_2     |  2203|
-|4     |  nolabel_line153  |DAC_stuff          |    26|
-|5     |  sample_LO_mixer  |Mixer              |     2|
-|6     |  AD9220           |ADC_Interface      |    65|
-|7     |  AM_BP_sec_1      |AM_BP_Filter       |  2193|
-|8     |  AM_BP_sec_2      |AM_BP_Filter_0     |  2182|
-|9     |  AM_BP_sec_3      |AM_BP_Filter_1     |  2318|
-|10    |  AM_peak_detect   |Peak_detect_hold   |  1106|
-|11    |  LO               |Local_Oscillator   |    81|
-+------+-------------------+-------------------+------+
++------+-------------------+-----------------------+------+
+|      |Instance           |Module                 |Cells |
++------+-------------------+-----------------------+------+
+|1     |top                |                       | 11875|
+|2     |  nolabel_line170  |DAC_stuff              |    17|
+|3     |  plot             |function_pixel_logic   |    80|
+|4     |  AD9220           |ADC_Interface          |    97|
+|5     |  AM_BP_sec_1      |AM_BP_Filter           |  2193|
+|6     |  AM_BP_sec_2      |AM_BP_Filter_0         |  2182|
+|7     |  AM_BP_sec_3      |AM_BP_Filter_1         |  2318|
+|8     |  AM_peak_detect   |Peak_detect_hold       |  1083|
+|9     |  LO               |Local_Oscillator       |    81|
+|10    |  db2              |debounce               |    43|
+|11    |  db3              |debounce_2             |    39|
+|12    |  db4              |debounce_3             |    40|
+|13    |  db5              |debounce_4             |    39|
+|14    |  my_buffer        |trigger_buffer         |   830|
+|15    |  my_height        |control_height         |    63|
+|16    |  my_period        |control_period         |    50|
+|17    |  my_trigger       |control_trigger_height |   227|
+|18    |  sample_LO_mixer  |Mixer                  |     2|
+|19    |  uut              |AM_audio_condition     |  2299|
+|20    |    audio_HP_sec_1 |AM_BP_Filter_5         |  2253|
+|21    |  xvga1            |xvga                   |   133|
++------+-------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 2137.676 ; gain = 452.988 ; free physical = 756 ; free virtual = 6418
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 2110.215 ; gain = 456.660 ; free physical = 200 ; free virtual = 10270
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 2137.676 ; gain = 297.441 ; free physical = 813 ; free virtual = 6476
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 2137.680 ; gain = 452.988 ; free physical = 828 ; free virtual = 6491
+Synthesis finished with 0 errors, 1 critical warnings and 24 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 2110.215 ; gain = 290.176 ; free physical = 259 ; free virtual = 10329
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 2110.219 ; gain = 456.660 ; free physical = 273 ; free virtual = 10343
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1075 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1186 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2137.680 ; gain = 0.000 ; free physical = 760 ; free virtual = 6423
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2110.219 ; gain = 0.000 ; free physical = 205 ; free virtual = 10275
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-53 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
+86 Infos, 55 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 2137.680 ; gain = 671.258 ; free physical = 889 ; free virtual = 6552
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2137.680 ; gain = 0.000 ; free physical = 890 ; free virtual = 6553
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:59 . Memory (MB): peak = 2110.219 ; gain = 652.961 ; free physical = 336 ; free virtual = 10406
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2110.219 ; gain = 0.000 ; free physical = 336 ; free virtual = 10406
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Dec  1 19:40:48 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  4 12:48:51 2019...
