@@ -116,6 +116,10 @@ module top_level(
     logic [2:0] sw_audio = {sw[12],sw[11],sw[10]};
     //------------------------------------------------------------------
     
+    //for modulation select use switch 5
+    logic modulation_select_sw = sw[5];
+    //------------------------------------------------------------------
+    
     //Interface with AD9220
     ADC_Interface AD9220 (.clk_100mhz(clk100mhz),.rst(rst),.sample_offset(sample),
                          .ADC_data_valid(ADC_data_valid),.ADC_clk(ADC_clk_gen),.B1(B1),.B2(B2),
@@ -123,7 +127,6 @@ module top_level(
                          .B11(B11),.B12(B12),.out_of_range(OTR));
                          
     //Local Oscillator
-  
     logic [11:0] LO_out;
     Local_Oscillator LO (.rst(rst), .clk_in(clk100mhz),.center_freq_div_20(center_freq_div_20),
                             .LO_out(LO_out));
@@ -135,7 +138,17 @@ module top_level(
     //convert mixer IF out to signed integer
     logic signed [23:0] IF_signed;
     assign IF_signed = {~IF_out[23],IF_out[22:0]};
-                 
+    
+    //FM Demodulation Stage 1 (BP filter and derivative)
+    logic signed [33:0] FM_stage_1_out;
+    logic FM_sample_ready;
+    
+    FM_demod_stage_1 FM_stage_1 (.clk(clk100mhz),.rst(rst),.IF_in(IF_signed),.IF_data_valid(ADC_data_valid),
+                                .FM_derivative(FM_stage_1_out),.FM_data_valid(FM_sample_ready));
+    
+    //end FM demod stage 1 ------------------------------------------          
+                     
+    //AM Demodulation Stage 1 (BP filter)
     //AM Bandpass Filter
     
     //section 1 ------------------------------------------
@@ -188,25 +201,44 @@ module top_level(
     assign b3 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
     assign a3 [(N-2):0] = '{18'sd65227,-18'sd125456}; //a coeff MATLAB: 
     
-    logic signed [33:0] filt_sec_3_out;
-    logic sec_3_ready;
+    logic signed [33:0] filt_stage_1_out;
+    logic AM_sample_ready;
     
     AM_BP_Filter #(.N(N)) AM_BP_sec_3 (.clk_in(clk100mhz),.rst(rst),.b(b3),.a(a3),
-                .sample_ready(sec_2_ready),.sample(filt_sec_3_in),.filt_out(filt_sec_3_out),.filt_valid(sec_3_ready));
-           
-    //AM Peak Detect and Hold
+                .sample_ready(AM_sample_ready),.sample(filt_sec_3_in),.filt_out(AM_stage_1_out),.filt_valid(sec_3_ready));
+   
+    //end AM demod stage 1 ------------------------------------------
+    
+    //AM and FM Demodulation stage 2 (peak detect and audio condition)
+    //Modulation_select_sw, sw[5], determines which demod to use (0 = AM, 1 = FM)
+    logic signed [33:0] peak_detect_sample_in;
+    logic peak_detect_sample_ready;
+    always_comb begin
+        if (!modulation_select_sw) begin
+            peak_detect_sample_ready = AM_sample_ready;
+            peak_detect_sample_in = AM_stage_1_out;
+        end else begin
+            peak_detect_sample_ready = FM_sample_ready;
+            peak_detect_sample_in = FM_stage_1_out;
+        end
+    end
+    
+    //Peak Detect and Hold
     //magnitude of peak values of signal
     logic [33:0] peak_values;
-    Peak_detect_hold AM_peak_detect (.clk(clk100mhz),.rst(rst),.sample_ready(sec_3_ready),.sample_in(filt_sec_3_out),.peak_value(peak_values));
+    Peak_detect_hold AM_peak_detect (.clk(clk100mhz),.rst(rst),.sample_ready(peak_detect_sample_ready),.sample_in(peak_detect_sample_in),.peak_value(peak_values));
        
-    //AM Audio Condition
+    //Audio Condition
     //output to DAC module
     logic signed [7:0] DAC_audio_in;
     //triggers for 1x 100MHz clock cycle when new audio sample ready
     logic audio_ready;
-    AM_audio_condition uut (.clk(clk100mhz),.rst(rst),.audio_offset(peak_values),.audio_level(sw_audio),
+    AM_audio_condition condition_AM_for_DAC (.clk(clk100mhz),.rst(rst),.audio_offset(peak_values),.audio_level(sw_audio),
                             .audio_out(DAC_audio_in),.audio_ready(audio_ready));
-                            
+    
+    //end demod stage 2 ------------------------------------------
+    
+    //Drive DAC with demodulated audio                      
     logic pwm_val;               
     DAC_stuff (.clk_in(clk100mhz), .rst_in(rst), .level_in({~DAC_audio_in[7],DAC_audio_in[6:0]}), .pwm_out(pwm_val));                      
     assign aud_pwm = pwm_val?1'bZ:1'b0; 
@@ -226,7 +258,7 @@ module top_level(
     // am_bp_ila am_bp_debug (.clk(clk100mhz),.probe0(ADC_data_valid),.probe1(IF_out),.probe2(peak_values));
     
     //AM peak detect ila
-    //am_detect_ila detector (.clk(clk100mhz),.probe0(ADC_data_valid),.probe1(filt_sec_3_out),.probe2(peak_values));
+    am_detect_ila detector (.clk(clk100mhz),.probe0(peak_detect_sample_ready),.probe1(peak_detect_sample_in),.probe2(peak_values));
     //ila_0 ila (.clk(clk100mhz),.probe0(DAC_audio_in));
     ///-------------------
    

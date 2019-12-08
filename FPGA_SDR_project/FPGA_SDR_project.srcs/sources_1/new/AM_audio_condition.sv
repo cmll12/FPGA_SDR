@@ -27,7 +27,7 @@ module AM_audio_condition(
     logic [11:0] count;
     logic trigger;
     //down-sampled, amplitude adjusted audio (48kHz). Still contains DC offset and is 24 bits
-    logic [23:0] ds_audio_offset;
+    logic [33:0] ds_audio_offset;
     
     //trigger once every COUNT_48k cycles
     assign trigger = (count == COUNT_48k);
@@ -41,8 +41,7 @@ module AM_audio_condition(
             //rst count every COUNT_48k periods of 100MHz clock for 48kHz sample rate
             if (trigger) begin
                 count <= 0;
-                //take top 24 bits of audio_offset (>>11)
-                ds_audio_offset <= audio_offset[33:10];
+                ds_audio_offset <= audio_offset;
                 sample_ready <= 1;
             end else begin
                 sample_ready <= 0 ;
@@ -50,31 +49,59 @@ module AM_audio_condition(
             end //else trigger
         end //else rst
     end
+   
+    //Moving average to compute audio offset
+    //array of past peak detect outputs
+    logic [33:0] window [31:0];
+    //current index in window
+    logic [4:0] index; 
+    logic [5:0] sum_i; //index for computing sum
+    logic [38:0] sum; //sum of values in window
+    logic [33:0] avg; //average value of window
     
-    //High pass to remove DC offset ----------
-    //initialize coeffs
-    parameter N = 3;
-    logic signed [17:0] b1 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
-    logic signed [17:0] a1 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
-    
-    assign b1 [(N-1):0] = '{18'sd65536,-18'sd131072,18'sd65536}; //b coeff MATLAB: [1,-2,1]
-    assign a1 [(N-2):0] = '{18'sd65321,-18'sd130856}; //a coeff MATLAB: 
-    
-    //convert to signed value for HP filter input
-    logic signed [23:0] HP_in;
-    assign HP_in = {~ds_audio_offset[23],ds_audio_offset[22:0]};
-    
-    logic signed [33:0] HP_out;
-    
-    //triggers on ADC_sample_valid
-    AM_BP_Filter #(.N(N)) audio_HP_sec_1 (.clk_in(clk),.rst(rst),.b(b1),.a(a1),
-                .sample_ready(sample_ready),.sample(HP_in),.filt_out(HP_out),.filt_valid(audio_ready));
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            //initialize all values in window to 0
+            for (int i=0; i<32; i=i+1) begin
+                window[i] <= 0; 
+            end
+            //reset index
+            index <= 0;
+            sum_i <= 0;
+            sum <= 0;
+            audio_ready <= 0;
+        end else begin //rst else
+            if (sample_ready) begin
+                //store current down sampled offset audio 
+                window[index] <= ds_audio_offset;
+                index <= index + 1;
+                sum <= 0;
+                sum_i <= 0;
+            end else begin
+                //no sample, still computing avg
+                if (sum_i < 32) begin
+                    sum <= sum + window[sum_i];
+                    sum_i = sum_i + 1;
+                end else begin //done computing avg
+                    sum_i <= 33; //stop computing avg if done by holding sum_i at 32
+                    avg <= (sum >> 5); //divide sum by 32 (# of window values) to get average
+                end //sum_i
+                
+                //asserts audio_ready once done summing, for 1 clk cycle
+                if (sum_i == 32) audio_ready <= 1;
+                else audio_ready <=0;
+                
+            end //sample_ready else
+        end //rst
+    end //always_ff
     
     //Shift level of audio and shrink to 8 bit value
-    logic signed [33:0] HP_shifted;
-    //shifts between 26 and 12 bits (since max audio level = 7)
-    //therefore min HP_shifted must be 20 bits to hear max volume on output
-    assign HP_shifted = HP_out >>> ('d20 - 2*audio_level);
-    assign audio_out = HP_shifted;
+    //ds_audio must be 34 bits since signed and could hold value that's 33 bits unsigned (as
+    //avg approaches equilibrium)
+    logic signed [34:0] ds_audio;
+    assign ds_audio = ds_audio_offset - avg;
+    
+    //shifts between 20 and 6 bits (since max audio level = 7)
+    assign audio_out = ( ds_audio >>> ('d20 - 2*audio_level) );
     
 endmodule

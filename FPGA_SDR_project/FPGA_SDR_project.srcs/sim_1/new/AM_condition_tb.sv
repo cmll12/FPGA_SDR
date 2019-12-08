@@ -65,12 +65,12 @@ module AM_condition_tb;
         rst = 0;
         
         //set audio level to min (0)
-        sw_audio = 3'd5;
-        #100_000;
+        sw_audio = 3'b000;
+        #10_000;
         
-        //set audio level to 1. Expect to see top cutoff
-        sw_audio = 3'd5;
-        #100_000; //wait 10us
+        //set audio level to 3. Expect to see top cutoff
+        sw_audio = 3'b110;
+        #10_000; //wait 10us
         
         //scale = 1;
         

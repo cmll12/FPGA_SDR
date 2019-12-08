@@ -11,6 +11,7 @@ vmap blk_mem_gen_v8_4_3 activehdl/blk_mem_gen_v8_4_3
 
 vlog -work xil_defaultlib  -sv2k12 \
 "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
 "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93 \
