@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -47,16 +48,14 @@ read_verilog -library xil_defaultlib -sv {
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/control_trigger_height.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/debounce.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/function_pixel_logic.sv}
+  {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Modules/histogram.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Given_Modules/level_to_pulse.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Given_Modules/synchronize.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/trigger_buffer.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/xvga.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv}
 }
-read_verilog -library xil_defaultlib {
-  {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/hdl/bram_to_fft.v}
-  {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/hdl/histogram.v}
-}
+read_verilog -library xil_defaultlib {{/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/hdl/bram_to_fft.v}}
 add_files {{/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/fft_mag.bd}}
 set_property used_in_implementation false [get_files -all {{/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0_clocks.xdc}}]
 set_property used_in_implementation false [get_files -all {{/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0_ooc.xdc}}]

@@ -40,11 +40,11 @@ module control_center_frequency(
              end else begin
                 if(is_fast) begin
                    if(center_frequency_out <= 18'd249_950) begin
-                      center_frequency_out <= center_frequency_out + 'd50;
+                      center_frequency_out <= center_frequency_out + 'd150;
                    end
                 end else begin
                    if(center_frequency_out <= 18'd249_999) begin
-                      center_frequency_out <= center_frequency_out + 1;
+                      center_frequency_out <= center_frequency_out + 'd25;
                    end
                 end
                 state <= WAIT_NORMAL;
@@ -56,11 +56,11 @@ module control_center_frequency(
              end else begin
                 if(is_fast) begin
                    if(center_frequency_out >= 'd25_050) begin
-                      center_frequency_out <= center_frequency_out - 'd50;
+                      center_frequency_out <= center_frequency_out - 'd150;
                    end
                 end else begin
                    if(center_frequency_out >= 'd25_001) begin
-                      center_frequency_out <= center_frequency_out - 1;
+                      center_frequency_out <= center_frequency_out - 'd25;
                    end
                 end
                 state <= WAIT_NORMAL;

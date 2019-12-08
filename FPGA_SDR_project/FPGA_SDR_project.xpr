@@ -94,15 +94,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/hdl/histogram.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/fft_demo_all/Nexys4FFTDemo-master/src/hdl/histogram.v"/>
-          <Attr Name="ImportTime" Val="1575479705"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/ADC_Interface.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -199,6 +190,15 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../FPGA_SDR_VGA/FPGA_SDR_VGA.srcs/sources_1/imports/My_Modules/function_pixel_logic.sv"/>
           <Attr Name="ImportTime" Val="1575413551"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Modules/histogram.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Modules/histogram.sv"/>
+          <Attr Name="ImportTime" Val="1575767005"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

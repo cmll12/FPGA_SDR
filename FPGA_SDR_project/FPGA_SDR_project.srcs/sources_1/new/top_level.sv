@@ -117,7 +117,7 @@ module top_level(
     //------------------------------------------------------------------
     
     //Interface with AD9220
-    ADC_Interface AD9220 (.clk_100mhz(clk_100mhz),.rst(rst),.sample_offset(sample),
+    ADC_Interface AD9220 (.clk_100mhz(clk100mhz),.rst(rst),.sample_offset(sample),
                          .ADC_data_valid(ADC_data_valid),.ADC_clk(ADC_clk_gen),.B1(B1),.B2(B2),
                          .B3(B3),.B4(B4),.B5(B5),.B6(B6),.B7(B7),.B8(B8),.B9(B9),.B10(B10),
                          .B11(B11),.B12(B12),.out_of_range(OTR));
@@ -459,7 +459,7 @@ module top_level(
     // INSTANTIATE HISTOGRAM VIDEO
     // A simple module that outputs a VGA histogram based on
     // hcount, vcount, and the BRAM read values
-    logic [2:0] hist_pixel;
+    logic [12:0] hist_pixel;
     logic [1:0] hist_range;
     histogram fft_histogram(
         .clk(clk_65mhz),
@@ -469,31 +469,21 @@ module top_level(
         .range(sw[4:3]), // How much to zoom on the first part of the spectrum
         .vaddr(haddr),
         .vdata(hdata),
+        .freq(center_freq_div_20),
         .pixel(hist_pixel));
         
     // VGA OUTPUT
     // Histogram has two pipeline stages so we'll pipeline the hs and vs accordingly
 
-    logic [1:0] hsync_delay;
-    logic [1:0] vsync_delay;
-    logic [1:0] blank_delay;
-    logic hsync_fft, vsync_fft, blank_fft;
-    always @(posedge clk_65mhz) begin
-        {hsync_fft,hsync_delay} <= {hsync_delay,hsync};
-        {vsync_fft,vsync_delay} <= {vsync_delay,vsync};
-        {blank_fft,blank_delay} <= {blank_delay,blank};
-    end
-        
+
+    
     always_ff @(posedge clk_65mhz) begin
-      if((sw[2:0] == 3'b100) || (sw[2:0] == 3'b101)) begin
-         hs <= hsync_fft;
-         vs <= vsync_fft;
-         b <= blank_fft;
-         rgb <= {{4{hist_pixel[0]}}, {4{hist_pixel[1]}}, {4{hist_pixel[2]}}};
+      hs <= hsync;
+      vs <= vsync;
+      b <= blank;
+      if((sw[2] == 1) || (sw[2] == 1)) begin
+         rgb <= hist_pixel;
       end else begin
-         hs <= hsync;
-         vs <= vsync;
-         b <= blank;
          if (sw[0]) begin
             rgb <= {12{border}};
          end else begin

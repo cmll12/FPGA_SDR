@@ -105,7 +105,7 @@ module control_trigger_height(
                  if(reset) begin
                     state_audio <= RESET;
                  end else begin
-                    if(height_out_audio >= 3) begin
+                    if(height_out_audio >= 53) begin
                        height_out_audio <= height_out - 'd50;
                     end
                     state_audio <= WAIT_NORMAL;

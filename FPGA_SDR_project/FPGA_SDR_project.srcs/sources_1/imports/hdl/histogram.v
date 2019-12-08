@@ -17,16 +17,17 @@ module histogram(
 
     // 1 bin per pixel, with the selected range
     assign vaddr = hcount[9:0] >> range;
-
+    
     reg [9:0] hheight; // Height of histogram bar
     reg [9:0] vheight; // The height of pixel above bottom of screen
     reg blank1; // blank pipelined 1
-
+    
     always @(posedge clk) begin
         // Pipeline stage 1
         hheight <= vdata >> 4;
         vheight <= 10'd500 - vcount;
         blank1 <= blank;
+        
 
         // Pipeline stage 2
         pixel <= blank1 ? 3'b0 : (vheight < hheight) ? 3'b111 : 3'b0;
