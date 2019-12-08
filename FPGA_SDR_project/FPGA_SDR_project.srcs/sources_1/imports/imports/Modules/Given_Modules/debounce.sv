@@ -16,7 +16,7 @@ module debounce (input reset_in, clock_in, noisy_in,
         clean_out <= noisy_in; 
         count <= 0; end
      else if (noisy_in != new_input) begin new_input<=noisy_in; count <= 0; end
-     else if (count == 1000000) clean_out <= new_input;
+     else if (count == 500000) clean_out <= new_input;
      else count <= count+1;
 
 

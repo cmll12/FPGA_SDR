@@ -8,12 +8,12 @@ module control_period(
    
    parameter RESET = 3'b000;
    parameter IDLE = 3'b001;
-   parameter RIGHT_INCREMENT = 3'b100;
-   parameter RIGHT_WAIT = 3'b101;
+   parameter RIGHT_INCREMENT = 3'b011;
    parameter LEFT_INCREMENT = 3'b111;
-   parameter LEFT_WAIT = 3'b011;
+   parameter WAIT_NORMAL = 3'b101;
    
    logic [2:0] state;
+   
    
    always_ff @(posedge clk) begin
       case(state)
@@ -25,10 +25,10 @@ module control_period(
              if(reset) begin
                  state <= RESET;
              end else begin
-                if(right) begin
+                if(!right) begin
                    state <= RIGHT_INCREMENT;
                 end else begin
-                   if(left) begin
+                   if(!left) begin
                       state <= LEFT_INCREMENT;
                   end
                end
@@ -40,19 +40,8 @@ module control_period(
              end else begin
                 if(period_out <= 'd3950) begin
                    period_out <= period_out + 1;
-                   state <= RIGHT_WAIT;
-                end else begin
-                   state <= IDLE;
                 end
-             end
-          end
-          RIGHT_WAIT: begin
-             if(reset) begin
-                state <= RESET;
-             end else begin
-                if(!right) begin
-                   state <= IDLE;
-                end
+                state <= WAIT_NORMAL;
              end
           end
           LEFT_INCREMENT: begin
@@ -61,17 +50,15 @@ module control_period(
              end else begin
                 if(period_out >= 1) begin
                    period_out <= period_out - 1;
-                   state <= LEFT_WAIT;
-                end else begin
-                   state <= IDLE;
                 end
+                state <= WAIT_NORMAL;
              end
           end
-          LEFT_WAIT: begin
+          WAIT_NORMAL: begin
              if(reset) begin
                 state <= RESET;
              end else begin
-                if(!left) begin
+                if(left & right) begin
                    state <= IDLE;
                 end
              end

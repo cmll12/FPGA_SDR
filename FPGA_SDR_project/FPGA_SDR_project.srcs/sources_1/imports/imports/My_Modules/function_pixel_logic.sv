@@ -20,18 +20,32 @@ module function_pixel_logic (
    logic signed[23:0] raw_trigger_height;
    logic signed[11:0] scaled_trigger_height;
    
+   logic signed[11:0] signed_signal;
+   assign signed_signal = signal_in;
+   
+   logic signed[11:0] signed_height_adjust;
+   assign signed_height_adjust = height_adjust;
+   
    parameter OFFSET_25 = 'sd2048;
    parameter OFFSET_20 = 'sd1638;
    parameter OFFSET_15 = 'sd1228;
    
-   parameter OFFSET_AUDIO = 'sd128;
+   parameter OFFSET_AUDIO = 'sd1025;
    
    always_comb begin
-      raw_signal_height = (signal_in - OFFSET_20) * height_adjust;
-      scaled_signal_height = raw_signal_height >>> 11;
-        
-      raw_trigger_height = (trigger_height - OFFSET_20) * height_adjust;
-      scaled_trigger_height = raw_trigger_height >>> 11;
+      if(is_audio) begin
+         raw_signal_height = (signed_signal - OFFSET_AUDIO) * signed_height_adjust;
+         scaled_signal_height = raw_signal_height >>> 11;
+            
+         raw_trigger_height = (trigger_height - OFFSET_AUDIO) * signed_height_adjust;
+         scaled_trigger_height = raw_trigger_height >>> 11;
+      end else begin
+         raw_signal_height = (signal_in - OFFSET_20) * height_adjust;
+         scaled_signal_height = raw_signal_height >>> 11;
+            
+         raw_trigger_height = (trigger_height - OFFSET_20) * height_adjust;
+         scaled_trigger_height = raw_trigger_height >>> 11;
+      end
    end
    
    always_ff @(posedge vclock_in) begin

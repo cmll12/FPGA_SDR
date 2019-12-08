@@ -1,0 +1,2 @@
+fft_bram.v,verilog,xil_defaultlib,../../../../FPGA_SDR_project.srcs/sources_1/ip/fft_bram/sim/fft_bram.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

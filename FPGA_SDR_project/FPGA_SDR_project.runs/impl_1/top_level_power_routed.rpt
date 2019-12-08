@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date             : Wed Dec  4 12:50:52 2019
+| Date             : Sat Dec  7 19:20:16 2019
 | Host             : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
 | Command          : report_power -file top_level_power_routed.rpt -pb top_level_power_summary_routed.pb -rpx top_level_power_routed.rpx
 | Design           : top_level
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.304        |
+| Total On-Chip Power (W)  | 0.415        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.206        |
-| Device Static (W)        | 0.098        |
+| Dynamic (W)              | 0.316        |
+| Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.6         |
-| Junction Temperature (C) | 26.4         |
+| Max Ambient (C)          | 83.1         |
+| Junction Temperature (C) | 26.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,24 +49,26 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+----------------+-----------+----------+-----------+-----------------+
-| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
-+----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.013 |        7 |       --- |             --- |
-| Slice Logic    |     0.016 |    11838 |       --- |             --- |
-|   LUT as Logic |     0.013 |     4154 |     63400 |            6.55 |
-|   CARRY4       |     0.003 |      622 |     15850 |            3.92 |
-|   F7/F8 Muxes  |    <0.001 |      532 |     63400 |            0.84 |
-|   Register     |    <0.001 |     5897 |    126800 |            4.65 |
-|   Others       |     0.000 |       64 |       --- |             --- |
-| Signals        |     0.027 |    10052 |       --- |             --- |
-| Block RAM      |     0.003 |      1.5 |       135 |            1.11 |
-| MMCM           |     0.121 |        1 |         6 |           16.67 |
-| DSPs           |     0.024 |       32 |       240 |           13.33 |
-| I/O            |     0.002 |       42 |       210 |           20.00 |
-| Static Power   |     0.098 |          |           |                 |
-| Total          |     0.304 |          |           |                 |
-+----------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.035 |        7 |       --- |             --- |
+| Slice Logic              |     0.036 |    25256 |       --- |             --- |
+|   LUT as Logic           |     0.026 |     7284 |     63400 |           11.49 |
+|   CARRY4                 |     0.005 |     1241 |     15850 |            7.83 |
+|   Register               |     0.002 |    11963 |    126800 |            9.43 |
+|   LUT as Shift Register  |     0.002 |      936 |     19000 |            4.93 |
+|   F7/F8 Muxes            |    <0.001 |      532 |     63400 |            0.84 |
+|   Others                 |     0.000 |     1527 |       --- |             --- |
+|   LUT as Distributed RAM |     0.000 |       32 |     19000 |            0.17 |
+| Signals                  |     0.052 |    18105 |       --- |             --- |
+| Block RAM                |     0.023 |      9.5 |       135 |            7.04 |
+| MMCM                     |     0.121 |        1 |         6 |           16.67 |
+| DSPs                     |     0.046 |       51 |       240 |           21.25 |
+| I/O                      |     0.003 |       65 |       210 |           30.95 |
+| Static Power             |     0.099 |          |           |                 |
+| Total                    |     0.415 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -75,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.099 |       0.083 |      0.016 |
+| Vccint    |       1.000 |     0.207 |       0.191 |      0.016 |
 | Vccaux    |       1.800 |     0.085 |       0.067 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -84,7 +86,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.002 |       0.002 |      0.000 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -145,25 +147,41 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------+-----------+
-| Name               | Power (W) |
-+--------------------+-----------+
-| top_level          |     0.206 |
-|   AD9220           |     0.002 |
-|   AM_BP_sec_1      |     0.019 |
-|   AM_BP_sec_2      |     0.017 |
-|   AM_BP_sec_3      |     0.018 |
-|   AM_peak_detect   |     0.002 |
-|   LO               |     0.002 |
-|     LO_sine_wave   |     0.002 |
-|       U0           |     0.002 |
-|   clkdivider       |     0.122 |
-|     inst           |     0.122 |
-|   my_buffer        |     0.004 |
-|   plot             |     0.002 |
-|   sample_LO_mixer  |     0.002 |
-|   uut              |     0.012 |
-|     audio_HP_sec_1 |     0.012 |
-+--------------------+-----------+
++------------------------+-----------+
+| Name                   | Power (W) |
++------------------------+-----------+
+| top_level              |     0.316 |
+|   AD9220               |     0.002 |
+|   AM_BP_sec_1          |     0.019 |
+|   AM_BP_sec_2          |     0.018 |
+|   AM_BP_sec_3          |     0.019 |
+|   AM_peak_detect       |     0.002 |
+|   LO                   |     0.004 |
+|     LO_sine_wave       |     0.002 |
+|       U0               |     0.002 |
+|   bram1                |     0.004 |
+|     U0                 |     0.004 |
+|       inst_blk_mem_gen |     0.004 |
+|   bram2                |     0.001 |
+|     U0                 |     0.001 |
+|       inst_blk_mem_gen |     0.001 |
+|   clkdivider           |     0.122 |
+|     inst               |     0.122 |
+|   fft_mag_i            |     0.090 |
+|     cordic_0           |     0.011 |
+|       U0               |     0.011 |
+|     mult_gen_0         |     0.001 |
+|       U0               |     0.001 |
+|     mult_gen_1         |     0.001 |
+|       U0               |     0.001 |
+|     xfft_0             |     0.077 |
+|       U0               |     0.077 |
+|   my_buffer            |     0.005 |
+|   my_trigger           |     0.002 |
+|   plot                 |     0.004 |
+|   sample_LO_mixer      |     0.002 |
+|   uut                  |     0.012 |
+|     audio_HP_sec_1     |     0.012 |
++------------------------+-----------+
 
 

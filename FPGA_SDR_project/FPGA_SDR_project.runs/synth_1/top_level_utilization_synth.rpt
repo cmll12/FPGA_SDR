@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Wed Dec  4 12:48:51 2019
+| Date         : Sat Dec  7 19:17:23 2019
 | Host         : eecs-digital-49 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
 | Design       : top_level
@@ -27,18 +27,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+-----------+-------+
-|        Site Type        | Used | Fixed | Available | Util% |
-+-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 4153 |     0 |     63400 |  6.55 |
-|   LUT as Logic          | 4153 |     0 |     63400 |  6.55 |
-|   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         | 5888 |     0 |    126800 |  4.64 |
-|   Register as Flip Flop | 5888 |     0 |    126800 |  4.64 |
-|   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |  532 |     0 |     31700 |  1.68 |
-| F8 Muxes                |    0 |     0 |     15850 |  0.00 |
-+-------------------------+------+-------+-----------+-------+
++----------------------------+------+-------+-----------+-------+
+|          Site Type         | Used | Fixed | Available | Util% |
++----------------------------+------+-------+-----------+-------+
+| Slice LUTs*                | 4688 |     0 |     63400 |  7.39 |
+|   LUT as Logic             | 4685 |     0 |     63400 |  7.39 |
+|   LUT as Memory            |    3 |     0 |     19000 |  0.02 |
+|     LUT as Distributed RAM |    0 |     0 |           |       |
+|     LUT as Shift Register  |    3 |     0 |           |       |
+| Slice Registers            | 6161 |     0 |    126800 |  4.86 |
+|   Register as Flip Flop    | 6161 |     0 |    126800 |  4.86 |
+|   Register as Latch        |    0 |     0 |    126800 |  0.00 |
+| F7 Muxes                   |  532 |     0 |     31700 |  1.68 |
+| F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
++----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -56,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 18    |          Yes |         Set |            - |
-| 5870  |          Yes |       Reset |            - |
+| 25    |          Yes |         Set |            - |
+| 6136  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -80,8 +82,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |   32 |     0 |       240 | 13.33 |
-|   DSP48E1 only |   32 |       |           |       |
+| DSPs           |   34 |     0 |       240 | 14.17 |
+|   DSP48E1 only |   34 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -91,7 +93,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   42 |     0 |       210 | 20.00 |
+| Bonded IOB                  |   65 |     0 |       210 | 30.95 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -147,33 +149,42 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 5870 |        Flop & Latch |
-| LUT2     | 1928 |                 LUT |
-| LUT6     | 1409 |                 LUT |
-| LUT4     |  677 |                 LUT |
-| CARRY4   |  622 |          CarryLogic |
+| FDRE     | 6136 |        Flop & Latch |
+| LUT2     | 1968 |                 LUT |
+| LUT6     | 1700 |                 LUT |
+| CARRY4   |  685 |          CarryLogic |
 | MUXF7    |  532 |               MuxFx |
-| LUT3     |  419 |                 LUT |
-| LUT5     |  150 |                 LUT |
-| LUT1     |  138 |                 LUT |
-| DSP48E1  |   32 |    Block Arithmetic |
-| IBUF     |   25 |                  IO |
-| FDSE     |   18 |        Flop & Latch |
+| LUT4     |  490 |                 LUT |
+| LUT3     |  460 |                 LUT |
+| LUT5     |  389 |                 LUT |
+| LUT1     |   83 |                 LUT |
+| DSP48E1  |   34 |    Block Arithmetic |
+| IBUF     |   32 |                  IO |
+| FDSE     |   25 |        Flop & Latch |
+| OBUFT    |   17 |                  IO |
 | OBUF     |   16 |                  IO |
-| OBUFT    |    1 |                  IO |
+| SRL16E   |    3 |  Distributed Memory |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+------------+------+
-|  Ref Name  | Used |
-+------------+------+
-| frame_bram |    2 |
-| sine_wave  |    1 |
-| clk_wiz_0  |    1 |
-+------------+------+
++---------------------------------+------+
+|             Ref Name            | Used |
++---------------------------------+------+
+| frame_bram                      |    2 |
+| sine_wave                       |    1 |
+| histogram_bram                  |    1 |
+| fft_mag_xfft_0_0                |    1 |
+| fft_mag_mult_gen_1_0            |    1 |
+| fft_mag_mult_gen_0_0            |    1 |
+| fft_mag_cordic_0_0              |    1 |
+| fft_mag_c_addsub_0_0            |    1 |
+| fft_mag_axis_register_slice_2_0 |    1 |
+| fft_bram                        |    1 |
+| clk_wiz_0                       |    1 |
++---------------------------------+------+
 
 
 9. Instantiated Netlists

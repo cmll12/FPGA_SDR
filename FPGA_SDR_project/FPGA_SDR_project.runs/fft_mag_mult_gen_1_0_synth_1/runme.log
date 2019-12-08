@@ -1,0 +1,13 @@
+
+*** Running vivado
+    with args -log fft_mag_mult_gen_1_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fft_mag_mult_gen_1_0.tcl
+
+
+****** Vivado v2019.1.2 (64-bit)
+  **** SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+  **** IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source fft_mag_mult_gen_1_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP fft_mag_mult_gen_1_0, cache-ID = e1eed2cae95581b1.
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  4 13:46:17 2019...
