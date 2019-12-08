@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575772101">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575822197">
+  <File Type="VDS-TIMING-PB" Name="top_level_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_level_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_level.dcp"/>
   <File Type="RDS-UTIL-PB" Name="top_level_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="top_level_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_level_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="top_level.vds"/>
+  <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
   <File Type="PA-TCL" Name="top_level.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -46,6 +49,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/DAC_stuff.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FM_demod_stage_1.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -177,12 +187,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../sine_wave_12_bit.coe">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/hdl/oversampler.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -190,6 +194,12 @@
         <Attr Name="ImportTime" Val="1572997478"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../sine_wave_12_bit.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -225,13 +235,13 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_mult_gen_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_mult_gen_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fft_mag_axis_register_slice_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_cordic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_c_addsub_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fft_bram"/>
+  <BlockFileSet Type="BlockSrcs" Name="fft_mag_axis_register_slice_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="histogram_bram"/>
+  <BlockFileSet Type="BlockSrcs" Name="fft_bram"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_xfft_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="frame_bram"/>
   <BlockFileSet Type="BlockSrcs" Name="sine_wave"/>
 </GenRun>

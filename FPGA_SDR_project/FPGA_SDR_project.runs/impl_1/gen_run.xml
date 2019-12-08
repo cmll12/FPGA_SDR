@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575772101">
-  <File Type="BITSTR-NKY" Name="top_level.nky"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575822198">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_level_methodology_drc_routed.pb"/>
-  <File Type="BITSTR-SYSDEF" Name="top_level.sysdef"/>
   <File Type="BG-DRC" Name="top_level.drc"/>
-  <File Type="ROUTE-DRC-RPX" Name="top_level_drc_routed.rpx"/>
-  <File Type="BITSTR-LTX" Name="top_level.ltx"/>
   <File Type="BG-BGN" Name="top_level.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_level_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="top_level.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="top_level.ltx"/>
   <File Type="BITSTR-MMI" Name="top_level.mmi"/>
   <File Type="BITSTR-BMM" Name="top_level_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="top_level.nky"/>
   <File Type="BITSTR-RBT" Name="top_level.rbt"/>
   <File Type="BITSTR-MSK" Name="top_level.msk"/>
   <File Type="BG-BIN" Name="top_level.bin"/>
   <File Type="BG-BIT" Name="top_level.bit"/>
-  <File Type="ROUTE-CLK" Name="top_level_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_level_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_level_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_level_bus_skew_postroute_physopted.rpt"/>
   <File Type="RDI-RDI" Name="top_level.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_level_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_level_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_level_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_level_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_level_postroute_physopt.dcp"/>
   <File Type="ROUTE-BUS-SKEW" Name="top_level_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="top_level_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="top_level_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-TIMING-RPX" Name="top_level_timing_summary_routed.rpx"/>
   <File Type="ROUTE-TIMING-PB" Name="top_level_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="top_level_timing_summary_routed.rpt"/>
@@ -28,24 +33,38 @@
   <File Type="ROUTE-PWR-RPX" Name="top_level_power_routed.rpx"/>
   <File Type="ROUTE-PWR-SUM" Name="top_level_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR" Name="top_level_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_level_methodology_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_level_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_level_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="top_level_drc_routed.rpx"/>
   <File Type="ROUTE-DRC-PB" Name="top_level_drc_routed.pb"/>
   <File Type="ROUTE-DRC" Name="top_level_drc_routed.rpt"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="top_level_routed_bb.dcp"/>
   <File Type="ROUTE-DCP" Name="top_level_routed.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="top_level_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="top_level_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="top_level_drc_physopted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="top_level_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="top_level_timing_summary_postplace_pwropted.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="top_level_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="top_level_timing_summary_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="top_level_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="top_level_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-CTRL" Name="top_level_control_sets_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="top_level_utilization_placed.pb"/>
   <File Type="PLACE-UTIL" Name="top_level_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="top_level_clock_utilization_placed.rpt"/>
   <File Type="PLACE-IO" Name="top_level_io_placed.rpt"/>
   <File Type="PLACE-DCP" Name="top_level_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="top_level_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="top_level_drc_pwropted.rpt"/>
   <File Type="PWROPT-DCP" Name="top_level_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="top_level_timing_summary_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="top_level.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="top_level_methodology_drc_opted.rpt"/>
   <File Type="OPT-DRC" Name="top_level_drc_opted.rpt"/>
   <File Type="OPT-DCP" Name="top_level_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="top_level_timing_summary_init.rpt"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="top_level_bus_skew_routed.rpx"/>
   <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="top_level_bus_skew_routed.pb"/>
@@ -90,6 +109,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/DAC_stuff.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/FM_demod_stage_1.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -221,12 +247,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../sine_wave_12_bit.coe">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/hdl/oversampler.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -234,6 +254,12 @@
         <Attr Name="ImportTime" Val="1572997478"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../sine_wave_12_bit.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -277,13 +303,13 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_mult_gen_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_mult_gen_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fft_mag_axis_register_slice_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_cordic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_c_addsub_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fft_bram"/>
+  <BlockFileSet Type="BlockSrcs" Name="fft_mag_axis_register_slice_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="histogram_bram"/>
+  <BlockFileSet Type="BlockSrcs" Name="fft_bram"/>
   <BlockFileSet Type="BlockSrcs" Name="fft_mag_xfft_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="frame_bram"/>
   <BlockFileSet Type="BlockSrcs" Name="sine_wave"/>
 </GenRun>

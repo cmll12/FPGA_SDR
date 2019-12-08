@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="am_detect_ila_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1574872528">
+<GenRun Id="am_detect_ila_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575821427">
+  <File Type="VDS-TIMING-PB" Name="am_detect_ila_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="am_detect_ila_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="am_detect_ila.dcp"/>
-  <File Type="PA-TCL" Name="am_detect_ila.tcl"/>
-  <File Type="REPORTS-TCL" Name="am_detect_ila_reports.tcl"/>
-  <File Type="RDS-RDS" Name="am_detect_ila.vds"/>
-  <File Type="RDS-UTIL" Name="am_detect_ila_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="am_detect_ila_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="am_detect_ila_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="am_detect_ila_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="am_detect_ila.vds"/>
+  <File Type="REPORTS-TCL" Name="am_detect_ila_reports.tcl"/>
+  <File Type="PA-TCL" Name="am_detect_ila.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/am_detect_ila">
-    <File Path="$PSRCDIR/sources_1/ip/am_detect_ila/am_detect_ila.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
+    <File Path="$PSRCDIR/sources_1/ip/am_detect_ila/am_detect_ila.xci"/>
     <Config>
       <Option Name="TopModule" Val="am_detect_ila"/>
       <Option Name="UseBlackboxStub" Val="1"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/am_detect_ila">
-    <File Path="$PSRCDIR/sources_1/ip/am_detect_ila/am_detect_ila.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
+    <File Path="$PSRCDIR/sources_1/ip/am_detect_ila/am_detect_ila.xci"/>
     <Config>
       <Option Name="TopModule" Val="am_detect_ila"/>
       <Option Name="UseBlackboxStub" Val="1"/>

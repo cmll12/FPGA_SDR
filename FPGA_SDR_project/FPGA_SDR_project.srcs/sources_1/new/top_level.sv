@@ -201,11 +201,11 @@ module top_level(
     assign b3 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
     assign a3 [(N-2):0] = '{18'sd65227,-18'sd125456}; //a coeff MATLAB: 
     
-    logic signed [33:0] filt_stage_1_out;
+    logic signed [33:0] AM_stage_1_out;
     logic AM_sample_ready;
     
     AM_BP_Filter #(.N(N)) AM_BP_sec_3 (.clk_in(clk100mhz),.rst(rst),.b(b3),.a(a3),
-                .sample_ready(AM_sample_ready),.sample(filt_sec_3_in),.filt_out(AM_stage_1_out),.filt_valid(sec_3_ready));
+                .sample_ready(sec_2_ready),.sample(filt_sec_3_in),.filt_out(AM_stage_1_out),.filt_valid(AM_sample_ready));
    
     //end AM demod stage 1 ------------------------------------------
     
@@ -231,10 +231,8 @@ module top_level(
     //Audio Condition
     //output to DAC module
     logic signed [7:0] DAC_audio_in;
-    //triggers for 1x 100MHz clock cycle when new audio sample ready
-    logic audio_ready;
     AM_audio_condition condition_AM_for_DAC (.clk(clk100mhz),.rst(rst),.audio_offset(peak_values),.audio_level(sw_audio),
-                            .audio_out(DAC_audio_in),.audio_ready(audio_ready));
+                            .audio_out(DAC_audio_in));
     
     //end demod stage 2 ------------------------------------------
     
@@ -258,7 +256,7 @@ module top_level(
     // am_bp_ila am_bp_debug (.clk(clk100mhz),.probe0(ADC_data_valid),.probe1(IF_out),.probe2(peak_values));
     
     //AM peak detect ila
-    am_detect_ila detector (.clk(clk100mhz),.probe0(peak_detect_sample_ready),.probe1(peak_detect_sample_in),.probe2(peak_values));
+    //ila_1 mod_test (.clk(clk100mhz),.probe0(peak_detect_sample_ready),.probe1(peak_detect_sample_in),.probe2(peak_values));
     //ila_0 ila (.clk(clk100mhz),.probe0(DAC_audio_in));
     ///-------------------
    

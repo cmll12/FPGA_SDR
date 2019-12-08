@@ -16,9 +16,7 @@ module AM_audio_condition(
         input [2:0] audio_level,
         
         //8 bit audio signal, centered at 0
-        output signed [7:0] audio_out,
-        //triggers when new 8 bit audio signal ready
-        output logic audio_ready
+        output logic signed [7:0] audio_out
     );
     
     //downsample to 48 khz  -------
@@ -69,7 +67,6 @@ module AM_audio_condition(
             index <= 0;
             sum_i <= 0;
             sum <= 0;
-            audio_ready <= 0;
         end else begin //rst else
             if (sample_ready) begin
                 //store current down sampled offset audio 
@@ -82,26 +79,17 @@ module AM_audio_condition(
                 if (sum_i < 32) begin
                     sum <= sum + window[sum_i];
                     sum_i = sum_i + 1;
-                end else begin //done computing avg
-                    sum_i <= 33; //stop computing avg if done by holding sum_i at 32
+                end if (sum_i == 32) begin //done computing avg
+                    sum_i <= 33; //causes system to stay in next else condition until ready to compute sum again
                     avg <= (sum >> 5); //divide sum by 32 (# of window values) to get average
-                end //sum_i
-                
-                //asserts audio_ready once done summing, for 1 clk cycle
-                if (sum_i == 32) audio_ready <= 1;
-                else audio_ready <=0;
-                
+                end else begin
+                     //Shift level of audio and shrink to 8 bit value
+                     //uses ds_audio_offset grabbed when sample_ready = 1
+                     //shifts between 20 and 6 bits (since max audio level = 7) 
+                    audio_out <= ( (ds_audio_offset - avg) >>> ('d20 - 2*audio_level) );
+                end //sum_i < 32
             end //sample_ready else
         end //rst
     end //always_ff
-    
-    //Shift level of audio and shrink to 8 bit value
-    //ds_audio must be 34 bits since signed and could hold value that's 33 bits unsigned (as
-    //avg approaches equilibrium)
-    logic signed [34:0] ds_audio;
-    assign ds_audio = ds_audio_offset - avg;
-    
-    //shifts between 20 and 6 bits (since max audio level = 7)
-    assign audio_out = ( ds_audio >>> ('d20 - 2*audio_level) );
     
 endmodule
