@@ -3,6 +3,7 @@ module control_period(
    input right,
    input left,
    input reset,
+   input is_fast,
    output logic [11:0] period_out
    );
    
@@ -38,8 +39,14 @@ module control_period(
              if(reset) begin
                 state <= RESET;
              end else begin
-                if(period_out <= 'd3950) begin
-                   period_out <= period_out + 1;
+                if(!is_fast) begin
+                   if(period_out <= 'd3950) begin
+                      period_out <= period_out + 1;
+                   end
+                end else begin
+                   if(period_out <= 'd3930) begin
+                      period_out <= period_out + 'd20;
+                   end
                 end
                 state <= WAIT_NORMAL;
              end
@@ -48,8 +55,14 @@ module control_period(
              if(reset) begin
                 state <= RESET;
              end else begin
-                if(period_out >= 1) begin
-                   period_out <= period_out - 1;
+                if(!is_fast) begin
+                   if(period_out >= 1) begin
+                      period_out <= period_out - 1;
+                   end
+                end else begin
+                   if(period_out >= 20) begin
+                      period_out <= period_out - 'd20;
+                   end
                 end
                 state <= WAIT_NORMAL;
              end

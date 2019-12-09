@@ -1,0 +1,314 @@
+/*
+
+Xilinx Vivado v2019.1.2 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2615518 on Fri Aug  9 15:53:29 MDT 2019
+IP Build: 2614745 on Fri Aug  9 20:55:02 MDT 2019
+
+Process ID (PID): 31983
+License: Customer
+
+Current time: 	Sun Dec 08 20:18:22 EST 2019
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Ubuntu
+OS Version: 4.2.0-42-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :1
+Screen size: 1600x900
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 598 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4
+Java executable location: 	/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	colinpc
+User home directory: /afs/athena.mit.edu/user/c/o/colinpc
+User working directory: /afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /var/local/xilinx-local/Vivado
+HDI_APPROOT: /var/local/xilinx-local/Vivado/2019.1
+RDI_DATADIR: /var/local/xilinx-local/Vivado/2019.1/data
+RDI_BINDIR: /var/local/xilinx-local/Vivado/2019.1/bin
+
+Vivado preferences file location: /afs/athena.mit.edu/user/c/o/colinpc/.Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: /afs/athena.mit.edu/user/c/o/colinpc/.Xilinx/Vivado/2019.1/
+Vivado layouts directory: /afs/athena.mit.edu/user/c/o/colinpc/.Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	/var/local/xilinx-local/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/vivado.log
+Vivado journal file location: 	/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-31983-eecs-digital-49
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /var/local/xilinx-local/Vivado/2019.1/ids_lite/ISE
+XILINXD_LICENSE_FILE: 27005@eecslicsrv
+XILINX_DSP: /var/local/xilinx-local/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: /var/local/xilinx-local/Vivado/2019.1
+XILINX_SDK: /var/local/xilinx-local/SDK/2019.1
+XILINX_VIVADO: /var/local/xilinx-local/Vivado/2019.1
+XILINX_VIVADO_HLS: /var/local/xilinx-local/Vivado/2019.1
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 5,068 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// Tcl Message: Warning: Tried to connect to session manager, None of the authentication protocols specified are supported 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,068 MB. GUI used memory: 44 MB. Current time: 12/8/19, 8:18:24 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr", 0); // q (O, cl)
+// [GUI Memory]: 60 MB (+60125kb) [00:02:07]
+// [Engine Memory]: 5,070 MB (+5164427kb) [00:02:07]
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: /afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr. Version: Vivado v2019.1.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,146 MB. GUI used memory: 45 MB. Current time: 12/8/19, 8:20:14 PM EST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 101 MB (+39632kb) [00:02:19]
+// [GUI Memory]: 108 MB (+2815kb) [00:02:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  3745 ms.
+// Tcl Message: open_project {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2019.1/data/ip'. 
+// [GUI Memory]: 119 MB (+5833kb) [00:02:22]
+// WARNING: HEventQueue.dispatchEvent() is taking  1650 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 6607.746 ; gain = 211.117 ; free physical = 3681 ; free virtual = 13158 
+// Project name: FPGA_SDR_project; location: /afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project; part: xc7a100tcsg324-1
+// [GUI Memory]: 128 MB (+3094kb) [00:02:24]
+// Elapsed time: 17 seconds
+dismissDialog("Open Project"); // by (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,320 MB. GUI used memory: 67 MB. Current time: 12/8/19, 8:20:29 PM EST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// by (cl):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// [Engine Memory]: 5,334 MB (+11445kb) [00:02:29]
+// Tcl Message: open_hw 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+dismissDialog("Open Hardware Manager"); // by (cl)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Open Target]", 22, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HW_TARGET
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.1.2   **** Build date : Aug  9 2019 at 18:23:23     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   
+// by (cl):  Auto Connect : addNotify
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  1531 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292646112A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/impl_1/top_level.ltx} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/impl_1/top_level.ltx} [get_hw_devices xc7a100t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 6,324 MB (+758454kb) [00:02:33]
+// WARNING: HEventQueue.dispatchEvent() is taking  1522 ms.
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s). 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: DEBUG_PROBE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7a100t_0] -filter {CELL_NAME=~"FM_stage_1/ila_fm_stage_1"}]] 
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_TITLE
+dismissDialog("Auto Connect"); // by (cl)
+// [GUI Memory]: 138 MB (+3753kb) [00:02:37]
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "hw_ila_1", 0); // k (j, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager, Program Device]", 23, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectMenuItem((HResource) null, "xc7a100t_0"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+setText(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_DEBUG_PROBES_FILE, (String) null); // am (al, bC)
+setText(PAResourceOtoP.ProgramFpgaDialog_SPECIFY_DEBUG_PROBES_FILE, (String) null); // am (al, bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cl)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/impl_1/top_level.bit} [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 6,428 MB. GUI used memory: 81 MB. Current time: 12/8/19, 8:20:54 PM EST
+// Tcl Message: program_hw_devices [get_hw_devices xc7a100t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_ILA_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: WAVEFORM_GLASSPANE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_GLASSPANE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 6,428 MB. GUI used memory: 83 MB. Current time: 12/8/19, 8:20:56 PM EST
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_GLASSPANE
+// TclEventType: HW_ILA_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-2302] Device xc7a100t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s). 
+// 'I' command handler elapsed time: 5 seconds
+dismissDialog("Program Device"); // by (cl)
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Elapsed time: 136 seconds
+closeFrame(RDIResource.WorkspaceDockingHolder_DOCKABLE_FRAME, "Waveform - hw_ila_1"); // Z (ar, cl)
+// Tcl Message: save_wave_config {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg} 
+// A (cl): Delete Dashboard: addNotify
+// PAResourceOtoP.PAViews_DASHBOARD: hw_ila_1: close view
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+closeView(PAResourceOtoP.PAViews_DASHBOARD, "hw_ila_1"); // i
+dismissDialog("Delete Dashboard"); // A (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 6,422 MB. GUI used memory: 75 MB. Current time: 12/8/19, 8:23:19 PM EST
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cl)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// A (cl): Confirm Close: addNotify

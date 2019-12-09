@@ -77,27 +77,27 @@ module top_level(
     wire encoder3_dt;
     wire encoder3_sw;
     synchronize encoder3_clk_synchronize(
-        .clk(clk100mhz),
+        .clk(clk_65mhz),
         .in(jc[6]),
         .out(encoder3_clk));
         
     synchronize encoder3_dt_synchronize(
-        .clk(clk100mhz),
+        .clk(clk_65mhz),
         .in(jc[7]),
         .out(encoder3_dt));
         
     synchronize encoder3_sw_synchronize(
-        .clk(clk100mhz),
-        .in(jd[0]),
+        .clk(clk_65mhz),
+        .in(jd[2]),
         .out(encoder3_sw));
     
     wire encoder3_clk_db;
     wire encoder3_dt_db;
     wire encoder3_sw_db;
     
-    debounce encoder3_clk_debounce(.reset_in(rst),.clock_in(clk100mhz),.noisy_in(encoder3_clk),.clean_out(encoder3_clk_db));
-    debounce encoder3_dt_debounce(.reset_in(rst),.clock_in(clk100mhz),.noisy_in(encoder3_dt),.clean_out(encoder3_dt_db));
-    debounce encoder3_sw_debounce(.reset_in(rst),.clock_in(clk100mhz),.noisy_in(encoder3_sw),.clean_out(encoder3_sw_db));
+    debounce encoder3_clk_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder3_clk),.clean_out(encoder3_clk_db));
+    debounce encoder3_dt_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder3_dt),.clean_out(encoder3_dt_db));
+    debounce encoder3_sw_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder3_sw),.clean_out(encoder3_sw_db));
     
     reg is_fast = 0;
     logic past_fast_value;
@@ -108,17 +108,51 @@ module top_level(
        past_fast_value <= encoder3_sw_db;
     end
     
-    control_center_frequency adjust_frequency(.clk(clk100mhz), .right(encoder3_clk_db), .left(encoder3_dt_db), .reset(rst), .center_frequency_out(center_freq_div_20), .is_fast(is_fast));
+    control_center_frequency adjust_frequency(.clk(clk_65mhz), .right(encoder3_clk_db), .left(encoder3_dt_db), .reset(rst), .center_frequency_out(center_freq_div_20), .is_fast(is_fast));
     
+    wire encoder5_clk;
+    wire encoder5_sw;
+    wire encoder5_dt;
+        
+    synchronize encoder5_clk_synchronize(
+        .clk(clk_65mhz),
+        .in(jd[4]),
+        .out(encoder5_clk));
+        
+    synchronize encoder5_sw_synchronize(
+        .clk(clk_65mhz),
+        .in(jd[0]),
+        .out(encoder5_sw));
+    
+    synchronize encoder5_dt_synchronize(
+        .clk(clk_65mhz),
+        .in(jd[5]),
+        .out(encoder5_dt));
+    
+    wire encoder5_clk_db;
+    wire encoder5_sw_db;
+    wire encoder5_dt_db;
+    
+    debounce encoder5_clk_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder5_clk),.clean_out(encoder5_clk_db));
+    debounce encoder5_sw_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder5_sw),.clean_out(encoder5_sw_db));
+    debounce encoder5_dt_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder5_dt),.clean_out(encoder5_dt_db));
+    
+    reg modulation_select_sw = 0;
+    logic past_modulation_value;
+    always_ff @(posedge clk_65mhz) begin
+       if(!encoder5_sw_db & past_modulation_value ) begin
+          modulation_select_sw <= modulation_select_sw + 1;
+       end
+       past_modulation_value <= encoder5_sw_db;
+    end
     
     //for AM condition
     //3 switches determine audio level
-    logic [3:0] sw_audio = {sw[13],sw[12],sw[11],sw[10]};
+    logic [4:0] sw_audio;
+    
+    control_volume(.clk(clk_65mhz), .up(encoder5_clk_db), .down(encoder5_dt_db), .reset(rst), .volume_out(sw_audio));
     //------------------------------------------------------------------
     
-    //for modulation select use switch 5
-    logic modulation_select_sw = sw[5];
-    //------------------------------------------------------------------
     
     //Interface with AD9220
     ADC_Interface AD9220 (.clk_100mhz(clk100mhz),.rst(rst),.sample_offset(sample),
@@ -228,6 +262,10 @@ module top_level(
     logic [33:0] peak_values;
     Peak_detect_hold AM_peak_detect (.clk(clk100mhz),.rst(rst),.sample_ready(peak_detect_sample_ready),.sample_in(peak_detect_sample_in),.peak_value(peak_values));
        
+    //ila --------------------
+    fm_stage_1_ila ila_fm_stage_1 (.clk(clk100mhz),.probe0(FM_stage_1_out),.probe1(peak_values));
+    //-----------------------  
+     
     //Audio Condition
     //output to DAC module
     logic signed [7:0] DAC_audio_in;
@@ -345,9 +383,8 @@ module top_level(
     logic [11:0] trigger_adjust;
     control_trigger_height my_trigger(.clk(clk_65mhz), .up(encoder2_clk_db), .down(encoder2_dt_db), .reset(rst), .sw(trigger_wanted), .is_audio(is_audio), .height_out(trigger_adjust));
     
-    
     logic [11:0] period;
-    control_period my_period(.clk(clk_65mhz), .right(encoder1_clk_db), .left(encoder1_dt_db), .reset(rst), .period_out(period));
+    control_period my_period(.clk(clk_65mhz), .is_fast(is_fast), .right(encoder1_clk_db), .left(encoder1_dt_db), .reset(rst), .period_out(period));
     
     
     logic [11:0] signal_to_display;
@@ -406,8 +443,15 @@ module top_level(
           fhead <= fhead + 1;
        end
     end
-    assign fsample = {sample, 2'b0}; // Pad the oversample with zeros to pretend it's 16 bits
     assign fwe = ADC_data_valid; // Write only when we finish an oversample (every 104*16 clock cycles)
+    
+    always_comb begin
+       if(sw[1]) begin
+          fsample = IF_out[23:10];
+       end else begin
+          fsample = {sample, 2'b0};
+       end
+    end
     
     // SAMPLE FRAME BRAM READ PORT SETUP
     // For this demo, we just need to display the FFT on 60Hz video, so let's only send the frame of samples
@@ -493,6 +537,7 @@ module top_level(
     logic [1:0] hist_range;
     histogram fft_histogram(
         .clk(clk_65mhz),
+        .rst(rst),
         .hcount(hcount),
         .vcount(vcount),
         .blank(blank),
@@ -500,18 +545,37 @@ module top_level(
         .vaddr(haddr),
         .vdata(hdata),
         .freq(center_freq_div_20),
+        .is_if(sw[1]),
         .pixel(hist_pixel));
         
     // VGA OUTPUT
     // Histogram has two pipeline stages so we'll pipeline the hs and vs accordingly
 
-
+    wire encoder4_sw;
+        
+    synchronize encoder4_sw_synchronize(
+        .clk(clk_65mhz),
+        .in(jd[3]),
+        .out(encoder4_sw));
+    
+    wire encoder4_sw_db;
+    
+    debounce encoder4_sw_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder4_sw),.clean_out(encoder4_sw_db));
+    
+    reg is_fft = 0;
+    logic past_fft_value;
+    always_ff @(posedge clk_65mhz) begin
+       if(!encoder4_sw_db & past_fft_value ) begin
+          is_fft <= is_fft + 1;
+       end
+       past_fft_value <= encoder4_sw_db;
+    end
     
     always_ff @(posedge clk_65mhz) begin
       hs <= hsync;
       vs <= vsync;
       b <= blank;
-      if((sw[2] == 1) || (sw[2] == 1)) begin
+      if(is_fft) begin
          rgb <= hist_pixel;
       end else begin
          if (sw[0]) begin

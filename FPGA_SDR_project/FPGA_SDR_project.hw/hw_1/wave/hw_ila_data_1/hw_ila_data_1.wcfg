@@ -3,108 +3,45 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="248564fs"></ZoomStartTime>
-      <ZoomEndTime time="945395fs"></ZoomEndTime>
-      <Cursor1Time time="750000fs"></Cursor1Time>
+      <ZoomStartTime time="148807fs"></ZoomStartTime>
+      <ZoomEndTime time="320614fs"></ZoomEndTime>
+      <Cursor1Time time="232000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="227"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <NameColumnWidth column_width="170"></NameColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="2" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="array" fp_name="FM_stage_1/FM_derivative">
+   <wvobject type="array" fp_name="FM_stage_1_out">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/FM_derivative[33:0]</obj_property>
-      <obj_property name="ObjectShortName">FM_derivative[33:0]</obj_property>
+      <obj_property name="ElementShortName">FM_stage_1_out[33:0]</obj_property>
+      <obj_property name="ObjectShortName">FM_stage_1_out[33:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
-      <obj_property name="AnalogYRangeMin">-30000.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">30000.000000</obj_property>
-      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
-      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-      <obj_property name="AnalogHorizLine">0.000000</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_1">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_1[23:0]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_1[23:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">200</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
       <obj_property name="AnalogYRangeMin">0.000000</obj_property>
       <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_3">
+   <wvobject type="array" fp_name="peak_values">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_3[23:23]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_3[23:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">peak_values[33:0]</obj_property>
+      <obj_property name="ObjectShortName">peak_values[33:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_4">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_4[23:23]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_4[23:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_5">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_5[23:23]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_5[23:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_6">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_6[23:23]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_6[23:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_7">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_7[23:23]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_7[23:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_8">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_8[23:23]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_8[23:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="FM_stage_1/IF_in_9">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">FM_stage_1/IF_in_9[23:23]</obj_property>
-      <obj_property name="ObjectShortName">IF_in_9[23:23]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
    </wvobject>
 </wave_config>

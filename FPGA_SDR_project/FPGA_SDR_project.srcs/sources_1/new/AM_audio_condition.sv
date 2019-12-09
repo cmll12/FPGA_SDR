@@ -13,7 +13,7 @@ module AM_audio_condition(
         //signal from peak detect, 10 MSPS
         input [33:0] audio_offset,
         //audio level, set by 3 switches
-        input [3:0] audio_level,
+        input [4:0] audio_level,
         
         //8 bit audio signal, centered at 0
         output logic signed [7:0] audio_out
@@ -86,7 +86,7 @@ module AM_audio_condition(
                      //Shift level of audio and shrink to 8 bit value
                      //uses ds_audio_offset grabbed when sample_ready = 1
                      //shifts between 20 and 6 bits (since max audio level = 15) 
-                    audio_out <= ( (ds_audio_offset - avg) >>> ('d30 - 2*audio_level) );
+                    audio_out <= ( (ds_audio_offset - avg) >>> ('d26 - audio_level) );
                 end //sum_i < 32
             end //sample_ready else
         end //rst

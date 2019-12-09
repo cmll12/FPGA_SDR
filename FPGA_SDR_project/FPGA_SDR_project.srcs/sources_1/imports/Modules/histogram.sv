@@ -6,6 +6,7 @@
 
 module histogram(
     input logic clk,
+    input logic rst,
     input logic [10:0] hcount,
     input logic [9:0] vcount,
     input logic blank,
@@ -13,6 +14,7 @@ module histogram(
     output logic [9:0] vaddr,
     input logic [15:0] vdata,
     input logic [18:0] freq,
+    input logic is_if,
     output logic [12:0] pixel
     );
 
@@ -41,18 +43,32 @@ module histogram(
             pixel_marker = 0;
          end
       end else begin
-         pixel_marker = 0;
+         if(is_if) begin
+            if(hcount == 'd186 || hcount == ('d187) || hcount == ('d185)) begin
+               if((vcount < 'd520) && (vcount > 'd505)) begin
+                  pixel_marker = 12'h0fb;
+               end else begin
+                  pixel_marker = 0;
+               end
+            end else begin
+               pixel_marker = 0;
+            end
+         end else begin
+            pixel_marker = 0;
+         end
       end
     end
     
     always @(posedge clk) begin
         pixel <= pixel_histogram + pixel_marker;
-        
-        if(((freq - current_freq) >= 'd122) && ((freq - current_freq) < 'd100_000)) begin
+        if(rst) begin
+           current_freq <= 18'd30_000;
+           current_position <= 10'd246;
+        end else if(((freq - current_freq) >= 'd122) && ((freq - current_freq) < 'd100_000)) begin
            current_position <= current_position + 1;
            current_freq = current_freq + 'd122;
         end else begin
-           if(((current_freq - freq) >= 'd122)) begin
+           if(((current_freq - freq) >= 'd122) && ((current_freq - freq) < 'd100_000)) begin
               current_position <= current_position - 1;
               current_freq = current_freq - 'd122;
            end

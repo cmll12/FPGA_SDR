@@ -1,0 +1,10 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(+0xb6aadb) [0x7fa583406adb]
+/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(JVM_handle_linux_signal+0xbb) [0x7fa58340be1b]
+/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/lib//server/libjvm.so(+0xb647b8) [0x7fa5834007b8]
+/lib/x86_64-linux-gnu/libc.so.6(+0x36cb0) [0x7fa5cb1bfcb0]
+/var/local/xilinx-local/Vivado/2019.1/lib/lnx64.o/librdi_labtools.so(Java_ui_data_labtools_lthwdatai_HWIla_1isAdvancedTrigger+0x15) [0x7fa58af5afb5]
+[0x7fa56b739db5]

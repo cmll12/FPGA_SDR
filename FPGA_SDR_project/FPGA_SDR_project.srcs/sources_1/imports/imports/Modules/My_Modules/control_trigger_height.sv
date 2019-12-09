@@ -75,7 +75,7 @@ module control_trigger_height(
       end else begin
           case(state_audio)
               RESET: begin
-                 height_out_audio <= 'd1025;
+                 height_out_audio <= 'd53;
                  state_audio <= IDLE;
               end
               IDLE: begin

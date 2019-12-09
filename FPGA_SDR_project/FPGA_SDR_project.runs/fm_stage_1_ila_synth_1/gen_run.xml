@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="fm_stage_1_ila_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575837710">
   <File Type="PA-TCL" Name="fm_stage_1_ila.tcl"/>
+  <File Type="RDS-DCP" Name="fm_stage_1_ila.dcp"/>
   <File Type="REPORTS-TCL" Name="fm_stage_1_ila_reports.tcl"/>
   <File Type="RDS-RDS" Name="fm_stage_1_ila.vds"/>
-  <File Type="RDS-DCP" Name="fm_stage_1_ila.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fm_stage_1_ila">
     <File Path="$PSRCDIR/sources_1/ip/fm_stage_1_ila/fm_stage_1_ila.xci">
       <FileInfo>
