@@ -26,14 +26,15 @@ module FM_demod_stage_1(
     logic signed [17:0] a2 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     logic signed [17:0] a3 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     logic signed [17:0] a4 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
-        
+    
+    //select NFM or WFM
     always_comb begin
         if (FM_BP_width) begin
             //FM (Wideband) Bandpass Filter
-            a1 [(N-2):0] = '{18'sd64789,-18'sd124533}; //a coeff MATLAB: 
-            a2 [(N-2):0] = '{18'sd64853,-18'sd125569}; //a coeff MATLAB: 
-            a3 [(N-2):0] = '{18'sd63792,-18'sd123882}; //a coeff MATLAB: 
-            a4 [(N-2):0] = '{18'sd63855,-18'sd124342}; //a coeff MATLAB: 
+            a1 [(N-2):0] = '{18'sd61600,-18'sd119464}; //a coeff MATLAB: 
+            a2 [(N-2):0] = '{18'sd62943,-18'sd125245}; //a coeff MATLAB: 
+            a3 [(N-2):0] = '{18'sd57240,-18'sd117002}; //a coeff MATLAB: 
+            a4 [(N-2):0] = '{18'sd58551,-18'sd120066}; //a coeff MATLAB: 
         end else begin
             //FM (narrowband) bandpass filter
             a1 [(N-2):0] = '{18'sd64789,-18'sd124533}; //a coeff MATLAB: 
@@ -51,8 +52,7 @@ module FM_demod_stage_1(
     
     logic signed [33:0] filt_sec_1_out;
     logic sec_1_ready;
-    
-    //triggers on ADC_sample_valid
+
     AM_BP_Filter #(.N(N)) FM_BP_sec_1 (.clk_in(clk),.rst(rst),.b(b1),.a(a1),
                 .sample_ready(IF_data_valid),.sample(IF_in),.filt_out(filt_sec_1_out),.filt_valid(sec_1_ready));
             
@@ -69,7 +69,6 @@ module FM_demod_stage_1(
     logic signed [33:0] filt_sec_2_out;
     logic sec_2_ready;
     
-    //triggers on ADC_sample_valid
     AM_BP_Filter #(.N(N)) FM_BP_sec_2 (.clk_in(clk),.rst(rst),.b(b2),.a(a2),
                 .sample_ready(sec_1_ready),.sample(filt_sec_2_in),.filt_out(filt_sec_2_out),.filt_valid(sec_2_ready));
     
@@ -86,7 +85,6 @@ module FM_demod_stage_1(
     logic signed [33:0] filt_sec_3_out;
     logic sec_3_ready;
     
-    //triggers on ADC_sample_valid
     AM_BP_Filter #(.N(N)) FM_BP_sec_3 (.clk_in(clk),.rst(rst),.b(b3),.a(a3),
                 .sample_ready(sec_2_ready),.sample(filt_sec_3_in),.filt_out(filt_sec_3_out),.filt_valid(sec_3_ready));
     
@@ -117,7 +115,7 @@ module FM_demod_stage_1(
     logic signed [33:0] past_FM_derivative;
     logic signed [33:0] FM_derivative;
     
-    //Calculates derivative of band passed FM signal to pass into peak detection
+    //Calculates derivative of band passed FM signal to pass into peak detection for smoothing
     //operates at constant sampling freq therefore d(FM_signal)/d(t) = current_val - past_val / t
     //and dividing by time doesn't matter so can ignore (constant)
     always_ff @(posedge clk) begin

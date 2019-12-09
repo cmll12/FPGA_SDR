@@ -15,7 +15,8 @@ module Peak_detect_hold(
         input sample_ready,
         input signed [33:0] sample_in,
         
-        output logic [33:0] peak_value
+        output logic [34:0] peak_value,
+        output logic sample_ready_out
     );
     
     logic signed [33:0] past_val [7:0]; //store past 8 values
@@ -61,6 +62,7 @@ module Peak_detect_hold(
             s_index <= 0;
             extrema <= 0;
             peak_value <= 0;
+            sample_ready_out <= 0;
         end else begin
            //peak detected if 5 positives & 5 negative derivatives
             //find and output max or min value, stop if searched all index
@@ -87,7 +89,11 @@ module Peak_detect_hold(
             
             //peak_Value only re-assigned once finishing searching all values, then holds
             //until after next search. Also converts from signed to unsigned variable
-            if (s_index == 8) peak_value <= (extrema >= 0) ? extrema : -'sd1*extrema;
+            if (s_index == 8) begin
+                peak_value <= (extrema >= 0) ? extrema : -'sd1*extrema;
+                //assert sample for 1 clk cycle
+                sample_ready_out <= 1;
+            end else sample_ready_out <= 0;
     
         end //!rst
         

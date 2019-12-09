@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 1
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -68,6 +70,12 @@ set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/us
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/ip/fft_mag_xfft_0_0/fft_mag_xfft_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/fft_mag_ooc.xdc]
 
+read_ip -quiet /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/fm_stage_1_ila.xci
+set_property used_in_synthesis false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/fm_stage_1_ila_ooc.xdc]
+
 read_ip -quiet /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave.xci
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/sine_wave/sine_wave_ooc.xdc]
 
@@ -84,12 +92,6 @@ set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/us
 
 read_ip -quiet /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/histogram_bram/histogram_bram.xci
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/histogram_bram/histogram_bram_ooc.xdc]
-
-read_ip -quiet /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/fm_stage_1_ila.xci
-set_property used_in_synthesis false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/ip/fm_stage_1_ila/fm_stage_1_ila_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

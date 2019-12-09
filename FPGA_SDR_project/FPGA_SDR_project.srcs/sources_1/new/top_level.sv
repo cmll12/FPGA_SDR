@@ -178,7 +178,7 @@ module top_level(
     logic FM_sample_ready;
     
     FM_demod_stage_1 FM_stage_1 (.clk(clk100mhz),.rst(rst),.IF_in(IF_signed),.IF_data_valid(ADC_data_valid),
-                                .FM_BP_width(sw[12]),.FM_derivative_out(FM_stage_1_out),.FM_data_valid(FM_sample_ready));
+                                .FM_BP_width(sw[14]),.FM_derivative_out(FM_stage_1_out),.FM_data_valid(FM_sample_ready));
     
     //end FM demod stage 1 ------------------------------------------          
                      
@@ -259,21 +259,63 @@ module top_level(
     
     //Peak Detect and Hold
     //magnitude of peak values of signal
-    logic [33:0] peak_values;
-    Peak_detect_hold AM_peak_detect (.clk(clk100mhz),.rst(rst),.sample_ready(peak_detect_sample_ready),.sample_in(peak_detect_sample_in),.peak_value(peak_values));
+    logic [34:0] peak_values;
+    logic peak_ready;
+
+    Peak_detect_hold AM_peak_detect (.clk(clk100mhz),.rst(rst),.sample_ready(peak_detect_sample_ready),
+                                     .sample_in(peak_detect_sample_in),.peak_value(peak_values),.sample_ready_out(peak_ready));
     
-    //filter peak values (get rid of HF in FM signal)
+//    //filter peak values (get rid of HF in FM signal) ----------------------
     
-       
-    //ila --------------------
-    fm_stage_1_ila ila_fm_stage_1 (.clk(clk100mhz),.probe0(FM_stage_1_out),.probe1(peak_values));
-    //-----------------------  
+//    //initialize a coeffs
+//    logic signed [17:0] a5 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+//    logic signed [17:0] a6 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+        
+//    assign a5 [(N-2):0] = '{18'sd65403,-18'sd130939}; //a coeff MATLAB: 
+//    assign a6 [(N-2):0] = '{18'sd65216,-18'sd130751}; //a coeff MATLAB: 
      
+//    //section 1 ------------------------------------------        
+//    logic signed [17:0] b5 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
+
+//    assign b5 [(N-1):0] = '{18'sd65536,18'sd131070,18'sd65536}; //b coeff MATLAB: [1,0,-1]
+    
+//    logic signed [33:0] filt_sec_5_out;
+//    logic sec_5_ready;
+    
+//    logic [4:0] first_shift = ('d10 + {sw[8],sw[7],sw[6],sw[5]});
+//    //triggers on ADC_sample_valid
+//    AM_BP_Filter #(.N(N)) FM_BP_sec_1 (.clk_in(clk100mhz),.rst(rst),.b(b5),.a(a5),
+//                .sample_ready(peak_ready),.sample((peak_values>>first_shift)),.filt_out(filt_sec_5_out),.filt_valid(sec_5_ready));
+            
+//    //section 2 ------------------------------------------
+    
+//    logic [4:0] second_shift = ('d5 + {sw[12],sw[11],sw[10],sw[9]});
+     
+//    logic signed [23:0] filt_sec_6_in;
+//    //divide output from filter section 1 by 2^11 to fit 24 bit input parameter
+//    assign filt_sec_6_in = ((filt_sec_5_out>>>second_shift));
+     
+//    //initialize coeffs
+//    logic signed [17:0] b6 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
+    
+//    assign b6 [(N-1):0] = '{18'sd65536,18'sd131070,18'sd65536}; //b coeff MATLAB: [1,0,-1]
+    
+//    logic signed [33:0] filt_sec_6_out;
+//    logic sec_6_ready;
+    
+//    AM_BP_Filter #(.N(N)) FM_BP_sec_2 (.clk_in(clk100mhz),.rst(rst),.b(b6),.a(a6),
+//                .sample_ready(sec_5_ready),.sample(filt_sec_6_in),.filt_out(filt_sec_6_out),.filt_valid(sec_6_ready));
+    //----------------------------------------------------------------------
+      
     //Audio Condition
     //output to DAC module
     logic signed [7:0] DAC_audio_in;
-    AM_audio_condition condition_AM_for_DAC (.clk(clk100mhz),.rst(rst),.audio_offset(peak_values),.audio_level(sw_audio),
+    AM_audio_condition condition_AM_for_DAC (.clk(clk100mhz),.rst(rst),.audio_offset(peak_values>>2),.audio_level(sw_audio),
                             .audio_out(DAC_audio_in));
+    
+    //ila --------------------
+    fm_stage_1_ila ila_fm_stage_1 (.clk(clk100mhz),.probe0(filt_sec_6_out),.probe1(filt_sec_5_out));
+    //-----------------------  
     
     //end demod stage 2 ------------------------------------------
     

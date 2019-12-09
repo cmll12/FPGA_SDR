@@ -42,4 +42,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fft_mag_xlslice
 # IP: bd/fft_mag/ip/fft_mag_xlslice_1_0/fft_mag_xlslice_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fft_mag_xlslice_1_0 || ORIG_REF_NAME==fft_mag_xlslice_1_0} -quiet] -quiet
 
+# IP: ip/fm_stage_1_ila/fm_stage_1_ila.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fm_stage_1_ila || ORIG_REF_NAME==fm_stage_1_ila} -quiet] -quiet
+
 # XDC: bd/fft_mag/fft_mag_ooc.xdc
