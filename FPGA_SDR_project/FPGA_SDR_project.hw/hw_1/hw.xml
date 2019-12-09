@@ -827,7 +827,7 @@
         <net name="FM_stage_1/filt_sec_2_out[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq34&apos;hX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq34&apos;hX_XXXX_XXXX"/>
@@ -881,7 +881,7 @@
         <net name="FM_stage_1/filt_sec_4_out[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq34&apos;hX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq34&apos;hX_XXXX_XXXX"/>

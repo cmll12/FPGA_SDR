@@ -28,7 +28,7 @@ module FM_demod_stage_1(
     logic signed [17:0] a1 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     
     assign b1 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a1 [(N-2):0] = '{18'sd65216,-18'sd125230}; //a coeff MATLAB: 
+    assign a1 [(N-2):0] = '{18'sd64789,-18'sd124533}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_1_out;
     logic sec_1_ready;
@@ -47,7 +47,7 @@ module FM_demod_stage_1(
     logic signed [17:0] a2 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     
     assign b2 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a2 [(N-2):0] = '{18'sd65229,-18'sd125668}; //a coeff MATLAB: 
+    assign a2 [(N-2):0] = '{18'sd64853,-18'sd125569}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_2_out;
     logic sec_2_ready;
@@ -66,7 +66,7 @@ module FM_demod_stage_1(
     logic signed [17:0] a3 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     
     assign b3 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a3 [(N-2):0] = '{18'sd64776,-18'sd124936}; //a coeff MATLAB: 
+    assign a3 [(N-2):0] = '{18'sd63792,-18'sd123882}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_3_out;
     logic sec_3_ready;
@@ -86,7 +86,7 @@ module FM_demod_stage_1(
     logic signed [17:0] a4 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     
     assign b4 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a4 [(N-2):0] = '{18'sd64788,-18'sd125123}; //a coeff MATLAB: 
+    assign a4 [(N-2):0] = '{18'sd63855,-18'sd124342}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_4_out;
     logic sec_4_ready;

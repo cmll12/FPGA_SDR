@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr">
+<Project Version="7" Minor="40" Path="/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="ec4afc73f3534767ab40c2efe684c38e"/>
@@ -66,23 +66,23 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xfft_0_0/fft_mag_xfft_0_0.xci">
-          <Proxy FileSetName="fft_mag_xfft_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_c_addsub_0_0/fft_mag_c_addsub_0_0.xci">
-          <Proxy FileSetName="fft_mag_c_addsub_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_0_0/fft_mag_mult_gen_0_0.xci">
           <Proxy FileSetName="fft_mag_mult_gen_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0.xci">
-          <Proxy FileSetName="fft_mag_axis_register_slice_2_0"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xfft_0_0/fft_mag_xfft_0_0.xci">
+          <Proxy FileSetName="fft_mag_xfft_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_1_0/fft_mag_mult_gen_1_0.xci">
           <Proxy FileSetName="fft_mag_mult_gen_1_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_cordic_0_0/fft_mag_cordic_0_0.xci">
           <Proxy FileSetName="fft_mag_cordic_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_c_addsub_0_0/fft_mag_c_addsub_0_0.xci">
+          <Proxy FileSetName="fft_mag_c_addsub_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0.xci">
+          <Proxy FileSetName="fft_mag_axis_register_slice_2_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/bram_to_fft.v">
@@ -211,7 +211,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/Modules/histogram.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Modules/histogram.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../o/colinpc/6.111 Final Project/Modules/histogram.sv"/>
           <Attr Name="ImportTime" Val="1575767005"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -220,7 +220,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/Given_Modules/level_to_pulse.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Modules/Given_Modules/level_to_pulse.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../o/colinpc/6.111 Final Project/Modules/Given_Modules/level_to_pulse.sv"/>
           <Attr Name="ImportTime" Val="1575485060"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -229,7 +229,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/Given_Modules/synchronize.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Modules/Given_Modules/synchronize.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../o/colinpc/6.111 Final Project/Modules/Given_Modules/synchronize.sv"/>
           <Attr Name="ImportTime" Val="1575407292"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

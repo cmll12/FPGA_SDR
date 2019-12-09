@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575867697">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575870229">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="top_level.drc"/>
   <File Type="BG-BGN" Name="top_level.bgn"/>
@@ -204,7 +204,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Modules/histogram.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Modules/histogram.sv"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../o/colinpc/6.111 Final Project/Modules/histogram.sv"/>
         <Attr Name="ImportTime" Val="1575767005"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -213,7 +213,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Given_Modules/level_to_pulse.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Modules/Given_Modules/level_to_pulse.sv"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../o/colinpc/6.111 Final Project/Modules/Given_Modules/level_to_pulse.sv"/>
         <Attr Name="ImportTime" Val="1575485060"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -222,7 +222,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/Given_Modules/synchronize.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Modules/Given_Modules/synchronize.sv"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../o/colinpc/6.111 Final Project/Modules/Given_Modules/synchronize.sv"/>
         <Attr Name="ImportTime" Val="1575407292"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

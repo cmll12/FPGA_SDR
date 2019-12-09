@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="sine_wave_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575851658">
-  <File Type="PA-TCL" Name="sine_wave.tcl"/>
+<GenRun Id="sine_wave_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575870227">
+  <File Type="VDS-TIMING-PB" Name="sine_wave_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="sine_wave_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="sine_wave.dcp"/>
-  <File Type="REPORTS-TCL" Name="sine_wave_reports.tcl"/>
+  <File Type="RDS-UTIL-PB" Name="sine_wave_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="sine_wave_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="sine_wave_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="sine_wave.vds"/>
+  <File Type="REPORTS-TCL" Name="sine_wave_reports.tcl"/>
+  <File Type="PA-TCL" Name="sine_wave.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/sine_wave">
     <File Path="$PSRCDIR/sources_1/ip/sine_wave/sine_wave.xci">
       <FileInfo>
