@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Sun Dec  8 15:41:53 2019
+# Process ID: 24049
+# Current directory: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/fm_stage_1_ila_synth_1
+# Command line: vivado -log fm_stage_1_ila.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fm_stage_1_ila.tcl
+# Log file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/fm_stage_1_ila_synth_1/fm_stage_1_ila.vds
+# Journal file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/fm_stage_1_ila_synth_1/vivado.jou
+#-----------------------------------------------------------
+source fm_stage_1_ila.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP fm_stage_1_ila, cache-ID = 2af30715407993b3.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  8 15:42:03 2019...

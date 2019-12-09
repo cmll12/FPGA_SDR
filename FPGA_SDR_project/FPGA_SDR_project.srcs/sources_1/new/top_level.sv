@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: MIT
-// Engineer: Charles Lindsay
+// Engineer: Charles Lindsay, Colin Chaney
 // 
 // Create Date: 11/10/2019 06:06:51 PM
 // Design Name: 
@@ -113,7 +113,7 @@ module top_level(
     
     //for AM condition
     //3 switches determine audio level
-    logic [2:0] sw_audio = {sw[12],sw[11],sw[10]};
+    logic [3:0] sw_audio = {sw[13],sw[12],sw[11],sw[10]};
     //------------------------------------------------------------------
     
     //for modulation select use switch 5

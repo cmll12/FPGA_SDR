@@ -19,6 +19,10 @@ module FM_demod_stage_1(
         output logic FM_data_valid
     );
        
+    //ila --------------------
+    fm_stage_1_ila ila_fm_stage_1 (.clk(clk),.probe0(IF_in),.probe1(FM_derivative));
+    //-----------------------
+    
     //FM (Wideband) Bandpass Filter
     
     //section 1 ------------------------------------------
@@ -36,11 +40,11 @@ module FM_demod_stage_1(
     //triggers on ADC_sample_valid
     AM_BP_Filter #(.N(N)) FM_BP_sec_1 (.clk_in(clk),.rst(rst),.b(b1),.a(a1),
                 .sample_ready(IF_data_valid),.sample(IF_in),.filt_out(filt_sec_1_out),.filt_valid(sec_1_ready));
-                
+            
     //section 2 ------------------------------------------
     logic signed [23:0] filt_sec_2_in;
-    //divide output from filter section 1 by 2^11 to fit 24 bit input parameter
-    assign filt_sec_2_in = (filt_sec_1_out>>>11);
+    //divide output from filter section 1 by 2^5 to fit 24 bit input parameter
+    assign filt_sec_2_in = (filt_sec_1_out>>>5);
      
     //initialize coeffs
     logic signed [17:0] b2 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
@@ -58,8 +62,8 @@ module FM_demod_stage_1(
     
     //section 3 ------------------------------------------
     logic signed [23:0] filt_sec_3_in;
-    //divide output from filter section 1 by 2^11 to fit 24 bit input parameter
-    assign filt_sec_3_in = (filt_sec_2_out>>>11);
+    //divide output from filter section 1 by 2^5 to fit 24 bit input parameter
+    assign filt_sec_3_in = (filt_sec_2_out>>>5);
     
     //initialize coeffs
     logic signed [17:0] b3 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
@@ -78,8 +82,8 @@ module FM_demod_stage_1(
     
      //section 4 ------------------------------------------
     logic signed [23:0] filt_sec_4_in;
-    //divide output from filter section 1 by 2^11 to fit 24 bit input parameter
-    assign filt_sec_4_in = (filt_sec_3_out>>>11);
+    //divide output from filter section 1 by 2^5 to fit 24 bit input parameter
+    assign filt_sec_4_in = (filt_sec_3_out>>>5);
     
     //initialize coeffs
     logic signed [17:0] b4 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array

@@ -30,7 +30,7 @@ module function_pixel_logic (
    parameter OFFSET_20 = 'sd1638;
    parameter OFFSET_15 = 'sd1228;
    
-   parameter OFFSET_AUDIO = 'sd1025;
+   parameter OFFSET_AUDIO = 'sd0;
    
    always_comb begin
       if(is_audio) begin
