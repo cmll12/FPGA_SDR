@@ -20,7 +20,6 @@ proc create_report { reportName command } {
 set_param xicom.use_bs_reader 1
 set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -49,6 +48,7 @@ read_verilog -library xil_defaultlib -sv {
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/control_period.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/control_trigger_height.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/control_volume.sv}
+  {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/control_zoom_magnitude.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/debounce.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/function_pixel_logic.sv}
   {/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Modules/histogram.sv}

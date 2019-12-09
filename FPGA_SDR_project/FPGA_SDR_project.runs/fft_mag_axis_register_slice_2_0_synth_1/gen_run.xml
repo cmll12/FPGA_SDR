@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="fft_mag_axis_register_slice_2_0_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575485112">
-  <File Type="RDS-UTIL-PB" Name="fft_mag_axis_register_slice_2_0_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="fft_mag_axis_register_slice_2_0_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="fft_mag_axis_register_slice_2_0_utilization_synth.pb"/>
   <File Type="RDS-RDS" Name="fft_mag_axis_register_slice_2_0.vds"/>
   <File Type="RDS-DCP" Name="fft_mag_axis_register_slice_2_0.dcp"/>
   <File Type="PA-TCL" Name="fft_mag_axis_register_slice_2_0.tcl"/>

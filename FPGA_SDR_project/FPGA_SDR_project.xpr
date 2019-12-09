@@ -66,23 +66,23 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xfft_0_0/fft_mag_xfft_0_0.xci">
-          <Proxy FileSetName="fft_mag_xfft_0_0"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_cordic_0_0/fft_mag_cordic_0_0.xci">
+          <Proxy FileSetName="fft_mag_cordic_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_c_addsub_0_0/fft_mag_c_addsub_0_0.xci">
           <Proxy FileSetName="fft_mag_c_addsub_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_0_0/fft_mag_mult_gen_0_0.xci">
-          <Proxy FileSetName="fft_mag_mult_gen_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_axis_register_slice_2_0/fft_mag_axis_register_slice_2_0.xci">
           <Proxy FileSetName="fft_mag_axis_register_slice_2_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_xfft_0_0/fft_mag_xfft_0_0.xci">
+          <Proxy FileSetName="fft_mag_xfft_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_1_0/fft_mag_mult_gen_1_0.xci">
           <Proxy FileSetName="fft_mag_mult_gen_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_cordic_0_0/fft_mag_cordic_0_0.xci">
-          <Proxy FileSetName="fft_mag_cordic_0_0"/>
+        <CompFileExtendedInfo CompFileName="fft_mag.bd" FileRelPathName="ip/fft_mag_mult_gen_0_0/fft_mag_mult_gen_0_0.xci">
+          <Proxy FileSetName="fft_mag_mult_gen_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/bram_to_fft.v">
@@ -185,6 +185,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/control_volume.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/control_zoom_magnitude.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

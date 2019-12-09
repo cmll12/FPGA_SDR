@@ -18,14 +18,14 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3647 
+INFO: Helper process launched with PID 26534 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1827.738 ; gain = 154.496 ; free physical = 1714 ; free virtual = 10032
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1827.285 ; gain = 151.496 ; free physical = 1613 ; free virtual = 9321
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_level' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
 	Parameter N bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/clk_wiz_0_stub.v:5]
 WARNING: [Synth 8-7023] instance 'clkdivider' of module 'clk_wiz_0' has 5 connections declared, but only 3 given [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:34]
 INFO: [Synth 8-6157] synthesizing module 'xvga' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/Given_Modules/xvga.sv:22]
 	Parameter DISPLAY_WIDTH bound to: 1024 - type: integer 
@@ -62,8 +62,8 @@ INFO: [Synth 8-6155] done synthesizing module 'ADC_Interface' (7#1) [/afs/athena
 INFO: [Synth 8-6157] synthesizing module 'Local_Oscillator' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
 	Parameter IF_FREQ_div_20 bound to: 18'b000101100011011110 
 	Parameter A bound to: 13744 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'sine_wave' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/sine_wave_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'sine_wave' (8#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/sine_wave_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'sine_wave' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/sine_wave_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'sine_wave' (8#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/sine_wave_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'Local_Oscillator' (9#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Local_Oscillator.sv:9]
 INFO: [Synth 8-6157] synthesizing module 'Mixer' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
 INFO: [Synth 8-6155] done synthesizing module 'Mixer' (10#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Mixer.sv:10]
@@ -76,8 +76,8 @@ INFO: [Synth 8-6155] done synthesizing module 'FM_demod_stage_1' (12#1) [/afs/at
 INFO: [Synth 8-6157] synthesizing module 'Peak_detect_hold' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Peak_detect_hold.sv:11]
 INFO: [Synth 8-6155] done synthesizing module 'Peak_detect_hold' (13#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/Peak_detect_hold.sv:11]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:266]
-INFO: [Synth 8-6157] synthesizing module 'fm_stage_1_ila' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fm_stage_1_ila_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fm_stage_1_ila' (14#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fm_stage_1_ila_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fm_stage_1_ila' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fm_stage_1_ila_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fm_stage_1_ila' (14#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fm_stage_1_ila_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'AM_audio_condition' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_audio_condition.sv:10]
 	Parameter COUNT_48k bound to: 2082 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'AM_audio_condition' (15#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/AM_audio_condition.sv:10]
@@ -115,8 +115,8 @@ INFO: [Synth 8-6157] synthesizing module 'trigger_buffer' [/afs/athena.mit.edu/u
 	Parameter BRAM2_WAIT_FOR_FILL bound to: 5'b11001 
 	Parameter BRAM2_WAIT_FOR_FRAME bound to: 5'b10001 
 	Parameter NEEDED_HIGH bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'frame_bram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/frame_bram_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'frame_bram' (20#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/frame_bram_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'frame_bram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/frame_bram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'frame_bram' (20#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/frame_bram_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'trigger_buffer' (21#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/Modules/My_Modules/trigger_buffer.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'function_pixel_logic' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/function_pixel_logic.sv:1]
 	Parameter OFFSET_25 bound to: 2048 - type: integer 
@@ -124,26 +124,26 @@ INFO: [Synth 8-6157] synthesizing module 'function_pixel_logic' [/afs/athena.mit
 	Parameter OFFSET_15 bound to: 1228 - type: integer 
 	Parameter OFFSET_AUDIO bound to: 0 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'function_pixel_logic' (22#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/imports/My_Modules/function_pixel_logic.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'fft_bram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_bram_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fft_bram' (23#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_bram_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fft_bram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_bram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fft_bram' (23#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_bram_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'level_to_pulse' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Given_Modules/level_to_pulse.sv:1]
 INFO: [Synth 8-6155] done synthesizing module 'level_to_pulse' (24#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Given_Modules/level_to_pulse.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'bram_to_fft' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/hdl/bram_to_fft.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'bram_to_fft' (25#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/hdl/bram_to_fft.v:7]
 INFO: [Synth 8-6157] synthesizing module 'fft_mag' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/synth/fft_mag.v:13]
-INFO: [Synth 8-6157] synthesizing module 'fft_mag_axis_register_slice_2_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_axis_register_slice_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fft_mag_axis_register_slice_2_0' (26#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_axis_register_slice_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fft_mag_axis_register_slice_2_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_axis_register_slice_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fft_mag_axis_register_slice_2_0' (26#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_axis_register_slice_2_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'axis_register_slice_2' of module 'fft_mag_axis_register_slice_2_0' has 10 connections declared, but only 9 given [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/synth/fft_mag.v:76]
-INFO: [Synth 8-6157] synthesizing module 'fft_mag_c_addsub_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_c_addsub_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fft_mag_c_addsub_0_0' (27#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_c_addsub_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'fft_mag_cordic_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_cordic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fft_mag_cordic_0_0' (28#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_cordic_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'fft_mag_mult_gen_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_mult_gen_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fft_mag_mult_gen_0_0' (29#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_mult_gen_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'fft_mag_mult_gen_1_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_mult_gen_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fft_mag_mult_gen_1_0' (30#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_mult_gen_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'fft_mag_xfft_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_xfft_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fft_mag_xfft_0_0' (31#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/fft_mag_xfft_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fft_mag_c_addsub_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_c_addsub_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fft_mag_c_addsub_0_0' (27#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_c_addsub_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fft_mag_cordic_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_cordic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fft_mag_cordic_0_0' (28#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_cordic_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fft_mag_mult_gen_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_mult_gen_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fft_mag_mult_gen_0_0' (29#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_mult_gen_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fft_mag_mult_gen_1_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_mult_gen_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fft_mag_mult_gen_1_0' (30#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_mult_gen_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fft_mag_xfft_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_xfft_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fft_mag_xfft_0_0' (31#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/fft_mag_xfft_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'xfft_0' of module 'fft_mag_xfft_0_0' has 19 connections declared, but only 13 given [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/synth/fft_mag.v:111]
 INFO: [Synth 8-6157] synthesizing module 'fft_mag_xlconcat_0_0' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/ip/fft_mag_xlconcat_0_0/synth/fft_mag_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
@@ -216,16 +216,23 @@ INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0
 INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (39#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'fft_mag_xlslice_1_0' (40#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/ip/fft_mag_xlslice_1_0/synth/fft_mag_xlslice_1_0.v:57]
 INFO: [Synth 8-6155] done synthesizing module 'fft_mag' (41#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/bd/fft_mag/synth/fft_mag.v:13]
-INFO: [Synth 8-6157] synthesizing module 'histogram_bram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/histogram_bram_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'histogram_bram' (42#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-3624-eecs-digital-49/realtime/histogram_bram_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'histogram_bram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/histogram_bram_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'histogram_bram' (42#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/.Xil/Vivado-26493-eecs-digital-49/realtime/histogram_bram_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'control_zoom_magnitude' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/control_zoom_magnitude.sv:23]
+	Parameter RESET bound to: 3'b000 
+	Parameter IDLE bound to: 3'b001 
+	Parameter UP_INCREMENT bound to: 3'b011 
+	Parameter DOWN_INCREMENT bound to: 3'b111 
+	Parameter WAIT_NORMAL bound to: 3'b101 
+INFO: [Synth 8-6155] done synthesizing module 'control_zoom_magnitude' (43#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/control_zoom_magnitude.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'histogram' [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Modules/histogram.sv:7]
-INFO: [Synth 8-6155] done synthesizing module 'histogram' (43#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Modules/histogram.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'histogram' (44#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Modules/histogram.sv:7]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'FM_stage_1'. This will prevent further optimization [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:180]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_fm_stage_1'. This will prevent further optimization [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:266]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'AM_peak_detect'. This will prevent further optimization [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:263]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'condition_AM_for_DAC'. This will prevent further optimization [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:272]
 WARNING: [Synth 8-3848] Net led in module/entity top_level does not have driver. [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:19]
-INFO: [Synth 8-6155] done synthesizing module 'top_level' (44#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_level' (45#1) [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/top_level.sv:9]
 WARNING: [Synth 8-3917] design top_level has port aud_sd driven by constant 1
 WARNING: [Synth 8-3331] design histogram has unconnected port blank
 WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice__parameterized0 has unconnected port Din[15]
@@ -317,13 +324,15 @@ WARNING: [Synth 8-3331] design top_level has unconnected port sw[8]
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[7]
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[6]
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[5]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[4]
+WARNING: [Synth 8-3331] design top_level has unconnected port sw[3]
 WARNING: [Synth 8-3331] design top_level has unconnected port sw[2]
 WARNING: [Synth 8-3331] design top_level has unconnected port btnc
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[7]
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[6]
 WARNING: [Synth 8-3331] design top_level has unconnected port jd[1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1887.461 ; gain = 214.219 ; free physical = 1716 ; free virtual = 10035
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1887.008 ; gain = 211.219 ; free physical = 1621 ; free virtual = 9332
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -336,10 +345,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1900.332 ; gain = 227.090 ; free physical = 1715 ; free virtual = 10035
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1902.848 ; gain = 227.059 ; free physical = 1623 ; free virtual = 9335
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1900.332 ; gain = 227.090 ; free physical = 1715 ; free virtual = 10035
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1902.848 ; gain = 227.059 ; free physical = 1623 ; free virtual = 9335
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -382,25 +391,25 @@ Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_
 Finished Parsing XDC File [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2071.816 ; gain = 0.000 ; free physical = 1573 ; free virtual = 9893
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2071.363 ; gain = 0.000 ; free physical = 1474 ; free virtual = 9190
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2071.816 ; gain = 0.000 ; free physical = 1573 ; free virtual = 9893
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2071.363 ; gain = 0.000 ; free physical = 1474 ; free virtual = 9190
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bram1' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bram2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'LO/LO_sine_wave' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_buffer/frame1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_buffer/frame2' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2074.785 ; gain = 401.543 ; free physical = 1718 ; free virtual = 10037
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2074.332 ; gain = 398.543 ; free physical = 1589 ; free virtual = 9305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2074.785 ; gain = 401.543 ; free physical = 1718 ; free virtual = 10037
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2074.332 ; gain = 398.543 ; free physical = 1589 ; free virtual = 9305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -428,13 +437,14 @@ Applied set_property DONT_TOUCH = true for bram1. (constraint file  auto generat
 Applied set_property DONT_TOUCH = true for bram2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ila_fm_stage_1. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2074.785 ; gain = 401.543 ; free physical = 1721 ; free virtual = 10039
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2074.332 ; gain = 398.543 ; free physical = 1591 ; free virtual = 9308
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_center_frequency'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/new/control_volume.sv:19]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_volume'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_period'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'trigger_buffer'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_zoom_magnitude'
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.srcs/sources_1/imports/Modules/histogram.sv:67]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -459,13 +469,13 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                   RESET |                              000 |                              000
-                    IDLE |                              001 |                              001
-         RIGHT_INCREMENT |                              010 |                              011
-          LEFT_INCREMENT |                              011 |                              111
-             WAIT_NORMAL |                              100 |                              101
+                   RESET |                            00001 |                              000
+                    IDLE |                            00010 |                              001
+         RIGHT_INCREMENT |                            00100 |                              011
+          LEFT_INCREMENT |                            01000 |                              111
+             WAIT_NORMAL |                            10000 |                              101
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'control_period'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'control_period'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -480,8 +490,18 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
     BRAM2_WAIT_FOR_FRAME |                             1000 |                            10001
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'trigger_buffer'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   RESET |                            00001 |                              000
+                    IDLE |                            00010 |                              001
+            UP_INCREMENT |                            00100 |                              011
+          DOWN_INCREMENT |                            01000 |                              111
+             WAIT_NORMAL |                            10000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'control_zoom_magnitude'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2074.789 ; gain = 401.547 ; free physical = 1708 ; free virtual = 10029
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2074.336 ; gain = 398.547 ; free physical = 1578 ; free virtual = 9297
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -515,6 +535,7 @@ Detailed RTL Component Info :
 	   8 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 8     
 	   3 Input      3 Bit       Adders := 7     
+	   2 Input      2 Bit       Adders := 2     
 	   2 Input      1 Bit       Adders := 5     
 +---Registers : 
 	              101 Bit    Registers := 56    
@@ -531,7 +552,7 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 10    
 	                3 Bit    Registers := 12    
-	                2 Bit    Registers := 14    
+	                2 Bit    Registers := 15    
 	                1 Bit    Registers := 99    
 +---Multipliers : 
 	               18x101  Multipliers := 7     
@@ -553,16 +574,18 @@ Detailed RTL Component Info :
 	   2 Input      9 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 4     
-	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 13    
+	   5 Input      5 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 6     
 	   3 Input      4 Bit        Muxes := 1     
 	   9 Input      4 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 3     
-	   2 Input      3 Bit        Muxes := 27    
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 22    
 	   6 Input      3 Bit        Muxes := 4     
+	   5 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 233   
-	   5 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 235   
+	   5 Input      1 Bit        Muxes := 8     
 	   6 Input      1 Bit        Muxes := 8     
 	   9 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
@@ -755,10 +778,9 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   5 Input     12 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 5     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input      5 Bit        Muxes := 7     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
 	   5 Input      1 Bit        Muxes := 2     
 Module trigger_buffer 
 Detailed RTL Component Info : 
@@ -803,6 +825,18 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   3 Input     32 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 4     
+Module control_zoom_magnitude 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 6     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 2     
 Module histogram 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -992,8 +1026,6 @@ WARNING: [Synth 8-3917] design top_level has port aud_sd driven by constant 1
 WARNING: [Synth 8-3331] design histogram has unconnected port blank
 WARNING: [Synth 8-3331] design histogram has unconnected port vdata[15]
 WARNING: [Synth 8-3331] design histogram has unconnected port vdata[14]
-WARNING: [Synth 8-3331] design histogram has unconnected port vdata[3]
-WARNING: [Synth 8-3331] design histogram has unconnected port vdata[2]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'bram_to_fft_0/frame_tdata_reg[16]' (FDRE) to 'bram_to_fft_0/frame_tdata_reg[17]'
 INFO: [Synth 8-3886] merging instance 'bram_to_fft_0/frame_tdata_reg[17]' (FDRE) to 'bram_to_fft_0/frame_tdata_reg[18]'
@@ -1028,7 +1060,7 @@ INFO: [Synth 8-3886] merging instance 'AM_BP_sec_3/x_reg[2][22]' (FDRE) to 'AM_B
 INFO: [Synth 8-3886] merging instance 'AM_BP_sec_3/x_reg[1][22]' (FDRE) to 'AM_BP_sec_3/x_reg[1][23]'
 INFO: [Synth 8-3886] merging instance 'AM_BP_sec_3/x_reg[0][22]' (FDRE) to 'AM_BP_sec_3/x_reg[0][23]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 2074.789 ; gain = 401.547 ; free physical = 1570 ; free virtual = 9905
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:46 . Memory (MB): peak = 2074.336 ; gain = 398.547 ; free physical = 1506 ; free virtual = 9239
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1112,13 +1144,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'clkdivider/clk_out1' to p
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clkdivider/clk_out2' to pin 'clkdivider/bbstub_clk_out2/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 2074.789 ; gain = 401.547 ; free physical = 1415 ; free virtual = 9749
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:53 . Memory (MB): peak = 2074.336 ; gain = 398.547 ; free physical = 1363 ; free virtual = 9097
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:58 . Memory (MB): peak = 2104.781 ; gain = 431.539 ; free physical = 1358 ; free virtual = 9692
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:58 . Memory (MB): peak = 2105.328 ; gain = 429.539 ; free physical = 1322 ; free virtual = 9056
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1130,7 +1162,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:04 ; elapsed = 00:01:09 . Memory (MB): peak = 2139.914 ; gain = 466.672 ; free physical = 1381 ; free virtual = 9706
+Finished Technology Mapping : Time (s): cpu = 00:01:03 ; elapsed = 00:01:08 . Memory (MB): peak = 2140.492 ; gain = 464.703 ; free physical = 1319 ; free virtual = 9053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1155,7 +1187,7 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-4442] BlackBox module clkdivider has unconnected pin reset
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:06 ; elapsed = 00:01:11 . Memory (MB): peak = 2139.918 ; gain = 466.676 ; free physical = 1378 ; free virtual = 9703
+Finished IO Insertion : Time (s): cpu = 00:01:05 ; elapsed = 00:01:10 . Memory (MB): peak = 2140.496 ; gain = 464.707 ; free physical = 1318 ; free virtual = 9053
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1168,7 +1200,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:11 . Memory (MB): peak = 2139.918 ; gain = 466.676 ; free physical = 1378 ; free virtual = 9703
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:05 ; elapsed = 00:01:10 . Memory (MB): peak = 2140.496 ; gain = 464.707 ; free physical = 1318 ; free virtual = 9053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1180,25 +1212,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 2139.918 ; gain = 466.676 ; free physical = 1273 ; free virtual = 9692
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:07 ; elapsed = 00:01:13 . Memory (MB): peak = 2140.496 ; gain = 464.707 ; free physical = 1318 ; free virtual = 9052
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 2139.918 ; gain = 466.676 ; free physical = 1273 ; free virtual = 9692
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:07 ; elapsed = 00:01:13 . Memory (MB): peak = 2140.496 ; gain = 464.707 ; free physical = 1318 ; free virtual = 9052
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 2139.918 ; gain = 466.676 ; free physical = 1278 ; free virtual = 9692
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 2140.496 ; gain = 464.707 ; free physical = 1318 ; free virtual = 9052
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 2139.918 ; gain = 466.676 ; free physical = 1278 ; free virtual = 9692
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 2140.496 ; gain = 464.707 ; free physical = 1318 ; free virtual = 9052
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1253,21 +1285,21 @@ Report Cell Usage:
 |11    |frame_bram__2                   |     1|
 |12    |histogram_bram                  |     1|
 |13    |sine_wave                       |     1|
-|14    |CARRY4                          |  1070|
+|14    |CARRY4                          |  1062|
 |15    |DSP48E1                         |    53|
 |16    |DSP48E1_1                       |     2|
-|17    |LUT1                            |   126|
-|18    |LUT2                            |  3316|
-|19    |LUT3                            |   564|
+|17    |LUT1                            |   121|
+|18    |LUT2                            |  3318|
+|19    |LUT3                            |   541|
 |20    |LUT4                            |   618|
-|21    |LUT5                            |   413|
-|22    |LUT6                            |  2909|
+|21    |LUT5                            |   428|
+|22    |LUT6                            |  2915|
 |23    |MUXF7                           |  1052|
 |24    |MUXF8                           |    34|
 |25    |SRL16E                          |     1|
-|26    |FDRE                            | 11236|
+|26    |FDRE                            | 11245|
 |27    |FDSE                            |    45|
-|28    |IBUF                            |    31|
+|28    |IBUF                            |    29|
 |29    |OBUF                            |    16|
 |30    |OBUFT                           |    17|
 +------+--------------------------------+------+
@@ -1276,7 +1308,7 @@ Report Instance Areas:
 +------+---------------------------+-------------------------+------+
 |      |Instance                   |Module                   |Cells |
 +------+---------------------------+-------------------------+------+
-|1     |top                        |                         | 21812|
+|1     |top                        |                         | 21806|
 |2     |  FM_stage_1               |FM_demod_stage_1         |  8881|
 |3     |    FM_BP_sec_1            |AM_BP_Filter_27          |  2191|
 |4     |    FM_BP_sec_2            |AM_BP_Filter_28          |  2188|
@@ -1298,13 +1330,13 @@ Report Instance Areas:
 |20    |  AM_BP_sec_3              |AM_BP_Filter_1           |  2226|
 |21    |  LO                       |Local_Oscillator         |    88|
 |22    |  adjust_frequency         |control_center_frequency |   149|
-|23    |  encoder1_clk_debounce    |debounce                 |    38|
+|23    |  encoder1_clk_debounce    |debounce                 |    40|
 |24    |  encoder1_clk_synchronize |synchronize              |     4|
-|25    |  encoder1_dt_debounce     |debounce_2               |    38|
+|25    |  encoder1_dt_debounce     |debounce_2               |    40|
 |26    |  encoder1_dt_synchronize  |synchronize_3            |     4|
 |27    |  encoder1_sw_debounce     |debounce_4               |    44|
 |28    |  encoder1_sw_synchronize  |synchronize_5            |     4|
-|29    |  encoder2_clk_debounce    |debounce_6               |    40|
+|29    |  encoder2_clk_debounce    |debounce_6               |    41|
 |30    |  encoder2_clk_synchronize |synchronize_7            |     4|
 |31    |  encoder2_dt_debounce     |debounce_8               |    40|
 |32    |  encoder2_dt_synchronize  |synchronize_9            |     4|
@@ -1325,42 +1357,43 @@ Report Instance Areas:
 |47    |  encoder5_sw_debounce     |debounce_24              |    39|
 |48    |  encoder5_sw_synchronize  |synchronize_25           |     4|
 |49    |  fft_histogram            |histogram                |   110|
-|50    |  my_buffer                |trigger_buffer           |   709|
+|50    |  my_buffer                |trigger_buffer           |   710|
 |51    |  my_height                |control_height           |   148|
-|52    |  my_period                |control_period           |    61|
-|53    |  my_trigger               |control_trigger_height   |   432|
-|54    |  nolabel_line153          |control_volume           |    19|
-|55    |  nolabel_line279          |DAC_stuff                |    26|
-|56    |  plot                     |function_pixel_logic     |    98|
-|57    |  sample_LO_mixer          |Mixer                    |    16|
-|58    |  vsync_ltp                |level_to_pulse           |     2|
-|59    |  vsync_synchronize        |synchronize_26           |     4|
-|60    |  xvga1                    |xvga                     |   201|
+|52    |  my_period                |control_period           |    64|
+|53    |  my_trigger               |control_trigger_height   |   415|
+|54    |  my_zoom                  |control_zoom_magnitude   |    19|
+|55    |  nolabel_line153          |control_volume           |    19|
+|56    |  nolabel_line279          |DAC_stuff                |    26|
+|57    |  plot                     |function_pixel_logic     |    84|
+|58    |  sample_LO_mixer          |Mixer                    |    16|
+|59    |  vsync_ltp                |level_to_pulse           |     2|
+|60    |  vsync_synchronize        |synchronize_26           |     4|
+|61    |  xvga1                    |xvga                     |   200|
 +------+---------------------------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:09 ; elapsed = 00:01:14 . Memory (MB): peak = 2139.918 ; gain = 466.676 ; free physical = 1278 ; free virtual = 9692
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 2140.496 ; gain = 464.707 ; free physical = 1318 ; free virtual = 9052
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 73 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:01:11 . Memory (MB): peak = 2139.918 ; gain = 292.223 ; free physical = 1337 ; free virtual = 9751
-Synthesis Optimization Complete : Time (s): cpu = 00:01:10 ; elapsed = 00:01:14 . Memory (MB): peak = 2139.922 ; gain = 466.676 ; free physical = 1351 ; free virtual = 9765
+Synthesis finished with 0 errors, 1 critical warnings and 75 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:05 ; elapsed = 00:01:10 . Memory (MB): peak = 2140.496 ; gain = 293.223 ; free physical = 1378 ; free virtual = 9112
+Synthesis Optimization Complete : Time (s): cpu = 00:01:08 ; elapsed = 00:01:13 . Memory (MB): peak = 2140.500 ; gain = 464.707 ; free physical = 1393 ; free virtual = 9127
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 2211 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 2203 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2145.855 ; gain = 0.000 ; free physical = 1341 ; free virtual = 9670
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2144.465 ; gain = 0.000 ; free physical = 1306 ; free virtual = 9041
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-160 Infos, 115 Warnings, 1 Critical Warnings and 0 Errors encountered.
+164 Infos, 115 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:16 ; elapsed = 00:01:21 . Memory (MB): peak = 2145.855 ; gain = 690.879 ; free physical = 1465 ; free virtual = 9805
+synth_design: Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 2144.465 ; gain = 689.941 ; free physical = 1439 ; free virtual = 9174
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2145.855 ; gain = 0.000 ; free physical = 1465 ; free virtual = 9806
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2144.465 ; gain = 0.000 ; free physical = 1440 ; free virtual = 9175
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Dec  9 00:03:13 2019...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  9 12:20:48 2019...

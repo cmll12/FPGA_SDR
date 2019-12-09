@@ -40,10 +40,10 @@ module function_pixel_logic (
          raw_trigger_height = (trigger_height - OFFSET_AUDIO) * signed_height_adjust;
          scaled_trigger_height = raw_trigger_height >>> 11;
       end else begin
-         raw_signal_height = (signal_in - OFFSET_20) * height_adjust;
+         raw_signal_height = (signal_in - OFFSET_25) * height_adjust;
          scaled_signal_height = raw_signal_height >>> 11;
             
-         raw_trigger_height = (trigger_height - OFFSET_20) * height_adjust;
+         raw_trigger_height = (trigger_height - OFFSET_25) * height_adjust;
          scaled_trigger_height = raw_trigger_height >>> 11;
       end
    end

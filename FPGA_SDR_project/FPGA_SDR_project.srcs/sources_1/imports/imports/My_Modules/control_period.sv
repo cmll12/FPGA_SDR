@@ -4,6 +4,7 @@ module control_period(
    input left,
    input reset,
    input is_fast,
+   input is_fft,
    output logic [11:0] period_out
    );
    
@@ -26,10 +27,10 @@ module control_period(
              if(reset) begin
                  state <= RESET;
              end else begin
-                if(!right) begin
+                if(!right && !is_fft) begin
                    state <= RIGHT_INCREMENT;
                 end else begin
-                   if(!left) begin
+                   if(!left && !is_fft) begin
                       state <= LEFT_INCREMENT;
                   end
                end
@@ -71,7 +72,7 @@ module control_period(
              if(reset) begin
                 state <= RESET;
              end else begin
-                if(left & right) begin
+                if(left & right && !is_fft) begin
                    state <= IDLE;
                 end
              end

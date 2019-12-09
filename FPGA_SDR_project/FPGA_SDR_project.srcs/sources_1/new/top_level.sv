@@ -377,14 +377,57 @@ module top_level(
        past_audio_value <= encoder1_sw_db;
     end
     
+    wire encoder4_sw;
+        
+    synchronize encoder4_sw_synchronize(
+        .clk(clk_65mhz),
+        .in(jd[3]),
+        .out(encoder4_sw));
+    
+    wire encoder4_sw_db;
+    
+    debounce encoder4_sw_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder4_sw),.clean_out(encoder4_sw_db));
+    
+    reg is_fft = 0;
+    logic past_fft_value;
+    always_ff @(posedge clk_65mhz) begin
+       if(!encoder4_sw_db & past_fft_value ) begin
+          is_fft <= is_fft + 1;
+       end
+       past_fft_value <= encoder4_sw_db;
+    end
+    
     logic [11:0] height_adjust;
-    control_height my_height(.clk(clk_65mhz), .up(encoder2_clk_db), .down(encoder2_dt_db), .reset(rst), .sw(trigger_wanted), .is_audio(is_audio), .height_out(height_adjust));
+    control_height my_height(
+                    .clk(clk_65mhz), 
+                    .up(encoder2_clk_db), 
+                    .down(encoder2_dt_db), 
+                    .reset(rst), 
+                    .sw(trigger_wanted), 
+                    .is_audio(is_audio),
+                    .is_fft(is_fft),
+                    .height_out(height_adjust));
     
     logic [11:0] trigger_adjust;
-    control_trigger_height my_trigger(.clk(clk_65mhz), .up(encoder2_clk_db), .down(encoder2_dt_db), .reset(rst), .sw(trigger_wanted), .is_audio(is_audio), .height_out(trigger_adjust));
+    control_trigger_height my_trigger(
+                    .clk(clk_65mhz), 
+                    .up(encoder2_clk_db), 
+                    .down(encoder2_dt_db), 
+                    .reset(rst), 
+                    .sw(trigger_wanted), 
+                    .is_audio(is_audio), 
+                    .is_fft(is_fft),
+                    .height_out(trigger_adjust));
     
     logic [11:0] period;
-    control_period my_period(.clk(clk_65mhz), .is_fast(is_fast), .right(encoder1_clk_db), .left(encoder1_dt_db), .reset(rst), .period_out(period));
+    control_period my_period(
+                    .clk(clk_65mhz), 
+                    .is_fast(is_fast), 
+                    .right(encoder1_clk_db), 
+                    .left(encoder1_dt_db), 
+                    .reset(rst),
+                    .is_fft(is_fft), 
+                    .period_out(period));
     
     
     logic [11:0] signal_to_display;
@@ -530,6 +573,16 @@ module top_level(
         .doutb(hdata)      // output wire [15 : 0] doutb
     );
     
+    
+    logic [1:0] fft_zoom_mag;
+    control_zoom_magnitude my_zoom(
+        .clk(clk_65mhz), 
+        .up(encoder2_clk_db), 
+        .down(encoder2_dt_db), 
+        .reset(rst), 
+        .is_fft(is_fft), 
+        .zoom_out(fft_zoom_mag));
+    
     // INSTANTIATE HISTOGRAM VIDEO
     // A simple module that outputs a VGA histogram based on
     // hcount, vcount, and the BRAM read values
@@ -541,7 +594,7 @@ module top_level(
         .hcount(hcount),
         .vcount(vcount),
         .blank(blank),
-        .range(sw[4:3]), // How much to zoom on the first part of the spectrum
+        .range(fft_zoom_mag), // How much to zoom on the first part of the spectrum
         .vaddr(haddr),
         .vdata(hdata),
         .freq(center_freq_div_20),
@@ -550,26 +603,6 @@ module top_level(
         
     // VGA OUTPUT
     // Histogram has two pipeline stages so we'll pipeline the hs and vs accordingly
-
-    wire encoder4_sw;
-        
-    synchronize encoder4_sw_synchronize(
-        .clk(clk_65mhz),
-        .in(jd[3]),
-        .out(encoder4_sw));
-    
-    wire encoder4_sw_db;
-    
-    debounce encoder4_sw_debounce(.reset_in(rst),.clock_in(clk_65mhz),.noisy_in(encoder4_sw),.clean_out(encoder4_sw_db));
-    
-    reg is_fft = 0;
-    logic past_fft_value;
-    always_ff @(posedge clk_65mhz) begin
-       if(!encoder4_sw_db & past_fft_value ) begin
-          is_fft <= is_fft + 1;
-       end
-       past_fft_value <= encoder4_sw_db;
-    end
     
     always_ff @(posedge clk_65mhz) begin
       hs <= hsync;

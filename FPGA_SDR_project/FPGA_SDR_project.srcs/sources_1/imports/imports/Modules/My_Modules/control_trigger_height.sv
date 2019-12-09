@@ -5,6 +5,7 @@ module control_trigger_height(
    input reset,
    input sw,
    input is_audio,
+   input is_fft,
    output logic [11:0] height_out
    );
    
@@ -32,10 +33,10 @@ module control_trigger_height(
                  if(reset) begin
                      state_signal <= RESET;
                  end else begin
-                    if(!up && !sw) begin
+                    if(!up && !sw && !is_fft) begin
                        state_signal <= UP_INCREMENT;
                     end else begin
-                       if(!down && !sw) begin
+                       if(!down && !sw && !is_fft) begin
                           state_signal <= DOWN_INCREMENT;
                       end
                    end
@@ -65,7 +66,7 @@ module control_trigger_height(
                  if(reset) begin
                     state_signal <= RESET;
                  end else begin
-                    if(up & down & !sw) begin
+                    if(up & down & !sw && !is_fft) begin
                        state_signal <= IDLE;
                     end
                  end
@@ -82,10 +83,10 @@ module control_trigger_height(
                  if(reset) begin
                      state_audio <= RESET;
                  end else begin
-                    if(!up && !sw) begin
+                    if(!up && !sw && !is_fft) begin
                        state_audio <= UP_INCREMENT;
                     end else begin
-                       if(!down && !sw) begin
+                       if(!down && !sw && !is_fft) begin
                           state_audio <= DOWN_INCREMENT;
                       end
                    end
@@ -115,7 +116,7 @@ module control_trigger_height(
                  if(reset) begin
                     state_audio <= RESET;
                  end else begin
-                    if(up & down & !sw) begin
+                    if(up & down & !sw && !is_fft) begin
                        state_audio <= IDLE;
                     end
                  end
