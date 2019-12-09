@@ -178,7 +178,7 @@ module top_level(
     logic FM_sample_ready;
     
     FM_demod_stage_1 FM_stage_1 (.clk(clk100mhz),.rst(rst),.IF_in(IF_signed),.IF_data_valid(ADC_data_valid),
-                                .FM_derivative(FM_stage_1_out),.FM_data_valid(FM_sample_ready));
+                                .FM_BP_width(sw[12]),.FM_derivative_out(FM_stage_1_out),.FM_data_valid(FM_sample_ready));
     
     //end FM demod stage 1 ------------------------------------------          
                      
@@ -261,6 +261,9 @@ module top_level(
     //magnitude of peak values of signal
     logic [33:0] peak_values;
     Peak_detect_hold AM_peak_detect (.clk(clk100mhz),.rst(rst),.sample_ready(peak_detect_sample_ready),.sample_in(peak_detect_sample_in),.peak_value(peak_values));
+    
+    //filter peak values (get rid of HF in FM signal)
+    
        
     //ila --------------------
     fm_stage_1_ila ila_fm_stage_1 (.clk(clk100mhz),.probe0(FM_stage_1_out),.probe1(peak_values));

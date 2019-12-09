@@ -14,21 +14,40 @@ module FM_demod_stage_1(
         input signed [23:0] IF_in,
         //driven by ADC_data_valid
         input IF_data_valid,
+        //if 1, use wideband FM, if 0, use narrowband FM
+        input FM_BP_width,
         //derivative of band passed FM signal
-        output logic signed [33:0] FM_derivative,
+        output logic signed [33:0] FM_derivative_out,
         output logic FM_data_valid
     );
-       
-    //FM (Wideband) Bandpass Filter
+    
+    parameter N = 3;
+    logic signed [17:0] a1 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+    logic signed [17:0] a2 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+    logic signed [17:0] a3 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+    logic signed [17:0] a4 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
+        
+    always_comb begin
+        if (FM_BP_width) begin
+            //FM (Wideband) Bandpass Filter
+            a1 [(N-2):0] = '{18'sd64789,-18'sd124533}; //a coeff MATLAB: 
+            a2 [(N-2):0] = '{18'sd64853,-18'sd125569}; //a coeff MATLAB: 
+            a3 [(N-2):0] = '{18'sd63792,-18'sd123882}; //a coeff MATLAB: 
+            a4 [(N-2):0] = '{18'sd63855,-18'sd124342}; //a coeff MATLAB: 
+        end else begin
+            //FM (narrowband) bandpass filter
+            a1 [(N-2):0] = '{18'sd64789,-18'sd124533}; //a coeff MATLAB: 
+            a2 [(N-2):0] = '{18'sd64853,-18'sd125569}; //a coeff MATLAB: 
+            a3 [(N-2):0] = '{18'sd63792,-18'sd123882}; //a coeff MATLAB: 
+            a4 [(N-2):0] = '{18'sd63855,-18'sd124342}; //a coeff MATLAB: 
+        end //if narrow or wide    
+    end //always_comb
     
     //section 1 ------------------------------------------
     //initialize coeffs
-    parameter N = 3;
     logic signed [17:0] b1 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
-    logic signed [17:0] a1 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
-    
+
     assign b1 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a1 [(N-2):0] = '{18'sd64789,-18'sd124533}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_1_out;
     logic sec_1_ready;
@@ -44,10 +63,8 @@ module FM_demod_stage_1(
      
     //initialize coeffs
     logic signed [17:0] b2 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
-    logic signed [17:0] a2 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     
     assign b2 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a2 [(N-2):0] = '{18'sd64853,-18'sd125569}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_2_out;
     logic sec_2_ready;
@@ -63,10 +80,8 @@ module FM_demod_stage_1(
     
     //initialize coeffs
     logic signed [17:0] b3 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
-    logic signed [17:0] a3 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     
     assign b3 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a3 [(N-2):0] = '{18'sd63792,-18'sd123882}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_3_out;
     logic sec_3_ready;
@@ -83,10 +98,8 @@ module FM_demod_stage_1(
     
     //initialize coeffs
     logic signed [17:0] b4 [(N-1):0]; //N b feedforward coeffs [b(N-1)...b0), unpacked array
-    logic signed [17:0] a4 [(N-2):0]; //N-1 feedback coeffs [a(N-1)...a1], unpacked array
     
     assign b4 [(N-1):0] = '{-18'sd65536,18'sd0,18'sd65536}; //b coeff MATLAB: [1,0,-1]
-    assign a4 [(N-2):0] = '{18'sd63855,-18'sd124342}; //a coeff MATLAB: 
     
     logic signed [33:0] filt_sec_4_out;
     logic sec_4_ready;
@@ -100,6 +113,9 @@ module FM_demod_stage_1(
     //FM signal derivative with respect to time
     //stores previous value from last section in FM bandpass
     logic signed [33:0] past_filt_4_out;
+    logic signed [33:0] past_past_filt_4_out;
+    logic signed [33:0] past_FM_derivative;
+    logic signed [33:0] FM_derivative;
     
     //Calculates derivative of band passed FM signal to pass into peak detection
     //operates at constant sampling freq therefore d(FM_signal)/d(t) = current_val - past_val / t
@@ -107,12 +123,20 @@ module FM_demod_stage_1(
     always_ff @(posedge clk) begin
         if (rst) begin
             past_filt_4_out <= 0;
+            past_past_filt_4_out <=0;
+            past_FM_derivative <= 0;
             FM_derivative <= 0;
+            FM_derivative_out <=0;
             FM_data_valid <= 0;
         end else begin
             if (sec_4_ready) begin
+                past_past_filt_4_out <= past_filt_4_out;
                 past_filt_4_out <= filt_sec_4_out;
+                //calc derivative and past derivative
+                past_FM_derivative <= past_filt_4_out - past_past_filt_4_out;
                 FM_derivative <= filt_sec_4_out - past_filt_4_out;
+                //current derivative out averaged over past 2
+                FM_derivative_out <= (FM_derivative >>> 2) + (past_FM_derivative >>> 2);
                 //trigger data valid. Will occur at 10 MHz
                 FM_data_valid <= 1;
             end else begin

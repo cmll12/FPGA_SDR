@@ -2,8 +2,8 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Mon Dec  9 00:44:00 2019
-# Process ID: 12472
+# Start of session at: Mon Dec  9 10:31:12 2019
+# Process ID: 26153
 # Current directory: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1
 # Command line: vivado -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
 # Log file: /afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.runs/synth_1/top_level.vds

@@ -10,25 +10,27 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="183608fs"></ZoomEndTime>
+      <ZoomEndTime time="1024001fs"></ZoomEndTime>
       <Cursor1Time time="232000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="170"></NameColumnWidth>
-      <ValueColumnWidth column_width="118"></ValueColumnWidth>
+      <ValueColumnWidth column_width="110"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="2" />
+   <wave_markers>
+   </wave_markers>
    <wvobject type="array" fp_name="FM_stage_1_out">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">FM_stage_1_out[33:0]</obj_property>
       <obj_property name="ObjectShortName">FM_stage_1_out[33:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
-      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+      <obj_property name="AnalogYRangeMin">-317628000.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">317628000.000000</obj_property>
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>

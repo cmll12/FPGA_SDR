@@ -48,6 +48,8 @@ module AM_condition_tb;
      
      Peak_detect_hold pd (.clk(clk),.rst(rst),.sample_ready(clk10),.sample_in(peak_in),.peak_value(peak_value));
      
+     //Audio_low_pass lp_audio (.clk(clk),.rst(rst),.sample_in(peak_values),.sample_out(
+     
      //3 switches determine audio level
      logic [2:0] sw_audio;
      logic signed [7:0] DAC_audio;
