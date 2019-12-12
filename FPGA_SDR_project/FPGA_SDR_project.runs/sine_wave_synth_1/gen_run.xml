@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="sine_wave_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575870227">
+<GenRun Id="sine_wave_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575927997">
   <File Type="REPORTS-TCL" Name="sine_wave_reports.tcl"/>
   <File Type="PA-TCL" Name="sine_wave.tcl"/>
   <File Type="RDS-DCP" Name="sine_wave.dcp"/>

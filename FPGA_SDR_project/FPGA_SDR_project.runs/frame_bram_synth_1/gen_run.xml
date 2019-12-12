@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="frame_bram_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575429108">
-  <File Type="RDS-UTIL" Name="frame_bram_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="frame_bram_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="frame_bram_utilization_synth.rpt"/>
   <File Type="RDS-RDS" Name="frame_bram.vds"/>
   <File Type="RDS-DCP" Name="frame_bram.dcp"/>
   <File Type="PA-TCL" Name="frame_bram.tcl"/>

@@ -3,51 +3,33 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/afs/athena.mit.edu/user/c/m/cmll/six_111/project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="/afs/athena.mit.edu/user/c/o/colinpc/6.111 Final Project/FPGA_SDR/FPGA_SDR_project/FPGA_SDR_project.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024001fs"></ZoomEndTime>
+      <ZoomEndTime time="1762619fs"></ZoomEndTime>
       <Cursor1Time time="622000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="170"></NameColumnWidth>
-      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+      <ValueColumnWidth column_width="74"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="2" />
-   <wave_markers>
-   </wave_markers>
-   <wvobject type="array" fp_name="filt_sec_6_out">
+   <wvobject type="logic" fp_name="filt_sec_6_out">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">filt_sec_6_out[33:0]</obj_property>
-      <obj_property name="ObjectShortName">filt_sec_6_out[33:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
-      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
-      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
-      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-      <obj_property name="AnalogHorizLine">0.000000</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="ElementShortName">filt_sec_6_out</obj_property>
+      <obj_property name="ObjectShortName">filt_sec_6_out</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="filt_sec_5_out">
+   <wvobject type="logic" fp_name="filt_sec_5_out">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">filt_sec_5_out[33:0]</obj_property>
-      <obj_property name="ObjectShortName">filt_sec_5_out[33:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">filt_sec_5_out</obj_property>
+      <obj_property name="ObjectShortName">filt_sec_5_out</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
-      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
-      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
-      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
-      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
-      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
-      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
 </wave_config>
